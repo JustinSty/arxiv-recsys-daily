@@ -1,0 +1,152 @@
+# 所有可调参数都在这里。改完直接 push，下次跑就生效。
+
+fetch:
+  # 主分类：只要沾这些就进入下一轮
+  required_categories: [cs.IR]
+  # 辅助分类：必须同时命中 aux_keywords 才保留，否则 cs.LG 的 NLP/CV 论文会淹掉你
+  aux_categories: [cs.LG, cs.AI]
+  aux_keywords:
+    - recommend
+    - ranking
+    - ctr
+    - cvr
+    - retrieval
+    - user behavior
+    - collaborative filtering
+  max_results: 300      # 每次最多抓多少条
+  page_size: 100        # arXiv 单页上限 2000，但分页更稳
+  sleep_seconds: 3.0    # arXiv 要求的礼貌间隔，别改小
+  window_days: 3        # 只看最近几天提交的（周末不发论文，留点余量）
+  skip_revisions: true  # v2/v3 更新版不推送
+
+thresholds:
+  must_read: 8          # 分数 >= 这个进「今天读这些」
+  maybe: 5              # 分数 >= 这个进折叠的「可能相关」
+  # 低于 maybe 的只写进存档 json，网页上不显示
+
+scoring:
+  # ---- 工业信号：这是整个过滤器的核心 ----
+  industrial:
+    weight_groups:
+      - terms: ["online a/b", "a/b test", "ab test", "live experiment", "online experiment"]
+        weight: 5
+      - terms: ["deployed", "in production", "production system", "serving", "launched", "real-world deployment"]
+        weight: 4
+      - terms: ["billions of users", "millions of users", "daily active", "billion-scale", "industrial-scale", "web-scale"]
+        weight: 2
+      - terms: ["latency", "throughput", "inference cost", "qps", "memory footprint", "serving cost"]
+        weight: 2
+
+  # 公开数据集名，匹配公司之前先从文本里抹掉，避免 "Amazon Beauty" 误判成工业信号
+  dataset_phrases:
+    - amazon beauty
+    - amazon reviews
+    - amazon product
+    - taobao dataset
+    - tmall dataset
+    - movielens
+    - yelp dataset
+    - gowalla
+    - last.fm
+    - lastfm
+    - criteo dataset
+    - avazu
+
+  companies:
+    weight: 3
+    terms:
+      - douyin
+      - tiktok
+      - bytedance
+      - kuaishou
+      - taobao
+      - alibaba
+      - ant group
+      - tencent
+      - wechat
+      - xiaohongshu
+      - baidu
+      - meituan
+      - pinduoduo
+      - meta ai
+      - facebook
+      - instagram
+      - google
+      - youtube
+      - amazon
+      - netflix
+      - spotify
+      - pinterest
+      - linkedin
+      - snap inc
+      - etsy
+      - ebay
+      - yandex
+      - naver
+      - coupang
+      - shopee
+
+  # ---- 主题权重：按你当前关注方向调 ----
+  topics:
+    weight_groups:
+      - terms: ["long behavior sequence", "ultra-long", "ultra long", "lifelong user", "long-term user behavior", "100k sequence"]
+        weight: 5
+      - terms: ["sequential recommendation", "user behavior modeling", "behavior sequence", "user sequence"]
+        weight: 4
+      - terms: ["target-aware", "target attention", "target-attention", "late fusion", "early fusion", "target-agnostic"]
+        weight: 4
+      - terms: ["sequence compression", "latent bottleneck", "perceiver", "low-rank cache", "kv cache", "cross-attention compression"]
+        weight: 4
+      - terms: ["ranking backbone", "unified ranking", "multi-task", "multi task", "mmoe", "gradient conflict", "task conflict"]
+        weight: 3
+      - terms: ["efficient attention", "linear attention", "sparse attention", "flash attention"]
+        weight: 3
+      - terms: ["ctr prediction", "cvr prediction", "two-tower", "recall stage", "candidate generation", "retrieval stage"]
+        weight: 2
+      - terms: ["semantic id", "generative recommendation", "scaling law", "one model", "foundation model"]
+        weight: 2
+
+  # ---- 场地信号：看 comments 字段 ----
+  venues:
+    weight: 3
+    terms: ["recsys", "kdd", "cikm", "sigir", "www 20", "the web conference", "wsdm", "icdm", "neurips", "icml"]
+  industry_tracks:
+    weight: 3
+    terms: ["industry track", "industrial track", "ads track", "applied data science"]
+
+  # ---- 负向 ----
+  negative:
+    # 无条件减分
+    always:
+      - terms: ["bachelor's thesis", "bachelor thesis", "master's thesis", "master thesis"]
+        weight: -4
+      - terms: ["survey", "overview of", "workshop report", "tutorial", "position paper"]
+        weight: -2
+    # 只在完全没有工业信号时才减分
+    if_not_industrial:
+      - terms: ["conversational recommendation", "llm agent", "chatbot", "dialogue system"]
+        weight: -3
+      - terms: ["fairness", "bias mitigation", "privacy-preserving", "explainability", "explainable"]
+        weight: -2
+      - terms: ["movielens", "amazon beauty", "yelp dataset", "gowalla", "lastfm", "last.fm"]
+        weight: -2
+
+rerank:
+  enabled: true                 # 没配 ANTHROPIC_API_KEY 时会自动跳过
+  model: claude-sonnet-5
+  max_papers: 15                # 每天最多送几篇进 LLM，控制成本
+  min_rule_score: 5             # 规则分低于这个的不送
+  # 告诉模型你在关注什么，它据此判断相关性
+  interests: |
+    工业级推荐系统的排序与召回，特别是：
+    - 长行为序列建模、序列压缩、target-aware 与 target-agnostic 的取舍
+    - Perceiver / latent bottleneck 类架构在推荐场景的应用
+    - 统一排序骨干下的多任务信息流与梯度冲突
+    - 线上部署的工程约束：延迟、显存、训练吞吐
+    偏好经过线上 A/B 验证的工业界工作，不关心纯学术的小数据集实验。
+
+site:
+  title: 每日推荐系统论文
+  base_url: ""        # 例如 https://yourname.github.io/arxiv-recsys-daily
+  timezone: America/Los_Angeles
+  keep_archive_days: 180
