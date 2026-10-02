@@ -3,22 +3,15 @@
 <channel>
   <title>每日推荐系统论文</title>
   <link>https://arxiv.org/list/cs.IR/new</link>
-  <description>每日筛选的工业推荐系统论文（2026-09-30）</description>
+  <description>每日筛选的工业推荐系统论文（2026-10-02）</description>
   <language>zh-cn</language>
-  <lastBuildDate>Wed, 30 Sep 2026 07:03:17 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 02 Oct 2026 07:17:13 +0000</lastBuildDate>
   <item>
-    <title>HELIX: Purified and Unified - Rethinking Feature Interaction and Sequence Modeling for Large-Scale Recommendation</title>
-    <link>https://arxiv.org/abs/2609.37183</link>
-    <guid isPermaLink="true">https://arxiv.org/abs/2609.37183</guid>
-    <pubDate>Wed, 30 Sep 2026 07:03:17 +0000</pubDate>
-    <description>规则分 12 — Industrial recommendation ranking models typically scale along two modeling axes: feature interaction over heterogeneous user, item, context, and cross features, and sequence modeling over long, informative, and multi-type user behavior histories. We find that scaling either capability in isolation is insufficient, as each exhibits a limited scaling ceiling and a suboptimal scaling-law slope. We conjecture that achieving a more favorable scaling-law slope requires jointly scaling both axes. To support this, we present HELIX, a purified and unified architecture for large-scale recommendation. HELIX interleaves sequence retrieval and feature interaction while enforcing one-way information flow from reusable sequence states to candidate-conditioned mix-tokens. This design preserves cross-depth communication between the two modeling axes while keeping user-side sequence computation amortizable, enabling flexible and asymmetric scaling of sequence modeling and feature interaction. Deployed in TikTok&#x27;s e-commerce recommendation system, HELIX consistently improves offline CTR AUC, CVR AUC, and other ranking metrics. In online A/B tests, it achieves an approximately 6% increase in e-commerce video GMV per user.</description>
-  </item>
-  <item>
-    <title>How Can Recommendation Feedback Evolve Agent Memory?</title>
-    <link>https://arxiv.org/abs/2609.37544</link>
-    <guid isPermaLink="true">https://arxiv.org/abs/2609.37544</guid>
-    <pubDate>Wed, 30 Sep 2026 07:03:17 +0000</pubDate>
-    <description>规则分 5 — Content-generation agents continuously receive impressions, clicks, conversions, and negative feedback from recommendation systems, providing real-world outcome signals for memory evolution. However, these signals are delayed and noisy, confounded by audience composition, placement, and recommendation policies, and may result from the combined influence of multiple memories, making accurate attribution difficult. Existing methods rely primarily on immediate feedback or semantic retrieval and therefore struggle to reliably translate recommendation outcomes into memory fitness. To address this challenge, we propose TIDE (Trajectory-Informed Directed Memory Evolution), an external memory evolution framework driven by delayed recommendation feedback. We further introduce Memory Evolution Gain (MEG), which measures the utility improvement of evolved memory over a no memory baseline on strictly future tasks. TIDE treats memory as a capacity-constrained population of experiences: temporal and semantic credit assignment estimates contextual fitness, while responsibility credit distributes outcome signals according to the memories referenced during generation. These signals are then used to reinforce, crossover, mutate, or evict memories. On an e-commerce membership marketing content-generation agent, TIDE achieves a +7.75-percentage-point MEG in offline temporal replay and significantly improves both unique click-through rate (UCTR) and activation rate in an online A/B test. On a delayed-label benchmark, TIDE achieves the lowest mean absolute error (MAE) and root mean squared error (RMSE) and the highest MEG among the compared methods, demonstrating its effectiveness.</description>
+    <title>From Rules to Neural Graphs: Scalable Structured Prediction for Patent Prior Art Search</title>
+    <link>https://arxiv.org/abs/2610.01553</link>
+    <guid isPermaLink="true">https://arxiv.org/abs/2610.01553</guid>
+    <pubDate>Fri, 02 Oct 2026 07:17:13 +0000</pubDate>
+    <description>规则分 5 — Patent search requires processing documents routinely exceeding tens of thousands of tokens. Most neural retrieval approaches operate on truncated inputs, limiting their effectiveness. Graph-based retrieval addresses this by representing each patent as a structured invention graph, but constructing these graphs relies on brittle rule-based parsers. We present the neural parser, which adapts biaffine attention from dependency parsing to predict invention graphs directly from patent text. Our local biaffine attention restricts pairwise scoring to a sliding window, reducing complexity from $O(n^2)$ to $O(n \cdot w)$. Since local and global scoring share the same weights, the model trains on short sequences and deploys on documents exceeding 40,000 tokens without retraining. Distilled from 1 million rule-parsed documents, it surpasses its teacher at 3$\times$ lower inference cost: neural graphs improve citation recall by 0.5% on short queries and 1.1% on full documents in a downstream Graph Transformer retrieval system.</description>
   </item>
 </channel>
 </rss>
