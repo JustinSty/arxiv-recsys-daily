@@ -5,13 +5,7 @@
   <link>https://arxiv.org/list/cs.IR/new</link>
   <description>每日筛选的工业推荐系统论文（2026-10-02）</description>
   <language>zh-cn</language>
-  <lastBuildDate>Fri, 02 Oct 2026 07:17:13 +0000</lastBuildDate>
-  <item>
-    <title>From Rules to Neural Graphs: Scalable Structured Prediction for Patent Prior Art Search</title>
-    <link>https://arxiv.org/abs/2610.01553</link>
-    <guid isPermaLink="true">https://arxiv.org/abs/2610.01553</guid>
-    <pubDate>Fri, 02 Oct 2026 07:17:13 +0000</pubDate>
-    <description>规则分 5 — Patent search requires processing documents routinely exceeding tens of thousands of tokens. Most neural retrieval approaches operate on truncated inputs, limiting their effectiveness. Graph-based retrieval addresses this by representing each patent as a structured invention graph, but constructing these graphs relies on brittle rule-based parsers. We present the neural parser, which adapts biaffine attention from dependency parsing to predict invention graphs directly from patent text. Our local biaffine attention restricts pairwise scoring to a sliding window, reducing complexity from $O(n^2)$ to $O(n \cdot w)$. Since local and global scoring share the same weights, the model trains on short sequences and deploys on documents exceeding 40,000 tokens without retraining. Distilled from 1 million rule-parsed documents, it surpasses its teacher at 3$\times$ lower inference cost: neural graphs improve citation recall by 0.5% on short queries and 1.1% on full documents in a downstream Graph Transformer retrieval system.</description>
-  </item>
+  <lastBuildDate>Sat, 03 Oct 2026 06:48:17 +0000</lastBuildDate>
+
 </channel>
 </rss>

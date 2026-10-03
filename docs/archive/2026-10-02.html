@@ -77,25 +77,9 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <div class="wrap">
 <header>
   <div class="date">2026-10-02</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 57 篇，达到阈值 1 篇</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 0 篇，达到阈值 0 篇</div>
 </header>
-<h2>可能相关</h2><article class="paper">
-  <div class="mark">
-    <span class="num">1</span>
-    <span class="sub">5 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.01553">From Rules to Neural Graphs: Scalable Structured Prediction for Patent Prior Art Search</a></h3>
-    <p class="who">Nikolai Zenovkin、Sebastian Björkqvist</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Patent search requires processing documents routinely exceeding tens of thousands of tokens. Most neural retrieval approaches operate on truncated inputs, limiting their effectiveness. Graph-based retrieval addresses this by representing each patent as a structured invention graph, but constructing these graphs relies on brittle rule-based parsers. We present the neural parser, which adapts biaffine attention from dependency parsing to predict invention graphs directly from patent text. Our local biaffine attention restricts pairwise scoring to a sliding window, reducing complexity from $O(n^2)$ to $O(n \cdot w)$. Since local and global scoring share the same weights, the model trains on short sequences and deploys on documents exceeding 40,000 tokens without retraining. Distilled from 1 million rule-parsed documents, it surpasses its teacher at 3$\times$ lower inference cost: neural graphs improve citation recall by 0.5% on short queries and 1.1% on full documents in a downstream Graph Transformer retrieval system.</p>
-    </details>
-    <div class="hits"><span>工业信号：inference cost</span><span>工业 track：applied data science</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.01553">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.01553">PDF</a><span class="who">Accepted for publication at the ECML PKDD 2026 conference (Applied Data Science track)</span></p>
-  </div>
-</article>
+<p class="empty">今天没有达到阈值的论文。周末和节假日 arXiv 不发布新论文，工作日出现这种情况可以考虑调低阈值。</p>
 <footer>
   <p><a href="feed.xml">RSS</a> · <a href="archive.html">历史</a></p>
   <p>数据来自 arXiv，按本地规则打分排序。分数只是排序依据，不代表论文质量。</p>
