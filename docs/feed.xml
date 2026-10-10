@@ -3,22 +3,9 @@
 <channel>
   <title>每日推荐系统论文</title>
   <link>https://arxiv.org/list/cs.IR/new</link>
-  <description>每日筛选的工业推荐系统论文（2026-10-09）</description>
+  <description>每日筛选的工业推荐系统论文（2026-10-10）</description>
   <language>zh-cn</language>
-  <lastBuildDate>Fri, 09 Oct 2026 07:42:08 +0000</lastBuildDate>
-  <item>
-    <title>Compile the Table: Query-Calibrated Operator Compression for Tabular In-Context Learning</title>
-    <link>https://arxiv.org/abs/2610.11784</link>
-    <guid isPermaLink="true">https://arxiv.org/abs/2610.11784</guid>
-    <pubDate>Fri, 09 Oct 2026 07:42:08 +0000</pubDate>
-    <description>规则分 10 — Tabular in-context learning (ICL) has emerged as a training-free and accurate paradigm for tabular prediction, but current approaches to compressing its in-context examples face an accuracy-throughput tradeoff: fixed subsets can sacrifice accuracy, while query-specific retrieval limits cache reuse and batching across queries, reducing throughput. We propose QCOC (Query-Calibrated Operator Compression), which exploits the exchangeability and repeated use of in-context examples by compiling their full KV cache once into compact memory shared across subsequent queries. Instead of retaining raw examples, QCOC clusters their states into joint-KV prototypes, preserves per-cluster multiplicities and the original example count, and calibrates prototype values against attention query vectors produced by the in-context examples through an anchored closed-form solution. Prototype compression drives the speedup, while value fitting helps preserve accuracy. On 64 held-out OpenML-CC18 datasets, QCOC achieves the highest mean accuracy among the compared compression and retrieval methods at both retained counts. Across 12 configurations on seven long tables, it ranks first among compressed methods in ten and averages 0.23 percentage points below full context. Compressing 8,192 in-context examples to 512 memory slots yields a 10.5x cache compression ratio; excluding one-time compilation, in a single-core CPU online-serving comparison over 1,000 queries, QCOC is up to 508x faster than dynamic retrieval baselines and 1.98x faster than full-context inference. These results show that QCOC enables compact-memory reuse and efficient inference across queries while retaining accuracy close to full context.</description>
-  </item>
-  <item>
-    <title>AdaptLSTM: Efficient Adaptive Online Learning for Cloud Workload Forecasting under Distribution Drift</title>
-    <link>https://arxiv.org/abs/2610.12265</link>
-    <guid isPermaLink="true">https://arxiv.org/abs/2610.12265</guid>
-    <pubDate>Fri, 09 Oct 2026 07:42:08 +0000</pubDate>
-    <description>规则分 7 — Accurate workload forecasting is critical for elastic resource provisioning in web-scale cloud services, where distribution shifts driven by viral content, product launches, and user behavior degrade offline-trained models rapidly. Naive online learning recovers accuracy but incurs prohibitive per-step compute cost. We propose AdaptLSTM, an adaptive online framework that detects drift via validation-calibrated thresholds and applies selective, targeted updates. On the Alibaba Machine Trace, AdaptLSTM recovers 54\% of Naive Online&#x27;s improvement at 20\% cost ($2.7\times$ efficiency, $p=0.002$ over 10 seeds). On the more volatile Container Trace, it achieves 96\% at 20\% cost ($4.8\times$ efficiency, $+75\%$ MAE reduction over Static). Unlike classical drift detectors (ADWIN, DDM, Page-Hinkley) which fail to trigger on regression-scale error streams, AdaptLSTM fires 42 times over 301 steps and outperforms matched-budget baselines. Wall-clock profiling shows $1.33\times$ throughput gain and 45\% update-time reduction. The framework is model-agnostic: identical Pareto patterns hold for LSTM, GRU, and Transformer backbones.</description>
-  </item>
+  <lastBuildDate>Sat, 10 Oct 2026 07:28:33 +0000</lastBuildDate>
+
 </channel>
 </rss>
