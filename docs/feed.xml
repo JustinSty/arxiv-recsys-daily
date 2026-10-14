@@ -5,7 +5,20 @@
   <link>https://arxiv.org/list/cs.IR/new</link>
   <description>每日筛选的工业推荐系统论文（2026-10-13）</description>
   <language>zh-cn</language>
-  <lastBuildDate>Tue, 13 Oct 2026 08:02:23 +0000</lastBuildDate>
-
+  <lastBuildDate>Wed, 14 Oct 2026 06:26:39 +0000</lastBuildDate>
+  <item>
+    <title>Web Scale on a Budget: Tail-Aware Retrieval Evaluation</title>
+    <link>https://arxiv.org/abs/2610.17986</link>
+    <guid isPermaLink="true">https://arxiv.org/abs/2610.17986</guid>
+    <pubDate>Wed, 14 Oct 2026 06:26:39 +0000</pubDate>
+    <description>规则分 7 — A common practice in instance retrieval is to grow the gallery size to improve a benchmark&#x27;s discrimination capability. One prominent example is ILIAS, which adds up to 100 million distractor images. The prevailing assumption is that faithful evaluation demands web scale, and that indexing all 100M images through the backbone is the unavoidable price of a comparable number. That price is steep: hundreds of GPU-hours and ~200 GB of descriptors per model, paid again for every method or ablation. We show the web-scale indexing price is largely avoidable: evaluation itself obeys a scaling law. The number of distractors that outrank a positive is Binomial in the gallery size. We define the per-query retrieval hardness, a gallery-scale agnostic quantity that yields a retrieval metric at any scale, and demonstrate it can be derived from a small random sample. The underlying sampled-rank machinery is long established in recommender-system and biometric evaluation, but to our knowledge has never been adapted to visual retrieval. We make the law per-query and estimable, and validate it at true 100M scale on ILIAS and INSTRE, and on the full 759k-distractor Google Landmarks v2 pool. Concretely, within a 5% sample (a flat 20x less indexing), every backbone&#x27;s tail-aware (EVT) estimate has converged onto the large-scale mAP, to within ~0.01 (mean absolute error 0.005), across five backbones, three benchmarks, and two distractor pools (mAP@1000 at 100M on ILIAS/INSTRE; the official mAP@100 at the full 759k pool on GLDv2); the recommender-systems count baseline over-predicts everywhere (+0.037 to +0.068). This is an order of magnitude better than naively reporting the metric on the same subset (+0.08 to +0.13). We release code and the per-query hardness to facilitate faster, cheaper, and greener retrieval evaluation.</description>
+  </item>
+  <item>
+    <title>SMI: Ontology-Grounded Semantic IDs for Hierarchy-Aware Medical Concept Representation</title>
+    <link>https://arxiv.org/abs/2610.18672</link>
+    <guid isPermaLink="true">https://arxiv.org/abs/2610.18672</guid>
+    <pubDate>Wed, 14 Oct 2026 06:26:39 +0000</pubDate>
+    <description>规则分 5 — Biomedical language models (LMs) provide strong representations for clinical tasks, but they often fail to capture the hierarchical structure among medical concepts. This limitation is especially pronounced for rare and fine-grained clinical codes in long-tailed vocabularies, where hierarchy-agnostic LM representations become less informative as concept frequency decreases. We introduce Semantic Medical Identifier (SMI), a training-free framework for constructing ontology-grounded Semantic IDs and hierarchy-aware medical concept representations. For each diagnosis, procedure, or medication concept, SMI defines its Semantic ID as the coarse-to-fine path through an expert-defined medical ontology. SMI then aggregates frozen biomedical LM embeddings across the corresponding ontology levels to form hierarchy-aware medical concept representations that preserve coarse-to-fine clinical semantics. The base SMI uses uniform aggregation across ontology levels, while a level-weighted variant selects global level weights on validation data. Our theoretical analysis shows that SMI yields more informative medical concept representations than hierarchy-agnostic LM embeddings, particularly for rare and fine-grained clinical concepts. Experiments show that SMI captures meaningful hierarchical structure and improves clinical relation prediction. On MIMIC-IV, SMI improves mortality prediction, readmission prediction, drug recommendation, and rare drug prediction. On eICU, SMI yields more robust patient representations under cross-hospital distribution shift.</description>
+  </item>
 </channel>
 </rss>
