@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日推荐系统论文 · 2026-10-14</title>
+<style>
+:root {
+  --bg: #f5f6f4;
+  --ink: #1a2024;
+  --muted: #5e6b70;
+  --rule: #dcdfda;
+  --accent: #22516b;
+  --flag: #8a4b1f;
+  --surface: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181a;
+    --ink: #e6e8e4;
+    --muted: #939c9f;
+    --rule: #2b3134;
+    --accent: #7fb3d0;
+    --flag: #d39560;
+    --surface: #1b2023;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding: 2rem 1.15rem 4rem; }
+header { padding-bottom: 1.25rem; border-bottom: 2px solid var(--ink); }
+.date { font-size: 2.6rem; line-height: 1; font-weight: 600; letter-spacing: -0.02em; }
+.tally { margin-top: 0.5rem; color: var(--muted); font-size: 0.9rem; }
+h2 {
+  font-size: 0.95rem; font-weight: 600; margin: 2.25rem 0 0.25rem;
+  padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule);
+}
+.paper { padding: 1.4rem 0; border-bottom: 1px solid var(--rule); display: flex; gap: 0.9rem; }
+.mark { flex: 0 0 2.1rem; padding-top: 0.35rem; text-align: right; }
+.mark .num { font-size: 1.05rem; font-weight: 600; color: var(--accent); }
+.mark .sub { display: block; font-size: 0.7rem; color: var(--muted); }
+.body { flex: 1 1 auto; min-width: 0; }
+.title {
+  font-family: Charter, "Iowan Old Style", Georgia, "Songti SC", serif;
+  font-size: 1.16rem; line-height: 1.35; margin: 0 0 0.35rem;
+}
+.title a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+.title a:hover, .title a:focus { border-bottom-color: var(--accent); }
+.who { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+.zh { margin: 0.5rem 0; }
+.why { margin: 0.4rem 0; color: var(--muted); font-size: 0.92rem; }
+.flag { color: var(--flag); font-weight: 600; }
+.hits { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+.hits span { display: inline-block; margin-right: 0.7rem; white-space: nowrap; }
+.links { font-size: 0.85rem; margin-top: 0.6rem; }
+.links a { color: var(--accent); text-decoration: none; margin-right: 0.9rem; }
+.links a:hover { text-decoration: underline; }
+details { margin-top: 0.6rem; }
+summary { cursor: pointer; color: var(--muted); font-size: 0.88rem; }
+details .abs { margin-top: 0.5rem; font-size: 0.92rem; color: var(--muted); }
+.empty { padding: 2.5rem 0; color: var(--muted); }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
+  font-size: 0.85rem; color: var(--muted); }
+footer a { color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="date">2026-10-14</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 43 篇，达到阈值 2 篇</div>
+</header>
+<h2>可能相关</h2><article class="paper">
+  <div class="mark">
+    <span class="num">1</span>
+    <span class="sub">6 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.20588">Your Transformer Is Secretly Elastic</a></h3>
+    <p class="who">Walter Simoncini、Dheeraj Varghese、Gertjan J. Burghouts、Cees G. M. Snoek</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Scaling up transformers has produced models with broad capabilities, deployed across heterogeneous hardware and fluctuating workloads. Yet, model families offer only a few fixed sizes (e.g., S, B, L), forcing users to commit to a model based on hardware and latency constraints. This rigidity is often suboptimal under varying query loads. We introduce a retraining-free method that elastifies pre-trained transformers into a single model that adapts on-the-fly across a continuum of computational budgets. Our key contribution is a differentiable relaxation of the functional unit-ranking problem: unlike prior work, which optimizes a single importance weight per MLP block or attention head, we rank every individual MLP neuron and attention head jointly, on a common scale, by minimizing the model&#x27;s loss under soft pruning across many sparsity targets, all at once. Across 27 vision and text transformer encoders ranging from 22M to 8B parameters, our method yields smooth degradation up to 60% sparsity and outperforms one-shot baselines under deep pruning. For example, pruning DINOv3 ViT-H+/16 to 50% sparsity removes 427M parameters while reducing ImageNet-1k linear-probing accuracy by only 0.8%, without the need for weight correction or retraining. At 60% sparsity, a pruned AugReg ViT-B/16 model achieves up to $1.80\times$ higher throughput and $1.26\times$ lower single-query latency on an A100 GPU. Elastic models are produced in minutes, with construction time scaling sub-linearly with parameter count.</p>
+    </details>
+    <div class="hits"><span>工业信号：deployed、latency、throughput</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.20588">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.20588">PDF</a><span class="who">Code available at https://github.com/WalterSimoncini/secretly-elastic</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">2</span>
+    <span class="sub">5 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.20293">CASI: Credit Assignment via Set Intervention for Agentic Retrieval</a></h3>
+    <p class="who">Xinyi Cheng、Tianfu Zhang、Jiwen Li、Xuesen Zhang 等 8 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Large language models increasingly generate multiple retrieval actions jointly, while downstream systems often provide only one reward for the resulting set. Broadcasting this reward provides a valid score-function gradient estimator for the expected set-level objective, but does not determine a coalition-dependent within-set attribution. We introduce CASI (Credit Assignment via Set Intervention for Agentic Retrieval), which constructs the missing counterfactual information through snapshot-grounded set intervention: generate and retrieve once, hold replayable snapshot components fixed, and evaluate alternative subsets under common conditions. Shapley aggregation converts these marginals into within-set credit, which bounded zero-sum advantage shaping incorporates into policy optimization. For m &gt;= 4, singleton, leave-one-out, and full-set endpoints do not generally determine the Shapley allocation; under additive set values, extra coalition evaluations are redundant. In a five-action sponsored-search setting, exhaustive auction replay over 1,200 requests reveals substantial coalition dependence. Under the training-time evaluator, CASI achieves the highest median cosine similarity to a replay-defined Shapley reference among evaluated credit rules; under a sensitivity backend, CASI does not outperform Singleton. Across five independent training runs, CASI-trained policies achieve higher held-out auction-replay set value than Singleton- or Broadcast-trained policies. In a randomized seven-day production A/B test on 10% of traffic, the CASI-trained policy yields an observed 3.51% lift in the primary advertiser-value metric over production control.</p>
+    </details>
+    <div class="hits"><span>工业信号：a/b test</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.20293">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.20293">PDF</a><span class="who">19 pages, 2 figures, 8 tables</span></p>
+  </div>
+</article>
+<footer>
+  <p><a href="feed.xml">RSS</a> · <a href="archive.html">历史</a></p>
+  <p>数据来自 arXiv，按本地规则打分排序。分数只是排序依据，不代表论文质量。</p>
+</footer>
+</div>
+</body>
+</html>

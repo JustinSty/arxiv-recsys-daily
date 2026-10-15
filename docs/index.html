@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-10-13</title>
+<title>每日推荐系统论文 · 2026-10-14</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,24 +76,24 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-10-13</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 51 篇，达到阈值 2 篇</div>
+  <div class="date">2026-10-14</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 43 篇，达到阈值 2 篇</div>
 </header>
 <h2>可能相关</h2><article class="paper">
   <div class="mark">
     <span class="num">1</span>
-    <span class="sub">7 分</span>
+    <span class="sub">6 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.17986">Web Scale on a Budget: Tail-Aware Retrieval Evaluation</a></h3>
-    <p class="who">Boaz Meivar、Shai Avidan</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.20588">Your Transformer Is Secretly Elastic</a></h3>
+    <p class="who">Walter Simoncini、Dheeraj Varghese、Gertjan J. Burghouts、Cees G. M. Snoek</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">A common practice in instance retrieval is to grow the gallery size to improve a benchmark&#x27;s discrimination capability. One prominent example is ILIAS, which adds up to 100 million distractor images. The prevailing assumption is that faithful evaluation demands web scale, and that indexing all 100M images through the backbone is the unavoidable price of a comparable number. That price is steep: hundreds of GPU-hours and ~200 GB of descriptors per model, paid again for every method or ablation. We show the web-scale indexing price is largely avoidable: evaluation itself obeys a scaling law. The number of distractors that outrank a positive is Binomial in the gallery size. We define the per-query retrieval hardness, a gallery-scale agnostic quantity that yields a retrieval metric at any scale, and demonstrate it can be derived from a small random sample. The underlying sampled-rank machinery is long established in recommender-system and biometric evaluation, but to our knowledge has never been adapted to visual retrieval. We make the law per-query and estimable, and validate it at true 100M scale on ILIAS and INSTRE, and on the full 759k-distractor Google Landmarks v2 pool. Concretely, within a 5% sample (a flat 20x less indexing), every backbone&#x27;s tail-aware (EVT) estimate has converged onto the large-scale mAP, to within ~0.01 (mean absolute error 0.005), across five backbones, three benchmarks, and two distractor pools (mAP@1000 at 100M on ILIAS/INSTRE; the official mAP@100 at the full 759k pool on GLDv2); the recommender-systems count baseline over-predicts everywhere (+0.037 to +0.068). This is an order of magnitude better than naively reporting the metric on the same subset (+0.08 to +0.13). We release code and the per-query hardness to facilitate faster, cheaper, and greener retrieval evaluation.</p>
+      <p class="abs">Scaling up transformers has produced models with broad capabilities, deployed across heterogeneous hardware and fluctuating workloads. Yet, model families offer only a few fixed sizes (e.g., S, B, L), forcing users to commit to a model based on hardware and latency constraints. This rigidity is often suboptimal under varying query loads. We introduce a retraining-free method that elastifies pre-trained transformers into a single model that adapts on-the-fly across a continuum of computational budgets. Our key contribution is a differentiable relaxation of the functional unit-ranking problem: unlike prior work, which optimizes a single importance weight per MLP block or attention head, we rank every individual MLP neuron and attention head jointly, on a common scale, by minimizing the model&#x27;s loss under soft pruning across many sparsity targets, all at once. Across 27 vision and text transformer encoders ranging from 22M to 8B parameters, our method yields smooth degradation up to 60% sparsity and outperforms one-shot baselines under deep pruning. For example, pruning DINOv3 ViT-H+/16 to 50% sparsity removes 427M parameters while reducing ImageNet-1k linear-probing accuracy by only 0.8%, without the need for weight correction or retraining. At 60% sparsity, a pruned AugReg ViT-B/16 model achieves up to $1.80\times$ higher throughput and $1.26\times$ lower single-query latency on an A100 GPU. Elastic models are produced in minutes, with construction time scaling sub-linearly with parameter count.</p>
     </details>
-    <div class="hits"><span>工业信号：web-scale</span><span>公司：google</span><span>主题：scaling law</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.17986">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.17986">PDF</a><span class="who">19 pages, 8 figures, 10 tables</span></p>
+    <div class="hits"><span>工业信号：deployed、latency、throughput</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.20588">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.20588">PDF</a><span class="who">Code available at https://github.com/WalterSimoncini/secretly-elastic</span></p>
   </div>
 </article><article class="paper">
   <div class="mark">
@@ -101,15 +101,15 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
     <span class="sub">5 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.18672">SMI: Ontology-Grounded Semantic IDs for Hierarchy-Aware Medical Concept Representation</a></h3>
-    <p class="who">Ziyang Song、Lia Shen、Yixuan Li、Qincheng Lu 等 9 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.20293">CASI: Credit Assignment via Set Intervention for Agentic Retrieval</a></h3>
+    <p class="who">Xinyi Cheng、Tianfu Zhang、Jiwen Li、Xuesen Zhang 等 8 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Biomedical language models (LMs) provide strong representations for clinical tasks, but they often fail to capture the hierarchical structure among medical concepts. This limitation is especially pronounced for rare and fine-grained clinical codes in long-tailed vocabularies, where hierarchy-agnostic LM representations become less informative as concept frequency decreases. We introduce Semantic Medical Identifier (SMI), a training-free framework for constructing ontology-grounded Semantic IDs and hierarchy-aware medical concept representations. For each diagnosis, procedure, or medication concept, SMI defines its Semantic ID as the coarse-to-fine path through an expert-defined medical ontology. SMI then aggregates frozen biomedical LM embeddings across the corresponding ontology levels to form hierarchy-aware medical concept representations that preserve coarse-to-fine clinical semantics. The base SMI uses uniform aggregation across ontology levels, while a level-weighted variant selects global level weights on validation data. Our theoretical analysis shows that SMI yields more informative medical concept representations than hierarchy-agnostic LM embeddings, particularly for rare and fine-grained clinical concepts. Experiments show that SMI captures meaningful hierarchical structure and improves clinical relation prediction. On MIMIC-IV, SMI improves mortality prediction, readmission prediction, drug recommendation, and rare drug prediction. On eICU, SMI yields more robust patient representations under cross-hospital distribution shift.</p>
+      <p class="abs">Large language models increasingly generate multiple retrieval actions jointly, while downstream systems often provide only one reward for the resulting set. Broadcasting this reward provides a valid score-function gradient estimator for the expected set-level objective, but does not determine a coalition-dependent within-set attribution. We introduce CASI (Credit Assignment via Set Intervention for Agentic Retrieval), which constructs the missing counterfactual information through snapshot-grounded set intervention: generate and retrieve once, hold replayable snapshot components fixed, and evaluate alternative subsets under common conditions. Shapley aggregation converts these marginals into within-set credit, which bounded zero-sum advantage shaping incorporates into policy optimization. For m &gt;= 4, singleton, leave-one-out, and full-set endpoints do not generally determine the Shapley allocation; under additive set values, extra coalition evaluations are redundant. In a five-action sponsored-search setting, exhaustive auction replay over 1,200 requests reveals substantial coalition dependence. Under the training-time evaluator, CASI achieves the highest median cosine similarity to a replay-defined Shapley reference among evaluated credit rules; under a sensitivity backend, CASI does not outperform Singleton. Across five independent training runs, CASI-trained policies achieve higher held-out auction-replay set value than Singleton- or Broadcast-trained policies. In a randomized seven-day production A/B test on 10% of traffic, the CASI-trained policy yields an observed 3.51% lift in the primary advertiser-value metric over production control.</p>
     </details>
-    <div class="hits"><span>主题：semantic id</span><span>会议：neurips</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.18672">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.18672">PDF</a><span class="who">Accepted to NeurIPS 2026 (Main Track)</span></p>
+    <div class="hits"><span>工业信号：a/b test</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.20293">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.20293">PDF</a><span class="who">19 pages, 2 figures, 8 tables</span></p>
   </div>
 </article>
 <footer>
