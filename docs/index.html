@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-10-14</title>
+<title>每日推荐系统论文 · 2026-10-15</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,8 +76,8 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-10-14</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 43 篇，达到阈值 2 篇</div>
+  <div class="date">2026-10-15</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 47 篇，达到阈值 1 篇</div>
 </header>
 <h2>可能相关</h2><article class="paper">
   <div class="mark">
@@ -85,31 +85,15 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
     <span class="sub">6 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.20588">Your Transformer Is Secretly Elastic</a></h3>
-    <p class="who">Walter Simoncini、Dheeraj Varghese、Gertjan J. Burghouts、Cees G. M. Snoek</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.22230">Architecting for Hardware Diversity: Meta&#x27;s End-to-End Co-Design for High-Performance AI Training on AMD GPUs</a></h3>
+    <p class="who">Haoyu Zhang、Arshad Rahman、Adnan Aziz、Ajith Prabhudev 等 58 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Scaling up transformers has produced models with broad capabilities, deployed across heterogeneous hardware and fluctuating workloads. Yet, model families offer only a few fixed sizes (e.g., S, B, L), forcing users to commit to a model based on hardware and latency constraints. This rigidity is often suboptimal under varying query loads. We introduce a retraining-free method that elastifies pre-trained transformers into a single model that adapts on-the-fly across a continuum of computational budgets. Our key contribution is a differentiable relaxation of the functional unit-ranking problem: unlike prior work, which optimizes a single importance weight per MLP block or attention head, we rank every individual MLP neuron and attention head jointly, on a common scale, by minimizing the model&#x27;s loss under soft pruning across many sparsity targets, all at once. Across 27 vision and text transformer encoders ranging from 22M to 8B parameters, our method yields smooth degradation up to 60% sparsity and outperforms one-shot baselines under deep pruning. For example, pruning DINOv3 ViT-H+/16 to 50% sparsity removes 427M parameters while reducing ImageNet-1k linear-probing accuracy by only 0.8%, without the need for weight correction or retraining. At 60% sparsity, a pruned AugReg ViT-B/16 model achieves up to $1.80\times$ higher throughput and $1.26\times$ lower single-query latency on an A100 GPU. Elastic models are produced in minutes, with construction time scaling sub-linearly with parameter count.</p>
+      <p class="abs">Meta deploys a heterogeneous fleet comprising NVIDIA GPUs, AMD GPUs, and proprietary MTIA accelerators to reduce costs and mitigate vendor lock-in. However, the extensive history of NVIDIA-specific optimizations hinders performance portability to other hardware. This paper presents our methods for optimizing alternative accelerators, using AMD Instinct MI350X versus NVIDIA B200 for recommendation model training as a case study. We propose three reusable principles. First, hardware-model co-design is essential: rather than directly porting models from NVIDIA GPUs, revising model structures and software recipes allows full exploitation of accelerator-specific strengths (e.g., MI350X&#x27;s 1.6x HBM capacity relative to B200). Second, our analytical performance model enables zero-warmup optimal kernel selection across diverse datatypes and matrix shapes in production models, drastically simplifying tuning. Third, increasingly mature agentic workflows have lowered the barrier to porting from the CUDA ecosystem; we extend these workflows for microarchitecture-aware kernel optimizations and custom shim generation. Compared to the directly ported baseline, these methods deliver up to 1.5x improvement in end-to-end training throughput. To our knowledge, this is the first hyperscaler report on productionizing AMD GPUs for large-scale training. Our contributions have been upstreamed to the open-source PyTorch, Triton, and ROCm ecosystems.</p>
     </details>
-    <div class="hits"><span>工业信号：deployed、latency、throughput</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.20588">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.20588">PDF</a><span class="who">Code available at https://github.com/WalterSimoncini/secretly-elastic</span></p>
-  </div>
-</article><article class="paper">
-  <div class="mark">
-    <span class="num">2</span>
-    <span class="sub">5 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.20293">CASI: Credit Assignment via Set Intervention for Agentic Retrieval</a></h3>
-    <p class="who">Xinyi Cheng、Tianfu Zhang、Jiwen Li、Xuesen Zhang 等 8 人</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Large language models increasingly generate multiple retrieval actions jointly, while downstream systems often provide only one reward for the resulting set. Broadcasting this reward provides a valid score-function gradient estimator for the expected set-level objective, but does not determine a coalition-dependent within-set attribution. We introduce CASI (Credit Assignment via Set Intervention for Agentic Retrieval), which constructs the missing counterfactual information through snapshot-grounded set intervention: generate and retrieve once, hold replayable snapshot components fixed, and evaluate alternative subsets under common conditions. Shapley aggregation converts these marginals into within-set credit, which bounded zero-sum advantage shaping incorporates into policy optimization. For m &gt;= 4, singleton, leave-one-out, and full-set endpoints do not generally determine the Shapley allocation; under additive set values, extra coalition evaluations are redundant. In a five-action sponsored-search setting, exhaustive auction replay over 1,200 requests reveals substantial coalition dependence. Under the training-time evaluator, CASI achieves the highest median cosine similarity to a replay-defined Shapley reference among evaluated credit rules; under a sensitivity backend, CASI does not outperform Singleton. Across five independent training runs, CASI-trained policies achieve higher held-out auction-replay set value than Singleton- or Broadcast-trained policies. In a randomized seven-day production A/B test on 10% of traffic, the CASI-trained policy yields an observed 3.51% lift in the primary advertiser-value metric over production control.</p>
-    </details>
-    <div class="hits"><span>工业信号：a/b test</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.20293">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.20293">PDF</a><span class="who">19 pages, 2 figures, 8 tables</span></p>
+    <div class="hits"><span>工业信号：in production、throughput</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.22230">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.22230">PDF</a><span class="who">16 pages, 21 figures, 6 tables. To appear in the 59th IEEE/ACM International Symposium on Microarchitecture (MICRO 2026)</span></p>
   </div>
 </article>
 <footer>
