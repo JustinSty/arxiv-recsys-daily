@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-10-19</title>
+<title>每日推荐系统论文 · 2026-10-20</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,72 +76,72 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-10-19</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 69 篇，达到阈值 6 篇</div>
+  <div class="date">2026-10-20</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 55 篇，达到阈值 5 篇</div>
 </header>
 <h2>今天读这些</h2><article class="paper">
   <div class="mark">
     <span class="num">1</span>
-    <span class="sub">13 分</span>
+    <span class="sub">11 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.26831">AGR: Agentic Generative Retrieval with Tool-Augmented Search</a></h3>
-    <p class="who">Ming Yang、Yaqi Yin、Zhibo Wang、Xiaoze Jiang 等 15 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.28569">ECHO: Efficient Cascade with Homogeneous Operators for Distillation-Guided 100K-Sequence Modeling</a></h3>
+    <p class="who">Wenhao Li、Qinglin Jia、Chenghou Jin、Zihong Xian 等 11 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Large-scale search and recommendation systems derive much of their retrieval quality from rich, heterogeneous features, yet existing generative retrieval (GR) methods struggle to exploit such feature ecosystems efficiently. Static feature injection either encodes all available signals or places them according to predetermined schemes, increasing serving cost and introducing irrelevant or conflicting evidence. More fundamentally, existing methods cannot adaptively determine when a feature is needed, which feature to select, or where it should influence hierarchical Semantic ID (SID) generation. We propose Agentic Generative Retrieval (AGR), a tool-augmented paradigm that interleaves SID generation with on-demand feature acquisition. Conditioned on the request and decoded SID prefix, AGR decides whether to invoke a tool, which feature to acquire, and where its observation should influence subsequent decoding, thereby steering generation toward feature-consistent SID branches. To supervise this behavior, we construct tool-augmented trajectories based on feature applicability and information gain along the SID hierarchy, and train the model through SID pretraining followed by tool-augmented fine-tuning. Experiments on an industrial dataset and three public benchmarks, together with an online A/B test, consistently demonstrate the effectiveness of AGR.</p>
+      <p class="abs">Modeling lifetime user behavior sequences is essential for capturing long-range preferences in industrial recommendation, yet 100K-length user sequences make target-aware ranking prohibitively expensive. Search-based methods that retrieve from raw sequences incur candidate-dependent costs that grow with sequence length, whereas latent compression methods reduce computation at the expense of item-level addressability. We propose ECHO (Efficient Cascade with Homogeneous Operators), a framework that balances efficiency and fine-grained retrieval by retaining a subset of original event records per user via a Distilled Selector (DS) and retrieving a smaller set of target-relevant records per candidate via a Target-aware Fine-grained Retriever (TFR). DS is supervised by a candidate-aware full-history teacher via per-target distillation, enabling target-aware user-level selection without incurring full-history computation for every candidate. The retriever and target-attention scorer share the teacher&#x27;s learned relevance parameters, ensuring consistent relevance estimation across the cascade. At a sequence length of L = 100K, ECHO reduces online sequence-branch FLOPs by approximately 160x compared with a representative end-to-end model. Three deployment optimizations, including common user inputs, compact record encoding, and key-side projection absorption, further reduce memory, storage, and data-movement overhead. Experiments on KuaiRand-1K and an industrial-scale short-video platform demonstrate relative GAUC improvements of 0.113%-1.520% over state-of-the-art (SOTA) baselines across multiple tasks. Furthermore, online A/B testing shows a 0.613% improvement in app usage time.</p>
     </details>
-    <div class="hits"><span>工业信号：a/b test、online a/b、serving、serving cost</span><span>主题：semantic id</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.26831">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.26831">PDF</a></p>
+    <div class="hits"><span>工业信号：industrial-scale、online a/b</span><span>主题：target-attention、target-aware</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.28569">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.28569">PDF</a><span class="who">12 pages, 8 figures</span></p>
   </div>
 </article><article class="paper">
   <div class="mark">
     <span class="num">2</span>
-    <span class="sub">8 分</span>
+    <span class="sub">11 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.25748">MAPS: A Multi-Agent Personalized Script-Driven Video Advertising System Enhanced by Reinforcement Learning</a></h3>
-    <p class="who">Zhongyu Wang、Chen Zuo、Qingxuan Sun、Jiayang Qiao 等 7 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.27691">EASformer: Environment-Action-State Alignment for Industrial Generative Ranking</a></h3>
+    <p class="who">Bohao Li、Dinglun Cao、Pengcheng Huang、Yingda Tang 等 11 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">With the rapid growth of online video consumption, video advertising has become a dominant component of digital advertising. Most personalized video advertising systems follow a retrieval-based paradigm, which matches ad content with user preferences in a feature space and recommends the most similar candidates. However, since the candidate creatives are pre-produced, this paradigm limits the granularity of personalization and leads to performance disparities across diverse user groups. To address this limitation, we propose a multi-agent personalized script-driven video advertising system (MAPS). We design four collaborative agents that form a closed-loop pipeline of user profile modeling, script generation, video synthesis, and feedback-driven iterative refinement. To train the Scripter Agent, we develop a reinforcement learning framework equipped with a multi-dimensional reward function, which steers the agent toward producing scripts that simultaneously align with user content preferences and target product information. Extensive offline experiments on representative datasets demonstrate that our approach achieves encouraging performance in generating and integrating personalized creatives. Online A/B experiments in a specific scenario in the Kuaishou advertising system show that MAPS improves CTR by 2.87%, CVR by 2.74%, and ARPU by 9.85% over the generative baseline.</p>
+      <p class="abs">Modern industrial ranking systems increasingly adopt generative recommendation (GR) paradigms, in which user behavior sequences and non-sequential (NS) features are tokenized and jointly modeled by Transformer-style backbones. This unified formulation provides a scalable interface for modeling long histories and heterogeneous features. However, sequence and NS representations often carry asymmetric semantics: historical representations may combine environment context with observed-action semantics, whereas candidate-side NS representations contain no observed action but incorporate richer supplementary context, such as user-item interaction features and recent behavior lists. Direct interaction between such representations can make query-key dot products compare different semantic objects, limiting meaningful cross-token interaction. To fill this gap, we propose EASformer, an Environment-Action-State disentangled architecture for industrial app ranking. EASformer constructs an explicitly aligned context environment space shared by historical and non-sequence tokens, while disentangling user actions from historical token and candidate-specific context form non-sequence tokens. Based on this aligned space, EASformer enables complementary historical action retrieval and state-conditioned action prediction. Furthermore, the disentangled design supports a Cloze-style self-supervised objective by masking historical actions and reusing the candidate prediction pathway. On an offline benchmark from a real-world industrial app marketplace, EASformer achieves an AUC of 0.89411, yielding a 0.88% relative improvement over the deployed baseline. Online A/B tests further support this advantage, with relative eCPM lifts of 1.26% and 3.94% across two real-world ranking scenarios.</p>
     </details>
-    <div class="hits"><span>工业信号：online a/b</span><span>公司：kuaishou</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.25748">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.25748">PDF</a></p>
-  </div>
-</article><h2>可能相关</h2><article class="paper">
-  <div class="mark">
-    <span class="num">3</span>
-    <span class="sub">7 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.26105">Don&#x27;t Rewrite the SID Map: Topology Preservation for Generative Retrieval in Dynamic E-Commerce Search</a></h3>
-    <p class="who">Jianbo Zhu、Xing Fang、Xiaopeng Chu、Mingmin Jin 等 8 人</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Generative retrieval assigns each item a discrete semantic identifier (SID) and retrieves items by autoregressively generating SID sequences. In dynamic environments such as e-commerce, new items arrive continuously, requiring periodic updates to the SID-to-Item mapping and model to maintain retrieval timeliness. Each update, however, can invalidate search paths already learned by the retriever, and the quantitative relationship between mapping change and retrieval quality has not been systematically characterized. We study this problem with extensive controlled experiments over 67 days of large-scale e-commerce search logs and obtain three core findings. (1) SID semantic drift causes severe retrieval degradation that may be masked by large beam sizes: mapping updates reduce HitRate by 41.78-62.05% at beam size 1 but only 8.33-10.85% at beam size 1000, as redundant candidate generation conceals the true severity of drift. (2) The fraction of changed SIDs is strictly monotonically related to retrieval quality: as the remapped fraction increases from 0% to 72.75%, HitRate decreases monotonically, dropping up to 42.66% at beam size 1. Full remapping remains substantially worse than the preservation policy under warm-start training, indicating that short-budget continued training alone cannot repair topology disruption. (3) The SID topology-preserving principle makes even the simplest warm-start strategy highly effective: fixing old-item SIDs, inserting new-items, and warm-starting from the previous model improves old-item HitRate by 10% and new-item HitRate by 109%, validated across two non-overlapping update cycles. These findings distill into a concise deployment principle: insert new-items, freeze old-items; warm-start when possible, otherwise freeze; never change SIDs the model has already learned. A three-week online A/B test on TmallAPP shows UCTCVR +0.29% and GMV +1.16%.</p>
-    </details>
-    <div class="hits"><span>工业信号：a/b test、online a/b</span><span>主题：candidate generation</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.26105">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.26105">PDF</a></p>
+    <div class="hits"><span>工业信号：deployed、online a/b</span><span>主题：generative recommendation</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.27691">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.27691">PDF</a><span class="who">10 pages</span></p>
   </div>
 </article><article class="paper">
   <div class="mark">
-    <span class="num">4</span>
-    <span class="sub">5 分</span>
+    <span class="num">3</span>
+    <span class="sub">8 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.26676">Which Model for Which Role? Cost-Efficient Pareto Recommendation for LLM Agentic Workflows</a></h3>
-    <p class="who">Qian Xie、Wenyue Hua、Yueli He、Sripad Karne 等 10 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.28223">Local Inference of LLMs on Long Contexts: A Data Systems Perspective</a></h3>
+    <p class="who">Mattias Dürrmeier、Alberto Lerner</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">LLM agentic workflows increasingly employ different models for specialized roles. Users may prefer different trade-offs between task quality and deployment cost, sometimes also considering latency. Finding good assignments incurs a separate search cost from evaluating multiple candidates. We introduce Cost-Coupled Gittins (CC-Gittins), a multi-objective extension of single-objective cost-aware Gittins search for Pareto recommendation. It exploits the coupling between evaluation and deployment costs: assignments that cost more to deploy also cost more to evaluate. The search alternates between seeking higher quality and lower deployment cost, reusing each evaluation to inform both searches. After each batch, CC-Gittins recommends assignments that are nondominated under uncertainty-adjusted estimates of quality and deployment cost. We evaluate CC-Gittins on eight quality--cost matrices from workflows with two to five roles and up to 1,681 candidate assignments. We also evaluate the method with latency as a third objective. Across the eight benchmarks, CC-Gittins recovers a substantial fraction of the true Pareto frontier at roughly 10% of the exhaustive-evaluation cost, and recovers most of the frontier with few false positives by 30%.</p>
+      <p class="abs">Large language models can solve complex problems across a variety of subjects, such as mathematics and coding. For such complex analytical tasks, models with a long context perform better. Serving models with long context is currently mostly done on powerful systems with multiple GPUs, which are too expensive for most users. An alternative is local inference, or serving a model on a user&#x27;s own machine, which removes per-token costs and rate limits, besides keeping sensitive data private and giving users full control over the models they run. The common understanding, however, is that local LLMs need compression (e.g., quantization) to run on a single GPU. In this paper, we set out to study the limitations that prevent serving long-context models for single users, besides the capacity issue. Rather than characterizing a single model on one GPU, we analyze how different models behave across several GPU generations. This lets us uncover not just individual bottlenecks but broader trends in where inefficiencies arise. Our analysis confirms that, as expected, self-attention dominates the runtime for long-context inference. More unexpectedly, our evaluation reveals that the current structure of self-attention leaves key GPU resources significantly underutilized, and the newest GPU is often the least well served. Many of these findings are fundamentally data management problems, from paging the KV cache to improving cache utilization and synchronization in the GPU, which is why we bring this study to the Data Systems community. To engage this community, we present our findings as a series of experimental observations and formulate recommendations for future work.</p>
     </details>
-    <div class="hits"><span>工业信号：latency</span><span>会议：neurips</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.26676">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.26676">PDF</a><span class="who">Preliminary version accepted at NeurIPS 2026 Workshop on Resource-Aware Agentic AI (RAAAI)</span></p>
+    <div class="hits"><span>工业信号：serving</span><span>主题：kv cache</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.28223">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.28223">PDF</a></p>
+  </div>
+</article><h2>可能相关</h2><article class="paper">
+  <div class="mark">
+    <span class="num">4</span>
+    <span class="sub">7 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.27898">SPAR: Stepwise Personalized Autoregressive Recommendation with Prefix-Balanced Semantic IDs</a></h3>
+    <p class="who">Chunrui Zhang、Gaoyun Lin、Chang Zhou、Zheng Hu 等 7 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Semantic ID (SID)-based generative recommendation retrieves items through successive token-level decisions, making personalization at each decoding step essential. However, existing methods insufficiently account for prefix-dependent user evidence and imbalanced historical interaction loads among candidate branches. This can cause irreversible branch-selection errors and favor popular paths. We propose SPAR, a generative recommendation framework that jointly improves stepwise personalization and SID construction. Its PATH Decoder retrieves prefix-relevant evidence from compressed long-term user memories and combines it with recent behavior, user profiles, and event context to guide each token decision. Its RQ-PIB module balances historical interaction loads among sibling branches under each parent prefix while preserving semantic structure. Experiments on large-scale Youku production data show an average relative HitRate improvement of 2.66% over the strongest baseline. SPAR also increases target-prefix retention by 5.79 percentage points and reduces the traffic-weighted largest child-branch share by 32.84% across SID levels. In a 7-day online A/B test, SPAR serves 10% of Youku&#x27;s production traffic and improves average watch time per user by 3.95% and play conversion rate by 3.38%. These results demonstrate more reliable hierarchical decoding, balanced SID branches, and improved user engagement in industrial recommendation.</p>
+    </details>
+    <div class="hits"><span>工业信号：a/b test、online a/b</span><span>主题：generative recommendation、semantic id</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.27898">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.27898">PDF</a></p>
   </div>
 </article><article class="paper">
   <div class="mark">
@@ -149,31 +149,15 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
     <span class="sub">5 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.26114">From Retrieval to Recognition:Knowledge-Enhanced Post-training of Time Series Foundation Models for Classification</a></h3>
-    <p class="who">Zhen Liu、Yucheng Wang、Yingpeng Du、Tianjun Wei 等 8 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.27812">SliMOO: Interpretable Multi-Objective Evolutionary Search for LLM Depth Pruning</a></h3>
+    <p class="who">Guanchen Li、Yixing Xu、Xuanwu Yin、Dong Li 等 5 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Time series foundation models (TSFMs) have achieved notable progress in classification tasks through large-scale pretraining. However, their post-training practice mainly focuses on implicit parameter fine-tuning, where task-relevant information is entangled with abundant irrelevant knowledge in vast parameter spaces. This may hinder TSFMs from precisely activating useful knowledge for downstream classification. To this end, we propose Retrieval-to-Recognition (R2R), a plug-and-play post-training paradigm that adapts pretrained TSFMs to time series classification. Rather than pretraining a new foundation model, R2R improves how existing TSFMs are post-trained: it introduces a decoupled query encoder to extract discriminative patterns and retrieve instance-level numerical knowledge from a constructed knowledge base. The retrieved explicit knowledge is then fused with the TSFM&#x27;s implicit parametric embeddings, enabling joint knowledge transfer at both the parameter and feature levels. In this way, R2R allows TSFMs to recall task-relevant patterns learned during pretraining, improving the efficiency of knowledge utilization in downstream classification transfer. Experiments on 158 time series datasets show that R2R consistently improves the classification performance of state-of-the-art TSFMs. Ablation and knowledge-enhanced studies further validate the effectiveness of the proposed framework.</p>
+      <p class="abs">As large language models (LLMs) grow more powerful, their scale makes them costly to serve. Depth pruning offers a practical route to efficiency by directly reducing memory and latency without hardware-specific support. However, we observe that transformer layers exhibit markedly different task-dependent layer contributions, whereas existing depth-pruning methods ignore this heterogeneity and thus tend to optimize for a narrow domain or benchmark rather than preserve broad capability. This suggests that LLM depth pruning should be formulated as a multi-objective optimization problem rather than a single-score ranking problem. We propose SliMOO, an interpretable multi-objective evolutionary search framework for LLM depth pruning. SliMOO first uses single-layer removal probing to construct a task-layer importance map, which provides an interpretable view of task-shared and task-specific layers and serves as a search prior. It then performs a Pareto-aware evolutionary search for pruning masks, where candidates are generated under the guidance of the task-layer prior, scored by their deviation from the dense model on each task, and retained through NSGA-II environmental selection. Across the Llama-3.1 and Qwen3 model families, SliMOO consistently achieves stronger multi-task trade-offs than rule-based, greedy, and scalarized baselines. For example, on Llama-3.1-70B at 25% sparsity, it improves the math-domain average from 24.33% to 34.40% and the code-domain average from 35.03% to 39.14%. Code will be made available at https://github.com/AMD-AGI/SliMOO.</p>
     </details>
-    <div class="hits"><span>主题：foundation model</span><span>会议：neurips</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.26114">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.26114">PDF</a><span class="who">Accepted in NeurIPS 2026</span></p>
-  </div>
-</article><article class="paper">
-  <div class="mark">
-    <span class="num">6</span>
-    <span class="sub">5 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.25871">CODA: Cohort- and Drift-aware Foundation Model for Multimodal Clinical Reasoning</a></h3>
-    <p class="who">Changshuo Liu、Jiaqi Zhu、Wenqiao Zhang、Xiaokui Xiao 等 5 人</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Recent advances in multimodal foundation models have demonstrated strong performance across diverse clinical tasks. However, existing approaches predominantly operate at the individual sample level and fail to model the interplay between population-level cohort patterns and patient-specific variation that underlie real-world clinical reasoning. In practice, clinicians routinely reason through patient cohorts sharing similar demographic, physiological, or pathological characteristics, while accounting for patient-specific deviations from the group prototype. Motivated by this gap, we propose CODA, a cohort- and drift-aware foundation model for multimodal clinical reasoning. CODA explicitly integrates cohort structure into the modeling pipeline through two complementary mechanisms: cohort-aware population stratification and drift-aware individual adaptation. In particular, we leverage reinforcement learning to discover clinically meaningful patient cohorts, and further model each patient&#x27;s deviation from cohort prototypes as a structured drift signal encoding fine-grained individual heterogeneity. These cohort- and drift-aware representations are incorporated into the foundation model to enable reasoning that is simultaneously informed by population-level patterns and sensitive to individual-level variation. Extensive experiments on real-world electronic health record (EHR) benchmarks demonstrate that CODA achieves consistent effectiveness and strong generalizability across diverse clinical tasks, including closed-QA, open-QA, and report generation.</p>
-    </details>
-    <div class="hits"><span>主题：foundation model</span><span>会议：neurips</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.25871">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.25871">PDF</a><span class="who">Accepted by NeurIPS 2026</span></p>
+    <div class="hits"><span>工业信号：latency</span><span>主题：multi-task</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.27812">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.27812">PDF</a></p>
   </div>
 </article>
 <footer>
