@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-10-20</title>
+<title>每日推荐系统论文 · 2026-10-21</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,88 +76,40 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-10-20</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 55 篇，达到阈值 5 篇</div>
+  <div class="date">2026-10-21</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 70 篇，达到阈值 2 篇</div>
 </header>
-<h2>今天读这些</h2><article class="paper">
+<h2>可能相关</h2><article class="paper">
   <div class="mark">
     <span class="num">1</span>
-    <span class="sub">11 分</span>
+    <span class="sub">7 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.28569">ECHO: Efficient Cascade with Homogeneous Operators for Distillation-Guided 100K-Sequence Modeling</a></h3>
-    <p class="who">Wenhao Li、Qinglin Jia、Chenghou Jin、Zihong Xian 等 11 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.29577">The Reflexivity Threshold: A Phase Transition for Multi-Agent Performative Prediction</a></h3>
+    <p class="who">Ahmed Mahrous、Roberto Di Pietro</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Modeling lifetime user behavior sequences is essential for capturing long-range preferences in industrial recommendation, yet 100K-length user sequences make target-aware ranking prohibitively expensive. Search-based methods that retrieve from raw sequences incur candidate-dependent costs that grow with sequence length, whereas latent compression methods reduce computation at the expense of item-level addressability. We propose ECHO (Efficient Cascade with Homogeneous Operators), a framework that balances efficiency and fine-grained retrieval by retaining a subset of original event records per user via a Distilled Selector (DS) and retrieving a smaller set of target-relevant records per candidate via a Target-aware Fine-grained Retriever (TFR). DS is supervised by a candidate-aware full-history teacher via per-target distillation, enabling target-aware user-level selection without incurring full-history computation for every candidate. The retriever and target-attention scorer share the teacher&#x27;s learned relevance parameters, ensuring consistent relevance estimation across the cascade. At a sequence length of L = 100K, ECHO reduces online sequence-branch FLOPs by approximately 160x compared with a representative end-to-end model. Three deployment optimizations, including common user inputs, compact record encoding, and key-side projection absorption, further reduce memory, storage, and data-movement overhead. Experiments on KuaiRand-1K and an industrial-scale short-video platform demonstrate relative GAUC improvements of 0.113%-1.520% over state-of-the-art (SOTA) baselines across multiple tasks. Furthermore, online A/B testing shows a 0.613% improvement in app usage time.</p>
+      <p class="abs">Many learning systems are performative: once deployed, their predictions change the data distribution on which future models are trained. In multi-agent settings, this feedback is routed through a network of interacting learners, so stability depends not only on the strength of performativity but also on who affects whom. We study repeated retraining in multi-agent performative prediction and identify a spectral threshold that separates stable learning from worst-case learning obstruction. Prior work often collapses cross-agent feedback into a scalar contraction constant, missing this network structure. We instead introduce the reflexivity matrix $Γ$, which records how strongly one agent&#x27;s deployment can move another agent&#x27;s best response, defined from per-agent gradient sensitivities and curvature parameters. The threshold occurs when the spectral radius of this matrix crosses one. Below the threshold, repeated retraining converges geometrically to a unique performatively stable equilibrium, with cumulative excess loss bounded uniformly in the time horizon. Above the threshold, we construct noisy supercritical instances in which every local-information learner incurs expected cumulative excess loss growing linearly for horizons up to order $1/(ρ(Γ)-1)$. Together, these results characterize the threshold behavior through upper and lower bounds and recover the single-agent scalar threshold from prior work as a special case.</p>
     </details>
-    <div class="hits"><span>工业信号：industrial-scale、online a/b</span><span>主题：target-attention、target-aware</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.28569">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.28569">PDF</a><span class="who">12 pages, 8 figures</span></p>
+    <div class="hits"><span>工业信号：deployed</span><span>会议：neurips</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.29577">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.29577">PDF</a><span class="who">Accepted at NeurIPS 2026. 20 pages, including appendix and checklist. Code: https://github.com/AhmedMahrous00/reflexivity-threshold</span></p>
   </div>
 </article><article class="paper">
   <div class="mark">
     <span class="num">2</span>
-    <span class="sub">11 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.27691">EASformer: Environment-Action-State Alignment for Industrial Generative Ranking</a></h3>
-    <p class="who">Bohao Li、Dinglun Cao、Pengcheng Huang、Yingda Tang 等 11 人</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Modern industrial ranking systems increasingly adopt generative recommendation (GR) paradigms, in which user behavior sequences and non-sequential (NS) features are tokenized and jointly modeled by Transformer-style backbones. This unified formulation provides a scalable interface for modeling long histories and heterogeneous features. However, sequence and NS representations often carry asymmetric semantics: historical representations may combine environment context with observed-action semantics, whereas candidate-side NS representations contain no observed action but incorporate richer supplementary context, such as user-item interaction features and recent behavior lists. Direct interaction between such representations can make query-key dot products compare different semantic objects, limiting meaningful cross-token interaction. To fill this gap, we propose EASformer, an Environment-Action-State disentangled architecture for industrial app ranking. EASformer constructs an explicitly aligned context environment space shared by historical and non-sequence tokens, while disentangling user actions from historical token and candidate-specific context form non-sequence tokens. Based on this aligned space, EASformer enables complementary historical action retrieval and state-conditioned action prediction. Furthermore, the disentangled design supports a Cloze-style self-supervised objective by masking historical actions and reusing the candidate prediction pathway. On an offline benchmark from a real-world industrial app marketplace, EASformer achieves an AUC of 0.89411, yielding a 0.88% relative improvement over the deployed baseline. Online A/B tests further support this advantage, with relative eCPM lifts of 1.26% and 3.94% across two real-world ranking scenarios.</p>
-    </details>
-    <div class="hits"><span>工业信号：deployed、online a/b</span><span>主题：generative recommendation</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.27691">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.27691">PDF</a><span class="who">10 pages</span></p>
-  </div>
-</article><article class="paper">
-  <div class="mark">
-    <span class="num">3</span>
-    <span class="sub">8 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.28223">Local Inference of LLMs on Long Contexts: A Data Systems Perspective</a></h3>
-    <p class="who">Mattias Dürrmeier、Alberto Lerner</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Large language models can solve complex problems across a variety of subjects, such as mathematics and coding. For such complex analytical tasks, models with a long context perform better. Serving models with long context is currently mostly done on powerful systems with multiple GPUs, which are too expensive for most users. An alternative is local inference, or serving a model on a user&#x27;s own machine, which removes per-token costs and rate limits, besides keeping sensitive data private and giving users full control over the models they run. The common understanding, however, is that local LLMs need compression (e.g., quantization) to run on a single GPU. In this paper, we set out to study the limitations that prevent serving long-context models for single users, besides the capacity issue. Rather than characterizing a single model on one GPU, we analyze how different models behave across several GPU generations. This lets us uncover not just individual bottlenecks but broader trends in where inefficiencies arise. Our analysis confirms that, as expected, self-attention dominates the runtime for long-context inference. More unexpectedly, our evaluation reveals that the current structure of self-attention leaves key GPU resources significantly underutilized, and the newest GPU is often the least well served. Many of these findings are fundamentally data management problems, from paging the KV cache to improving cache utilization and synchronization in the GPU, which is why we bring this study to the Data Systems community. To engage this community, we present our findings as a series of experimental observations and formulate recommendations for future work.</p>
-    </details>
-    <div class="hits"><span>工业信号：serving</span><span>主题：kv cache</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.28223">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.28223">PDF</a></p>
-  </div>
-</article><h2>可能相关</h2><article class="paper">
-  <div class="mark">
-    <span class="num">4</span>
-    <span class="sub">7 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.27898">SPAR: Stepwise Personalized Autoregressive Recommendation with Prefix-Balanced Semantic IDs</a></h3>
-    <p class="who">Chunrui Zhang、Gaoyun Lin、Chang Zhou、Zheng Hu 等 7 人</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Semantic ID (SID)-based generative recommendation retrieves items through successive token-level decisions, making personalization at each decoding step essential. However, existing methods insufficiently account for prefix-dependent user evidence and imbalanced historical interaction loads among candidate branches. This can cause irreversible branch-selection errors and favor popular paths. We propose SPAR, a generative recommendation framework that jointly improves stepwise personalization and SID construction. Its PATH Decoder retrieves prefix-relevant evidence from compressed long-term user memories and combines it with recent behavior, user profiles, and event context to guide each token decision. Its RQ-PIB module balances historical interaction loads among sibling branches under each parent prefix while preserving semantic structure. Experiments on large-scale Youku production data show an average relative HitRate improvement of 2.66% over the strongest baseline. SPAR also increases target-prefix retention by 5.79 percentage points and reduces the traffic-weighted largest child-branch share by 32.84% across SID levels. In a 7-day online A/B test, SPAR serves 10% of Youku&#x27;s production traffic and improves average watch time per user by 3.95% and play conversion rate by 3.38%. These results demonstrate more reliable hierarchical decoding, balanced SID branches, and improved user engagement in industrial recommendation.</p>
-    </details>
-    <div class="hits"><span>工业信号：a/b test、online a/b</span><span>主题：generative recommendation、semantic id</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.27898">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.27898">PDF</a></p>
-  </div>
-</article><article class="paper">
-  <div class="mark">
-    <span class="num">5</span>
     <span class="sub">5 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2610.27812">SliMOO: Interpretable Multi-Objective Evolutionary Search for LLM Depth Pruning</a></h3>
-    <p class="who">Guanchen Li、Yixing Xu、Xuanwu Yin、Dong Li 等 5 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.30090">VX-One: Typed, Calibrated Decision Heads for Real-Time Perimeter Triage - An empirical study of unknown-attack honesty, cascade gray zones, and calibration under drift</a></h3>
+    <p class="who">Juan S. Santillana</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">As large language models (LLMs) grow more powerful, their scale makes them costly to serve. Depth pruning offers a practical route to efficiency by directly reducing memory and latency without hardware-specific support. However, we observe that transformer layers exhibit markedly different task-dependent layer contributions, whereas existing depth-pruning methods ignore this heterogeneity and thus tend to optimize for a narrow domain or benchmark rather than preserve broad capability. This suggests that LLM depth pruning should be formulated as a multi-objective optimization problem rather than a single-score ranking problem. We propose SliMOO, an interpretable multi-objective evolutionary search framework for LLM depth pruning. SliMOO first uses single-layer removal probing to construct a task-layer importance map, which provides an interpretable view of task-shared and task-specific layers and serves as a search prior. It then performs a Pareto-aware evolutionary search for pruning masks, where candidates are generated under the guidance of the task-layer prior, scored by their deviation from the dense model on each task, and retained through NSGA-II environmental selection. Across the Llama-3.1 and Qwen3 model families, SliMOO consistently achieves stronger multi-task trade-offs than rule-based, greedy, and scalarized baselines. For example, on Llama-3.1-70B at 25% sparsity, it improves the math-domain average from 24.33% to 34.40% and the code-domain average from 35.03% to 39.14%. Code will be made available at https://github.com/AMD-AGI/SliMOO.</p>
+      <p class="abs">Perimeter triage faces a latency/semantics trade-off: signature engines are fast and format-safe but blind to unseen attacks, while generative models are semantic but slow and produce unparseable output. In late 2026 a class of commercial System One decision models (TypeSafe Jev; Microsoft-Decision-1) began selling typed decision primitives - binary gates, closed-set choices, ordinal scores - as product APIs, with no academic treatment. We present VX-One: a small multi-head network (100K-10M parameters) whose outputs are these primitives - a calibrated gate, a choice over a closed candidate set that always includes an explicit unknown option, and an ordinal score, trained multi-task, temperature-calibrated per head (~0.7-1.7 ms p50 on CPU). We evaluate it on UNSW-NB15, CIC-IDS2017, EMBER2024 against calibrated XGBoost, Random-Forest, MLP, Kitsune, and measure a two-phase cascade (Suricata with 52,674 Emerging-Threats rules -&gt; VX-One) over five days of CIC-IDS2017. Findings: (i) VX-One wins detection (AUROC/FPR@95%TPR) on UNSW-NB15 and under temporal drift on CIC-IDS2017 (0.711 vs 0.637), but XGBoost wins multi-class attribution on all three benchmarks; (ii) leave-one-family-out gate detects never-seen families on 9/9 UNSW folds yet drops below chance on CIC recon family, and abstention threshold transfers poorly across benchmarks; (iii) on payload-less reconstructions signature engines resolve ~0.1% of flows - gray zone ~99.9% of traffic, recovered by Phase 2 (combined recall &gt;=0.978); (iv) calibration collapses under temporal drift (ECE 0.04-&gt;0.40) for every method while ranking partially survives. We provide a measured account of where typed calibrated decisions help perimeter triage, and where they fail.</p>
     </details>
     <div class="hits"><span>工业信号：latency</span><span>主题：multi-task</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2610.27812">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.27812">PDF</a></p>
+    <p class="links"><a href="https://arxiv.org/abs/2610.30090">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.30090">PDF</a><span class="who">11 pages, 7 tables, 1 figure</span></p>
   </div>
 </article>
 <footer>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日推荐系统论文 · 2026-10-21</title>
+<style>
+:root {
+  --bg: #f5f6f4;
+  --ink: #1a2024;
+  --muted: #5e6b70;
+  --rule: #dcdfda;
+  --accent: #22516b;
+  --flag: #8a4b1f;
+  --surface: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181a;
+    --ink: #e6e8e4;
+    --muted: #939c9f;
+    --rule: #2b3134;
+    --accent: #7fb3d0;
+    --flag: #d39560;
+    --surface: #1b2023;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding: 2rem 1.15rem 4rem; }
+header { padding-bottom: 1.25rem; border-bottom: 2px solid var(--ink); }
+.date { font-size: 2.6rem; line-height: 1; font-weight: 600; letter-spacing: -0.02em; }
+.tally { margin-top: 0.5rem; color: var(--muted); font-size: 0.9rem; }
+h2 {
+  font-size: 0.95rem; font-weight: 600; margin: 2.25rem 0 0.25rem;
+  padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule);
+}
+.paper { padding: 1.4rem 0; border-bottom: 1px solid var(--rule); display: flex; gap: 0.9rem; }
+.mark { flex: 0 0 2.1rem; padding-top: 0.35rem; text-align: right; }
+.mark .num { font-size: 1.05rem; font-weight: 600; color: var(--accent); }
+.mark .sub { display: block; font-size: 0.7rem; color: var(--muted); }
+.body { flex: 1 1 auto; min-width: 0; }
+.title {
+  font-family: Charter, "Iowan Old Style", Georgia, "Songti SC", serif;
+  font-size: 1.16rem; line-height: 1.35; margin: 0 0 0.35rem;
+}
+.title a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+.title a:hover, .title a:focus { border-bottom-color: var(--accent); }
+.who { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+.zh { margin: 0.5rem 0; }
+.why { margin: 0.4rem 0; color: var(--muted); font-size: 0.92rem; }
+.flag { color: var(--flag); font-weight: 600; }
+.hits { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+.hits span { display: inline-block; margin-right: 0.7rem; white-space: nowrap; }
+.links { font-size: 0.85rem; margin-top: 0.6rem; }
+.links a { color: var(--accent); text-decoration: none; margin-right: 0.9rem; }
+.links a:hover { text-decoration: underline; }
+details { margin-top: 0.6rem; }
+summary { cursor: pointer; color: var(--muted); font-size: 0.88rem; }
+details .abs { margin-top: 0.5rem; font-size: 0.92rem; color: var(--muted); }
+.empty { padding: 2.5rem 0; color: var(--muted); }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
+  font-size: 0.85rem; color: var(--muted); }
+footer a { color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="date">2026-10-21</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 70 篇，达到阈值 2 篇</div>
+</header>
+<h2>可能相关</h2><article class="paper">
+  <div class="mark">
+    <span class="num">1</span>
+    <span class="sub">7 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.29577">The Reflexivity Threshold: A Phase Transition for Multi-Agent Performative Prediction</a></h3>
+    <p class="who">Ahmed Mahrous、Roberto Di Pietro</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Many learning systems are performative: once deployed, their predictions change the data distribution on which future models are trained. In multi-agent settings, this feedback is routed through a network of interacting learners, so stability depends not only on the strength of performativity but also on who affects whom. We study repeated retraining in multi-agent performative prediction and identify a spectral threshold that separates stable learning from worst-case learning obstruction. Prior work often collapses cross-agent feedback into a scalar contraction constant, missing this network structure. We instead introduce the reflexivity matrix $Γ$, which records how strongly one agent&#x27;s deployment can move another agent&#x27;s best response, defined from per-agent gradient sensitivities and curvature parameters. The threshold occurs when the spectral radius of this matrix crosses one. Below the threshold, repeated retraining converges geometrically to a unique performatively stable equilibrium, with cumulative excess loss bounded uniformly in the time horizon. Above the threshold, we construct noisy supercritical instances in which every local-information learner incurs expected cumulative excess loss growing linearly for horizons up to order $1/(ρ(Γ)-1)$. Together, these results characterize the threshold behavior through upper and lower bounds and recover the single-agent scalar threshold from prior work as a special case.</p>
+    </details>
+    <div class="hits"><span>工业信号：deployed</span><span>会议：neurips</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.29577">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.29577">PDF</a><span class="who">Accepted at NeurIPS 2026. 20 pages, including appendix and checklist. Code: https://github.com/AhmedMahrous00/reflexivity-threshold</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">2</span>
+    <span class="sub">5 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.30090">VX-One: Typed, Calibrated Decision Heads for Real-Time Perimeter Triage - An empirical study of unknown-attack honesty, cascade gray zones, and calibration under drift</a></h3>
+    <p class="who">Juan S. Santillana</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Perimeter triage faces a latency/semantics trade-off: signature engines are fast and format-safe but blind to unseen attacks, while generative models are semantic but slow and produce unparseable output. In late 2026 a class of commercial System One decision models (TypeSafe Jev; Microsoft-Decision-1) began selling typed decision primitives - binary gates, closed-set choices, ordinal scores - as product APIs, with no academic treatment. We present VX-One: a small multi-head network (100K-10M parameters) whose outputs are these primitives - a calibrated gate, a choice over a closed candidate set that always includes an explicit unknown option, and an ordinal score, trained multi-task, temperature-calibrated per head (~0.7-1.7 ms p50 on CPU). We evaluate it on UNSW-NB15, CIC-IDS2017, EMBER2024 against calibrated XGBoost, Random-Forest, MLP, Kitsune, and measure a two-phase cascade (Suricata with 52,674 Emerging-Threats rules -&gt; VX-One) over five days of CIC-IDS2017. Findings: (i) VX-One wins detection (AUROC/FPR@95%TPR) on UNSW-NB15 and under temporal drift on CIC-IDS2017 (0.711 vs 0.637), but XGBoost wins multi-class attribution on all three benchmarks; (ii) leave-one-family-out gate detects never-seen families on 9/9 UNSW folds yet drops below chance on CIC recon family, and abstention threshold transfers poorly across benchmarks; (iii) on payload-less reconstructions signature engines resolve ~0.1% of flows - gray zone ~99.9% of traffic, recovered by Phase 2 (combined recall &gt;=0.978); (iv) calibration collapses under temporal drift (ECE 0.04-&gt;0.40) for every method while ranking partially survives. We provide a measured account of where typed calibrated decisions help perimeter triage, and where they fail.</p>
+    </details>
+    <div class="hits"><span>工业信号：latency</span><span>主题：multi-task</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.30090">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.30090">PDF</a><span class="who">11 pages, 7 tables, 1 figure</span></p>
+  </div>
+</article>
+<footer>
+  <p><a href="feed.xml">RSS</a> · <a href="archive.html">历史</a></p>
+  <p>数据来自 arXiv，按本地规则打分排序。分数只是排序依据，不代表论文质量。</p>
+</footer>
+</div>
+</body>
+</html>
