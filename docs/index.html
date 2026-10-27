@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-10-23</title>
+<title>每日推荐系统论文 · 2026-10-26</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,10 +76,42 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-10-23</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 0 篇，达到阈值 0 篇</div>
+  <div class="date">2026-10-26</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 75 篇，达到阈值 2 篇</div>
 </header>
-<p class="empty">今天没有达到阈值的论文。周末和节假日 arXiv 不发布新论文，工作日出现这种情况可以考虑调低阈值。</p>
+<h2>今天读这些</h2><article class="paper">
+  <div class="mark">
+    <span class="num">1</span>
+    <span class="sub">11 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.35550">Cross-Domain Sequential Recommendation with Representation-Level User Transfer</a></h3>
+    <p class="who">Abdulaziz Samra、Nikita Sukhorukov、Alexey Grishanov、Alexey Vasilev 等 5 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Cross-domain sequential recommendation aims to improve next-item prediction in a target domain by leveraging user behavior from auxiliary source domains. However, real-world deployment faces two critical challenges: business constraints that isolate interaction data across domains, and user heterogeneity, where many users lack cross-domain activity. This makes existing cross-domain methods difficult to apply. In this paper, we propose a simple and practical framework for cross-domain sequential recommendations that transfers information exclusively through learned user representations, without sharing raw interaction data or item embeddings across domains. We introduce a lightweight adapter that projects the source-domain user representation into the target-domain embedding space and integrates it with the target interaction sequence. Importantly, when source data is unavailable (i.e., the user observed only in the target domain), the model seamlessly defaults to a robust target-only sequential recommender, retaining benefits from joint training across all users. Extensive experiments were conducted under two setups; one targets benchmarking against previous baselines, while the other focuses on realistic and scalable conditions. Both sets of experiments demonstrate consistent performance gains for shared and unshared users.</p>
+    </details>
+    <div class="hits"><span>工业信号：real-world deployment</span><span>主题：sequential recommendation</span><span>会议：cikm</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.35550">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.35550">PDF</a><span class="who">Accepted in CIKM&#x27;26 - full paper track</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">2</span>
+    <span class="sub">11 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.35318">Unified Heterogeneous Feature Interaction via Effective-Rank Scaling for Recommender Systems</a></h3>
+    <p class="who">Ao Zhang、Haochuan Li、Boya Du、Jian Yang 等 6 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Large-scale industrial ranking models must jointly capture heterogeneous feature interactions, long-term user behaviors, and multi-scenario dependencies under stringent online serving constraints. Existing architectures typically process sequential and non-sequential features with separate modules, limiting bidirectional information exchange. Directly applying homogeneous self-attention to all semantic tokens can also be inefficient when sequential and non-sequential signals exhibit different effective-ranks (eRanks). Meanwhile, shared representations can overlook scenario-specific patterns and induce negative transfer between scenarios. In this paper, we propose HiRank, a unified framework for multi-scenario recommendation that jointly models Heterogeneous feature Interactions via effective-Rank scaling. HiRank integrates gated sequential attention with heterogeneous feature interaction within a unified backbone, enabling bidirectional fusion between sequential and non-sequential representations. HiRank further uses scenario-aware aggregation to compress heterogeneous low-order tokens into a compact representation. Distinct learned projections transform the full compact representation into scenario-aware composite tokens with complementary global feature views and more uniform information density, enabling more effective high-order self-attention. Extensive experiments on industrial-scale datasets demonstrate favorable performance scaling with parameter count and consistent improvements over competitive baselines. Online A/B tests further show a 2.27% increase in orders per user.</p>
+    </details>
+    <div class="hits"><span>工业信号：industrial-scale、online a/b、serving</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.35318">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.35318">PDF</a><span class="who">9 pages, 4 figures</span></p>
+  </div>
+</article>
 <footer>
   <p><a href="feed.xml">RSS</a> · <a href="archive.html">历史</a></p>
   <p>数据来自 arXiv，按本地规则打分排序。分数只是排序依据，不代表论文质量。</p>
