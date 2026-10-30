@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日推荐系统论文 · 2026-10-30</title>
+<style>
+:root {
+  --bg: #f5f6f4;
+  --ink: #1a2024;
+  --muted: #5e6b70;
+  --rule: #dcdfda;
+  --accent: #22516b;
+  --flag: #8a4b1f;
+  --surface: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181a;
+    --ink: #e6e8e4;
+    --muted: #939c9f;
+    --rule: #2b3134;
+    --accent: #7fb3d0;
+    --flag: #d39560;
+    --surface: #1b2023;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding: 2rem 1.15rem 4rem; }
+header { padding-bottom: 1.25rem; border-bottom: 2px solid var(--ink); }
+.date { font-size: 2.6rem; line-height: 1; font-weight: 600; letter-spacing: -0.02em; }
+.tally { margin-top: 0.5rem; color: var(--muted); font-size: 0.9rem; }
+h2 {
+  font-size: 0.95rem; font-weight: 600; margin: 2.25rem 0 0.25rem;
+  padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule);
+}
+.paper { padding: 1.4rem 0; border-bottom: 1px solid var(--rule); display: flex; gap: 0.9rem; }
+.mark { flex: 0 0 2.1rem; padding-top: 0.35rem; text-align: right; }
+.mark .num { font-size: 1.05rem; font-weight: 600; color: var(--accent); }
+.mark .sub { display: block; font-size: 0.7rem; color: var(--muted); }
+.body { flex: 1 1 auto; min-width: 0; }
+.title {
+  font-family: Charter, "Iowan Old Style", Georgia, "Songti SC", serif;
+  font-size: 1.16rem; line-height: 1.35; margin: 0 0 0.35rem;
+}
+.title a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+.title a:hover, .title a:focus { border-bottom-color: var(--accent); }
+.who { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+.zh { margin: 0.5rem 0; }
+.why { margin: 0.4rem 0; color: var(--muted); font-size: 0.92rem; }
+.flag { color: var(--flag); font-weight: 600; }
+.hits { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+.hits span { display: inline-block; margin-right: 0.7rem; white-space: nowrap; }
+.links { font-size: 0.85rem; margin-top: 0.6rem; }
+.links a { color: var(--accent); text-decoration: none; margin-right: 0.9rem; }
+.links a:hover { text-decoration: underline; }
+details { margin-top: 0.6rem; }
+summary { cursor: pointer; color: var(--muted); font-size: 0.88rem; }
+details .abs { margin-top: 0.5rem; font-size: 0.92rem; color: var(--muted); }
+.empty { padding: 2.5rem 0; color: var(--muted); }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
+  font-size: 0.85rem; color: var(--muted); }
+footer a { color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="date">2026-10-30</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 71 篇，达到阈值 4 篇</div>
+</header>
+<h2>今天读这些</h2><article class="paper">
+  <div class="mark">
+    <span class="num">1</span>
+    <span class="sub">12 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.39426">UGR: Unified Generative Ranking for Heterogeneous E-commerce Recommendation</a></h3>
+    <p class="who">Zonghe Shao、Huabin Chen、Sitong Lu、Fangmei Zhu 等 10 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">List-wise ranking in e-commerce recommendation must balance user utility and commercial value across organic content, ads, and candidates from other businesses, while modeling candidate interactions and sequential dependencies. Existing generative ranking methods typically learn from logged exposure sequences and operate on truncated candidate sets from a single business. Exposure-sequence learning may not fully exploit post-exposure feedback signals. Meanwhile, generative ranking over heterogeneous, multi-business candidates remains less explored, particularly when recommendation scores and advertising value must be jointly modeled under generalized second-price (GSP) auctions. We propose Unified Generative Ranking (UGR), which performs generative ranking over the full request-level multi-business heterogeneous candidate set, typically comprising around a thousand candidates in production, and directly generates multi-business ranking lists through candidate-aware autoregressive decoding. To go beyond exposure-sequence imitation, UGR introduces complementary feedback supervision through weighted supervised fine-tuning and permutation preference optimization, which respectively leverage observed post-exposure feedback and feedback-derived preferences among permutations. UGR uses a training-time advertising debiasing tower to model historical ad exposure effects and incorporates current ad value during serving while preserving the existing allocation and GSP pricing rules. Multi-value sequence retrieval produces candidate ranking lists, and the existing downstream evaluator selects the final list for exposure. Offline experiments demonstrate consistent gains in ranking quality, while online A/B tests on Taobao&#x27;s Guess You Like recommendation service yield improvements of 1.76% in Core IPV, 3.29% in Transaction Volume, and 2.10% in GMV over the production baseline.</p>
+    </details>
+    <div class="hits"><span>工业信号：in production、online a/b、serving</span><span>公司：taobao</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.39426">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.39426">PDF</a></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">2</span>
+    <span class="sub">12 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.39273">PFA: Attention Can Be Progressively Focused in Long-Sequence Generative Recommendation</a></h3>
+    <p class="who">Pengjie Zhou、Weiqin Yang、Haibo Xing、Hao Deng 等 5 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Long user behavioral sequences improve the performance of generative recommendation (GR), but computing full attention over long histories during autoregressive beam search decoding incurs substantial online inference latency. To accelerate long-sequence decoding, existing approaches typically rely on static history compression or dynamic top-k sparse attention; however, the former risks losing critical semantics, whereas the latter incurs significant overhead from repeated token selection and non-contiguous memory access. In this work, we thoroughly analyze attention patterns during GR decoding and reveal two key properties: (i) progressive attention focusing, where attention progressively focuses on a small subset of critical historical tokens; and (ii) cross-step ranking consistency, where their importance rankings remain relatively stable across subsequent decoding steps. Motivated by these observations, we propose Progressively Focused Attention (PFA), an efficient sparse decoding framework for long-sequence GR. PFA retains full attention at the initial decoding step to explore global historical preferences. It then establishes a shared importance ranking through cross-beam weighted aggregation and reorders the key-value cache of the selected tokens into a contiguous memory layout. Subsequent decoding steps reuse this ranking and geometrically reduce the token budget, preserving critical semantics while lowering computational and memory access overhead. Extensive experiments on two public benchmarks and a large-scale industrial dataset demonstrate that PFA outperforms state-of-the-art baselines. A 7-day online A/B test on a large-scale e-commerce advertising platform further confirms that PFA delivers substantial business gains while maintaining low inference latency. Our code is publicly available at https://anonymous.4open.science/r/PFA-review-088D.</p>
+    </details>
+    <div class="hits"><span>工业信号：a/b test、latency、online a/b</span><span>主题：generative recommendation、sparse attention</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.39273">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.39273">PDF</a><span class="who">11 pages, 3 figures, 7 tables</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">3</span>
+    <span class="sub">9 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.40112">Beyond IPS: Reliable Counterfactual Evaluation in Multi-Stage Ad Systems without Logged Propensities</a></h3>
+    <p class="who">Mohsen Malmir、Mohamed A. Radwan、Houssam Nassif、Murat Ali Bayir</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Offline evaluation of ad-ranking policies in multi-stage delivery systems is challenging because action propensities are often unavailable, limiting inverse propensity scoring (IPS). Reward-model-based estimators such as the Direct Method (DM) avoid propensities but can be biased when candidate policies induce impression distributions that differ from the logged data. We formalize DM-based counterfactual replay and propose mixture-weighted reward modeling, which reweights logged data toward a mixture of candidate-policy distributions using density ratios from a multiclass domain classifier. We bound each candidate&#x27;s value-estimation error by overlap, cold-start, and replay terms, and derive an asymptotic rule that uses the cold-start mass to decide whether to trust offline selection or route candidates to online A/B testing. On an ads-delivery simulator and on production traffic from a large-scale CTR ranking system, the mixture-weighted reward model improves policy selection over its unweighted counterpart in both settings, with the largest gains at low overlap in simulation. Combined with a doubly robust correction, it attains the highest Top-1 accuracy in production and at low and medium overlap in simulation.</p>
+    </details>
+    <div class="hits"><span>工业信号：in production、online a/b</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.40112">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.40112">PDF</a></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">4</span>
+    <span class="sub">9 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2610.39244">CASH: A Capability-Aware Subsidy Harness for Advertiser Subsidy Allocation</a></h3>
+    <p class="who">Minmao Wang、Huihuang Lin、Likang Wu、Hongke Zhao 等 6 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Advertising platforms subsidize advertisers through billing discounts, and Advertiser Subsidy Allocation (ASA) chooses a subsidy level for every account to maximize total discounted revenue under a platform-wide subsidy-rate constraint. In practice, operators configure these subsidies from business rules, advertiser tiers and operating goals. Such configuration draws on rich business experience, yet as the advertiser base grows, tier-level policies can neither resolve how individual accounts respond across subsidy levels nor allocate a shared budget at the granularity of single accounts. We propose CASH, a Capability-Aware Subsidy Harness for ASA. CASH pairs a knowledge-guided large language model (LLM) with a data-driven numerical response model, learns from realized outcomes where each is locally reliable across accounts and subsidy levels, and turns this reliability into explicit capability licenses that govern source selection, agent review and budget allocation. Its Expected Policy Coverage Gain (EPCG) directs a limited feedback budget toward evidence expected to expand high-value reliable coverage, and the resulting feedback further improves the numerical model and updates capability estimates. In a one-month online experiment with CASH serving 60% of a large-scale advertising platform&#x27;s traffic, CASH raises revenue per account by 15.35% and ADVV by 19.86% over Control at an essentially unchanged subsidy rate, with further gains in revenue quality, LTV and retention.</p>
+    </details>
+    <div class="hits"><span>工业信号：online experiment、serving</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2610.39244">arXiv 页面</a><a href="https://arxiv.org/pdf/2610.39244">PDF</a></p>
+  </div>
+</article>
+<footer>
+  <p><a href="feed.xml">RSS</a> · <a href="archive.html">历史</a></p>
+  <p>数据来自 arXiv，按本地规则打分排序。分数只是排序依据，不代表论文质量。</p>
+</footer>
+</div>
+</body>
+</html>
