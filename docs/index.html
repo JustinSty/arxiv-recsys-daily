@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-10-31</title>
+<title>每日推荐系统论文 · 2026-11-03</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,10 +76,74 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-10-31</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 0 篇，达到阈值 0 篇</div>
+  <div class="date">2026-11-03</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 63 篇，达到阈值 4 篇</div>
 </header>
-<p class="empty">今天没有达到阈值的论文。周末和节假日 arXiv 不发布新论文，工作日出现这种情况可以考虑调低阈值。</p>
+<h2>今天读这些</h2><article class="paper">
+  <div class="mark">
+    <span class="num">1</span>
+    <span class="sub">14 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.02981">Utility-Aware Generative Recommendation: Utility-Enriched Semantic Codes and Utility-Guided Decoding</a></h3>
+    <p class="who">Yang Hu、Duo Wang、Ning Li、Kang Li 等 10 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Generative recommendation has been widely adopted in large-scale industrial recommendation systems, where multimodal item embeddings are quantized into offline semantic identifiers (SIDs) and items are retrieved by autoregressively generating their SIDs. However, conventional SID construction often underrepresents item utility reflected in post-exposure behaviors such as shares, long views, and video completion, making semantically similar items with different utility insufficiently distinguishable while struggling to accommodate rapidly changing utility signals. Moreover, generation likelihood may be misaligned with downstream utility, causing high-utility candidates to be prematurely pruned during beam search before post-generation reranking or training-time reward alignment can effectively compensate. To address these limitations, we propose UAGR, which aligns both SID construction and decoding with downstream multi-objective utility. Our Utility-Enriched Semantic Codes preserve the original semantic information while incorporating item-level utility without increasing SID length or vocabulary size, supporting incremental utility updates with no additional tokenization or sequence-decoding cost. Meanwhile, our Utility-Guided Decoding estimates candidate utility by combining predictions of multiple post-exposure outcomes and incorporates these estimates into beam scoring, reducing the risk of prematurely pruning high-utility paths while enabling flexible utility control without interfering with generative backbone training. Extensive offline experiments and online A/B tests under real-world traffic demonstrate the effectiveness and deployability of UAGR, which has been fully deployed on Kuaishou and increases video watch time by 0.206\% online.</p>
+    </details>
+    <div class="hits"><span>工业信号：deployed、online a/b</span><span>公司：kuaishou</span><span>主题：generative recommendation</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.02981">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.02981">PDF</a></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">2</span>
+    <span class="sub">9 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.02758">Learning to Adjudicate: Verifier-Guided Multi-Agent Reasoning for E-Commerce Relevance</a></h3>
+    <p class="who">Shi Shu、Hao Chen、Baopu Qiu、Chao Wei 等 7 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Relevance modeling is fundamental to e-commerce search, determining how well retrieved products satisfy the needs expressed in a user&#x27;s query. Accurate judgments require interpreting user intent, comparing product attributes, and applying business-specific matching criteria. Current methods based on large language models (LLMs) leverage contextual understanding and reasoning, focusing on incorporating domain-specific context and enhancing reasoning performance. Despite these advances, difficult query-product pairs remain challenging when evidence from different perspectives supports conflicting conclusions. A single reasoning pass may fail to reconcile these conflicts and ensure that decisive evidence guides the final judgment. To address this challenge, we propose Collaborative Adjudication with Debate and Replay Experience (CADRE), a framework for evidence-based adjudication in e-commerce relevance assessment. CADRE organizes three expert agents sharing a frozen backbone to analyze product attributes, user intent, and business rules in separate contexts, while a trainable Verifier assesses their supporting evidence against the applicable matching criteria to determine relevance. Under expert disagreement, a Verifier-guided debate elicits targeted clarification and revision of disputed interpretations before final adjudication. We optimize the Verifier through multi-turn group relative policy optimization and adapt successful-experience replay so that trajectories yielding correct terminal labels can be reused alongside fresh rollouts in subsequent updates. For efficient online serving, we use CADRE as an offline teacher to distill its relevance judgments into a lightweight student model. Offline evaluations and online A/B tests on an e-commerce search advertising platform demonstrate that CADRE improves relevance classification and key business and relevance satisfaction metrics.</p>
+    </details>
+    <div class="hits"><span>工业信号：online a/b、serving</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.02758">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.02758">PDF</a></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">3</span>
+    <span class="sub">8 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.03008">E-GenRM: Generative Reward Modeling for Open-Ended E-Commerce Shopping Agents</a></h3>
+    <p class="who">Ying Sun、Qiuyu Zhao、Xiao Wang、Xiyu Zhao 等 9 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">We present E-GenRM (E-commerce Generative Reward Model), a generative reward model tailored to e-commerce shopping agents. User expectations are shifting from simple product queries to open-ended shopping tasks. However, existing trajectories and reward designs remain largely bounded by current agent usage patterns and known failures, providing limited guidance for further capability improvement. These limitations call for an integrated reward modeling framework for open-ended shopping agent tasks. On the data side, E-GenRM leverages naturally occurring user behavior across the shopping app to construct diverse, long-horizon conversational trajectories beyond established usage patterns. On the modeling side, E-GenRM first learns from behavior-grounded evaluation chains through supervised fine-tuning. It is then optimized through criterion-guided reinforcement learning, which rewards correct preference judgments and evidence-supported factual claims under each criterion. Personalized hard-negative training further improves its sensitivity to user preferences reflected in shopping behavior, beyond explicit requirements. We additionally develop an active evidence retrieval extension that acquires missing e-commerce information for evaluation. On E-GenRM-Bench, E-GenRM-27B achieves 87.40\% preference accuracy, outperforming the strongest baseline by 6.97 percentage points. In a 14-day online A/B test on Taobao, a shopping agent post-trained with E-GenRM improves the effective shopping-assistance rate by 1.39 percentage points and user satisfaction by 2.33 percentage points.</p>
+    </details>
+    <div class="hits"><span>工业信号：a/b test、online a/b</span><span>公司：taobao</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.03008">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.03008">PDF</a></p>
+  </div>
+</article><h2>可能相关</h2><article class="paper">
+  <div class="mark">
+    <span class="num">4</span>
+    <span class="sub">7 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.03272">Diverse-Teacher On-Policy Distillation for Generative Recommendation</a></h3>
+    <p class="who">Zhipeng Yi、Xinyu Lin、Minxuan Shan、Zipeng Chen 等 7 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Generative recommendation generates the semantic ID (SID) of the next item from a user&#x27;s interaction history. Existing training objectives mainly supervise target SID tokens, while on-policy distillation (OPD) provides denser supervision through a teacher&#x27;s probability distribution over all tokens for more effective and efficient training. However, OPD can aggravate popularity bias: teacher feedback favors popular-item tokens, transferring this preference to the student, while student rollout favors popular items, leaving unpopular-item SID paths rarely generated and supervised. These two sources of bias reinforce each other and reduce recommendation diversity. We propose HERO, a diversity-aware OPD framework. Heterogeneous teacher distillation trains two teachers specializing in popular and unpopular items and routes each training sample to the teacher matching the popularity group of its ground-truth item. The student learns from the routed teacher&#x27;s probability distribution along its own generated SIDs. Diversity-aware item rollout incorporates ground-truth SIDs of unpopular items into training, covering SID paths that the student rarely generates. Only the student is used for inference. Offline experiments on an industrial dataset and three public datasets further demonstrate its effectiveness, diversity, and robustness. Moreover, we deploy HERO in the &quot;Guess What You Like&quot; module on the 1688 homepage, where a 15-day online A/B test shows a 3.412% increase in gross merchandise value (GMV).</p>
+    </details>
+    <div class="hits"><span>工业信号：a/b test、online a/b</span><span>主题：generative recommendation、semantic id</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.03272">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.03272">PDF</a><span class="who">12 pages, 10 figures, 3 tables</span></p>
+  </div>
+</article>
 <footer>
   <p><a href="feed.xml">RSS</a> · <a href="archive.html">历史</a></p>
   <p>数据来自 arXiv，按本地规则打分排序。分数只是排序依据，不代表论文质量。</p>
