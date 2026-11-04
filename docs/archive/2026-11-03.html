@@ -77,55 +77,55 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <div class="wrap">
 <header>
   <div class="date">2026-11-03</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 63 篇，达到阈值 4 篇</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 74 篇，达到阈值 12 篇</div>
 </header>
 <h2>今天读这些</h2><article class="paper">
   <div class="mark">
     <span class="num">1</span>
-    <span class="sub">14 分</span>
+    <span class="sub">11 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.02981">Utility-Aware Generative Recommendation: Utility-Enriched Semantic Codes and Utility-Guided Decoding</a></h3>
-    <p class="who">Yang Hu、Duo Wang、Ning Li、Kang Li 等 10 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.04720">OneTrans-GSR: A Generative Slate Ranking Paradigm Unifying Reranking and Mix-Ranking with One Autoregressive Transformer</a></h3>
+    <p class="who">Feng Cheng、Yu-Hsuan Huang、Fengyi Wang、Chaofan Zhou 等 16 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Generative recommendation has been widely adopted in large-scale industrial recommendation systems, where multimodal item embeddings are quantized into offline semantic identifiers (SIDs) and items are retrieved by autoregressively generating their SIDs. However, conventional SID construction often underrepresents item utility reflected in post-exposure behaviors such as shares, long views, and video completion, making semantically similar items with different utility insufficiently distinguishable while struggling to accommodate rapidly changing utility signals. Moreover, generation likelihood may be misaligned with downstream utility, causing high-utility candidates to be prematurely pruned during beam search before post-generation reranking or training-time reward alignment can effectively compensate. To address these limitations, we propose UAGR, which aligns both SID construction and decoding with downstream multi-objective utility. Our Utility-Enriched Semantic Codes preserve the original semantic information while incorporating item-level utility without increasing SID length or vocabulary size, supporting incremental utility updates with no additional tokenization or sequence-decoding cost. Meanwhile, our Utility-Guided Decoding estimates candidate utility by combining predictions of multiple post-exposure outcomes and incorporates these estimates into beam scoring, reducing the risk of prematurely pruning high-utility paths while enabling flexible utility control without interfering with generative backbone training. Extensive offline experiments and online A/B tests under real-world traffic demonstrate the effectiveness and deployability of UAGR, which has been fully deployed on Kuaishou and increases video watch time by 0.206\% online.</p>
+      <p class="abs">Industrial recommender systems allocate substantial computation to pointwise candidate scoring, yet separate reranking and mix-ranking stages still assemble the final exposure slate using hand-crafted rules and specialized low-capacity models. Mix-ranking combines product cards, short videos, livestreams, and advertising cards supplied by distinct upstream business channels. Although these rules and models encode valuable domain knowledge, they are inherently limited in leveraging additional data and computation. They constrain the combinatorial space of candidate slates and determine objective trade-offs through manual tuning. To enable scalable and effective slate generation, we reformulate reranking and mix-ranking as a unified learning problem whose performance can improve with computation. Specifically, we instantiate this formulation across the reranking and mix-ranking stages and propose OneTrans-GSR, a single decoder-only policy that extends our deployed OneTrans backbone to generate the exposure slate end-to-end. During training, a reward model evaluates complete slates and guides reinforcement learning toward slate-level and long-term objectives. During decoding, business constraints are explicitly enforced. Offline evaluation shows that slate quality consistently improves as reward-model and policy compute increase. Deployed in a large-scale industrial recommendation system, OneTrans-GSR mixes heterogeneous content types within a unified slate. In online A/B tests, it improves GMV/u by 2.63%, advertiser value by 2.06%, and repurchase rate by 2.03%, while reducing end-to-end latency across the reranking and mix-ranking stages by 13%. These results mark a paradigm shift in slate generation: moving beyond human-engineered heuristics toward a general learned policy creates a scalable path for further algorithmic optimization and compute-driven improvement.</p>
     </details>
-    <div class="hits"><span>工业信号：deployed、online a/b</span><span>公司：kuaishou</span><span>主题：generative recommendation</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.02981">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.02981">PDF</a></p>
+    <div class="hits"><span>工业信号：deployed、latency、online a/b</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.04720">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.04720">PDF</a><span class="who">26 pages, 6 figures, 11 tables</span></p>
   </div>
 </article><article class="paper">
   <div class="mark">
     <span class="num">2</span>
-    <span class="sub">9 分</span>
+    <span class="sub">11 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.02758">Learning to Adjudicate: Verifier-Guided Multi-Agent Reasoning for E-Commerce Relevance</a></h3>
-    <p class="who">Shi Shu、Hao Chen、Baopu Qiu、Chao Wei 等 7 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.04259">ReuseGR: Offline--Online Decoupled Generative Retrieval via Adaptive Prefix Reuse</a></h3>
+    <p class="who">Xujing Wang、Yufeng Chen、Boxuan Zhang、Chao Wei 等 9 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Relevance modeling is fundamental to e-commerce search, determining how well retrieved products satisfy the needs expressed in a user&#x27;s query. Accurate judgments require interpreting user intent, comparing product attributes, and applying business-specific matching criteria. Current methods based on large language models (LLMs) leverage contextual understanding and reasoning, focusing on incorporating domain-specific context and enhancing reasoning performance. Despite these advances, difficult query-product pairs remain challenging when evidence from different perspectives supports conflicting conclusions. A single reasoning pass may fail to reconcile these conflicts and ensure that decisive evidence guides the final judgment. To address this challenge, we propose Collaborative Adjudication with Debate and Replay Experience (CADRE), a framework for evidence-based adjudication in e-commerce relevance assessment. CADRE organizes three expert agents sharing a frozen backbone to analyze product attributes, user intent, and business rules in separate contexts, while a trainable Verifier assesses their supporting evidence against the applicable matching criteria to determine relevance. Under expert disagreement, a Verifier-guided debate elicits targeted clarification and revision of disputed interpretations before final adjudication. We optimize the Verifier through multi-turn group relative policy optimization and adapt successful-experience replay so that trajectories yielding correct terminal labels can be reused alongside fresh rollouts in subsequent updates. For efficient online serving, we use CADRE as an offline teacher to distill its relevance judgments into a lightweight student model. Offline evaluations and online A/B tests on an e-commerce search advertising platform demonstrate that CADRE improves relevance classification and key business and relevance satisfaction metrics.</p>
+      <p class="abs">Larger generative retrieval models can improve retrieval quality, but their decoding cost makes low-latency serving difficult. When different users submit the same query, generating complete Semantic IDs (SIDs) for every request repeats computation, while their interaction histories call for different results. The challenge is to reuse large-model computation across requests while keeping retrieval personalized. We propose \textbf{ReuseGR}, which separates query-level candidate planning from request-level personalized completion. A 7B offline planner generates SID prefix sets shared across requests with the same query. A 0.5B online model uses each request&#x27;s history to select prefixes and generate the remaining tokens. ReuseCut chooses a cache depth for each query based on historical coverage, balancing computation reuse and candidate coverage. To strengthen online completion, we transfer 7B suffix-scoring knowledge to 0.5B through path-level knowledge distillation (Path KD). BudgetCut then selects scored branches to improve final top-100 recall under a fixed branch budget. Its selection policy is initialized by on-policy distillation (OPD) and refined through group-relative policy optimization (GRPO). On an industrial search-advertising dataset with approximately 2M query--item records and 3.38M catalog items, ReuseGR improves query-level HR@100 by 3.83 percentage points and reduces mean online latency by 38.9\% relative to an all-online 0.5B baseline when prefixes are prepared. It achieves HR@100 comparable to an all-online 7B baseline with 57.7\% lower online latency. A 14-day user-level online A/B test against the 0.5B baseline shows relative gains of 0.93\% in click-through rate and 1.05\% in revenue per thousand requests.</p>
     </details>
-    <div class="hits"><span>工业信号：online a/b、serving</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.02758">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.02758">PDF</a></p>
+    <div class="hits"><span>工业信号：a/b test、latency、online a/b、serving</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.04259">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.04259">PDF</a></p>
   </div>
 </article><article class="paper">
   <div class="mark">
     <span class="num">3</span>
-    <span class="sub">8 分</span>
+    <span class="sub">10 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.03008">E-GenRM: Generative Reward Modeling for Open-Ended E-Commerce Shopping Agents</a></h3>
-    <p class="who">Ying Sun、Qiuyu Zhao、Xiao Wang、Xiyu Zhao 等 9 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.05304">LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers</a></h3>
+    <p class="who">Minsoo Cheong、Sungjoo Yoo</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">We present E-GenRM (E-commerce Generative Reward Model), a generative reward model tailored to e-commerce shopping agents. User expectations are shifting from simple product queries to open-ended shopping tasks. However, existing trajectories and reward designs remain largely bounded by current agent usage patterns and known failures, providing limited guidance for further capability improvement. These limitations call for an integrated reward modeling framework for open-ended shopping agent tasks. On the data side, E-GenRM leverages naturally occurring user behavior across the shopping app to construct diverse, long-horizon conversational trajectories beyond established usage patterns. On the modeling side, E-GenRM first learns from behavior-grounded evaluation chains through supervised fine-tuning. It is then optimized through criterion-guided reinforcement learning, which rewards correct preference judgments and evidence-supported factual claims under each criterion. Personalized hard-negative training further improves its sensitivity to user preferences reflected in shopping behavior, beyond explicit requirements. We additionally develop an active evidence retrieval extension that acquires missing e-commerce information for evaluation. On E-GenRM-Bench, E-GenRM-27B achieves 87.40\% preference accuracy, outperforming the strongest baseline by 6.97 percentage points. In a 14-day online A/B test on Taobao, a shopping agent post-trained with E-GenRM improves the effective shopping-assistance rate by 1.39 percentage points and user satisfaction by 2.33 percentage points.</p>
+      <p class="abs">Looped transformers are a parameter-efficient alternative to standard transformers for language modeling. By reapplying the same layers across multiple loop steps, recent looped language models match the performance of non-looped models several times their size. While this architecture effectively reduces parameter memory, each loop step still stores its own keys and values, so the key-value (KV) cache grows linearly with the number of loop steps and becomes the main memory bottleneck. We observe that the KV cache of looped models is highly redundant along the loop axis and that the loop steps differ substantially in their sensitivity to quantization. Based on these observations, we propose $\textbf{LoopVQ}$, a KV cache vector quantization method for looped transformers that codes channels of multiple loop steps jointly, and fine-tunes the codebooks to match the output of the full-precision model. At 0.5 bits per element, LoopVQ outperforms existing KV cache vector quantization methods for standard LLMs on general, long chain-of-thought reasoning, and long-context retrieval tasks with Ouro and Huginn models. Its design is orthogonal to these methods, and combined with TaSQ, it retains much of the BF16 accuracy even at 0.25 bits per element. We also implement LoopVQ in SGLang, where it nearly halves the decode latency at a 32K-token context and raises the peak serving throughput by up to $4.3\times$ and $6.1\times$ on the 1.4B and 2.6B Ouro models compared to the BF16 baseline.</p>
     </details>
-    <div class="hits"><span>工业信号：a/b test、online a/b</span><span>公司：taobao</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.03008">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.03008">PDF</a></p>
+    <div class="hits"><span>工业信号：latency、serving、throughput</span><span>主题：kv cache</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.05304">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.05304">PDF</a></p>
   </div>
 </article><h2>可能相关</h2><article class="paper">
   <div class="mark">
@@ -133,15 +133,143 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
     <span class="sub">7 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.03272">Diverse-Teacher On-Policy Distillation for Generative Recommendation</a></h3>
-    <p class="who">Zhipeng Yi、Xinyu Lin、Minxuan Shan、Zipeng Chen 等 7 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.05006">When Category Means Move: A Paired-Support Audit of Recommendation Logs with Random Insertions</a></h3>
+    <p class="who">Yu Zhang、Zhihan Wang、Yuhang Lu、Shuai Li</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Generative recommendation generates the semantic ID (SID) of the next item from a user&#x27;s interaction history. Existing training objectives mainly supervise target SID tokens, while on-policy distillation (OPD) provides denser supervision through a teacher&#x27;s probability distribution over all tokens for more effective and efficient training. However, OPD can aggravate popularity bias: teacher feedback favors popular-item tokens, transferring this preference to the student, while student rollout favors popular items, leaving unpopular-item SID paths rarely generated and supervised. These two sources of bias reinforce each other and reduce recommendation diversity. We propose HERO, a diversity-aware OPD framework. Heterogeneous teacher distillation trains two teachers specializing in popular and unpopular items and routes each training sample to the teacher matching the popularity group of its ground-truth item. The student learns from the routed teacher&#x27;s probability distribution along its own generated SIDs. Diversity-aware item rollout incorporates ground-truth SIDs of unpopular items into training, covering SID paths that the student rarely generates. Only the student is used for inference. Offline experiments on an industrial dataset and three public datasets further demonstrate its effectiveness, diversity, and robustness. Moreover, we deploy HERO in the &quot;Guess What You Like&quot; module on the 1688 homepage, where a 15-day online A/B test shows a 3.412% increase in gross merchandise value (GMV).</p>
+      <p class="abs">Content-category dashboards summarize production recommendation logs, although the serving policy selects the users, items, and contexts behind each mean. Using KuaiRand random-insertion impressions, we audit these summaries on the same 12,472 users and 5,486 videos in both logs. Standard means have absolute/centered mean absolute error (MAE) 0.1935/0.0491 and rank correlation 0.7833. User demeaning plus a random grand-mean anchor reduces absolute MAE by 80.0%, but centered MAE by only 21.0%, without reliably improving rank. A complete-support ledger allocates weighted squared error mainly to within-video residual (72.41%) and video mix (23.90%), with 3.65% from random support. In a frozen later test, early category calibration reaches MAE 0.0251 versus 0.0531 for scalar calibration; their direct difference is -0.0280 [-0.0296, -0.0172]. Decision evidence is cutoff-specific: the nominal top-10 regret change for row-weighted demeaning versus naive is -0.0062 [-0.0084, -0.0003], while top-5 and top-20 intervals include zero. The six-contrast family-wise top-10 interval [-0.0136, 0.0013] includes zero. An outcome-free disjoint randomized-reference split also leaves all six nominal contrasts covering zero. A known-truth stress test shows incomplete improvement under a mean-additive positive control and failure under item mix and weak overlap. All decompositions are descriptive and each result is conditional on its overlap cohort. KuaiRand intervals quantify user-cluster variation conditional on the realized catalog and calendar; we claim neither intrinsic category effects nor a universally valid correction.</p>
     </details>
-    <div class="hits"><span>工业信号：a/b test、online a/b</span><span>主题：generative recommendation、semantic id</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.03272">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.03272">PDF</a><span class="who">12 pages, 10 figures, 3 tables</span></p>
+    <div class="hits"><span>工业信号：serving</span><span>会议：wsdm</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.05006">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.05006">PDF</a><span class="who">10 pages, 6 figures. Accepted at WSDM 2027 (Main Track)</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">5</span>
+    <span class="sub">7 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.04574">Spectral Quantum Memory for Implicit Neural Representations</a></h3>
+    <p class="who">Daniel A. Moroz-Broitman、Eliya Nachmani</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Implicit neural representations (INRs) model signals as continuous functions from coordinates to values, but their performance depends strongly on how spectral capacity is allocated. Yet most Quantum INR (QINR) architectures treat spectral components as independent outputs of separate quantum blocks. We introduce the Spectral Quantum Memory Model (SQMM), a memory coupled quantum INR in which sequential hybrid data reuploading layers (bands) communicate through a shared coherent quantum memory register. Each band reads the memory, computes on its own coordinate upload, and writes part of its state back, so later bands can build on the computation of earlier ones. When memory read and write layers are input independent, we prove that the memory state forms an operator valued Fourier series whose support is contained in the Minkowski sum of the initial memory spectrum and the local band spectra. Downstream bands then condition their Fourier coefficients on the spectral content stored by earlier bands, and the memory coupling creates no new primitive frequencies. This theory motivates a spectral memory alignment loss that encourages memory to encode the spectrum expressed by the deployed prefix of the model. Across audio and image reconstruction benchmarks, SQMM improves over compact QINR and INR baselines.</p>
+    </details>
+    <div class="hits"><span>工业信号：deployed</span><span>会议：neurips</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.04574">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.04574">PDF</a><span class="who">Accepted to Neurips 2026</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">6</span>
+    <span class="sub">7 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.04393">Voluntary Servitude: Weaponized Safety Warning Mechanisms for Controlling AI Agents</a></h3>
+    <p class="who">Ilan Zendel、Matan Levy、Stav Cohen、Avi Mendelson 等 5 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">LLM agents increasingly act on information retrieved from public sources they treat as credible, which turns a manipulated recommendation into a transaction, a dependency, or a decision with physical consequences. The security literature models this threat as instruction injection, in which an adversary writes a command into retrieved content and deployed defenses learn to recognize command syntax. We show that an attacker can instead steer an agent through the agent&#x27;s own harm-avoidance. A single fabricated hazard, written as an ordinary review, leads the agent to disqualify the legitimate options and select the attacker&#x27;s target by its own reasoning, with no command for a detector to recognize. We call this voluntary servitude. These payloads steer agents about as often as instruction injection (60.4% vs. 66.0%), and deployed injection detectors score them as benign, so behind a filter they are 1.7-4.4x more effective. We measure this at the generation stage across six models and ten consumer-service domains, for three attack families, and show that it transfers to production browser agents, outperforming instruction injection, and to a retrieval pipeline (1.0-57.0% end-to-end success, depending on the retriever). We then show that a corroboration requirement added to the agent&#x27;s instructions removes roughly 95% of the exposure against a non-adaptive attacker without retraining. With the requirement in place, the agent still reads the planted hazard and no longer acts on it.</p>
+    </details>
+    <div class="hits"><span>工业信号：deployed</span><span>会议：neurips</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.04393">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.04393">PDF</a><span class="who">Accepted at NeurIPS 2026 (Main Track). 17 pages, 7 figures, 8 tables</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">7</span>
+    <span class="sub">6 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.05104">Workload-Static Optical Circuit Switching For Scalable LLM Inference Decode</a></h3>
+    <p class="who">Maximilian Thürmer、Nicolas Scotto di Perto、Eloise Stein、Natanijel Vasic 等 9 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">LLM inference decode executes fine-grained collectives whose latency directly limits per-user interactivity, yet scale-up fabrics are still built from electronic packet switches designed for training. We observe that, for a given model deployment and parallelization, the communication structure of decode is fixed, and propose workload-static optical circuit switching (OCS): circuits are configured once per deployment, co-designed with model parallelism and with topology-aware collective schedules that turn spare accelerator ports into fewer communication phases or higher bandwidth. We evaluate this design with GXNET, a graph-based workload emulator coupled to analytical and flit-level network models grounded in hardware measurements. In a 576-accelerator scale-up domain serving 5T-parameter MoE models with up to 5M tokens of context, all-OCS fabrics improve interactivity by up to 65% and energy efficiency by up to 119% over 4:1 oversubscribed packet-switched fabrics.</p>
+    </details>
+    <div class="hits"><span>工业信号：latency、serving</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.05104">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.05104">PDF</a><span class="who">39 pages, 10 main text, 29 appendix, 28 figures</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">8</span>
+    <span class="sub">6 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.04997">Auditing Multi-Proxy Explanations of Web User Preferences: Identification Boundaries and Abstention</a></h3>
+    <p class="who">Yu Zhang、Zhihan Wang、Yuhang Lu、Shuai Li</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Web systems infer user preferences from behavior, ratings, text, and LLM-generated profiles, yet explaining a proxy may reveal its measurement process rather than the preference of interest. We develop an audit framework distinguishing point identification, partial identification, and abstention relative to an explicit reference distribution. Under feature-dependent, arbitrarily signed proxy bias, a strict majority of uncontaminated proxy attributions lets the coordinatewise median recover latent-attribution support and direction and, with externally justified positive scales, magnitude. We prove this threshold sharp using response-valid indistinguishable worlds, characterize sharp minimax error and exact compatible-target sets under approximate cleanliness and scale uncertainty, and propagate clean-proxy attribution error. A frozen known-truth benchmark spans two response families, four proxy counts, all contamination counts, three bias strengths, and eleven methods, with a focal comparison confirmed on twenty unseen seeds. Under correct budgets, a direct attribution-tensor audit achieved 100% coverage, 95.40%-97.05% active-driver sign decisions, and no false signs. In a temporally separated Amazon study, median aggregation reduced comparator-relative conditional sign error for all four targets; six of eight prespecified target-metric contrasts had Bonferroni intervals excluding zero. A controlled real-covariate perturbation favored the median on the prespecified focal metric for all four targets. Compatible sets showed that the current proxy configuration rarely licensed strict-sign conclusions. Weak comparator calibration limits the Amazon evidence to fitted-surface alignment rather than latent-preference recovery.</p>
+    </details>
+    <div class="hits"><span>公司：amazon</span><span>会议：wsdm</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.04997">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.04997">PDF</a><span class="who">11 pages, 1 figure. Accepted at WSDM 2027 (Main Track)</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">9</span>
+    <span class="sub">6 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.04715">ZeroGR: Filtering-First Constrained Decoding for Generative Recommendation</a></h3>
+    <p class="who">Xiangrui Yang、Jiawei Yang、Liang Zeng、Daqian Ding 等 12 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Generative recommendation is gaining traction in production, retrieving items by generating their identifiers one token at a time. The generated sequences must identify relevant catalog items, so constrained decoding couples relevance scoring with validity filtering. Because most possible sequences are invalid, scoring before filtering wastes computation on candidates that will be discarded. Our evaluation shows that filtering first can avoid this work with negligible impact on recommendation quality. We present ZeroGR, a filtering-first constrained decoding system for generative recommendation. ZeroGR uses a step-sliced filtering index to reduce GPU memory use by tailoring data representations to each decoding step. Its execution engine adopts shared-slot execution to accelerate data exchange across stages and hybrid projection to adapt computation to workload patterns, thereby reducing execution overhead. During index refreshes, ZeroGR applies layout-guided streaming construction to speed up updates and limit serving interference. Extensive evaluation shows that ZeroGR accelerates the filtering and scoring pipeline by up to $9.9\times$ over representative baselines while reducing GPU index memory use and accelerating index reconstruction.</p>
+    </details>
+    <div class="hits"><span>工业信号：in production、serving</span><span>主题：generative recommendation</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.04715">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.04715">PDF</a><span class="who">14 pages, 20 figures</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">10</span>
+    <span class="sub">6 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.04619">Collaborative Search Meets Large Language Models: An Empirical Study</a></h3>
+    <p class="who">Peiyuan Gong、Jiamian Li、Erhan Zhang、Fengming Liang 等 7 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Collaborative search enables users to address complex information needs jointly. Advances in large language models (LLMs) enable autonomous agents to support collaborative information seeking within shared communication spaces. However, little is known about how these agents shape search experiences, behaviors, and outcomes compared with conventional search tools. We conduct a user study with 80 students working in 40 pairs. Each pair completes four collaborative search tasks under four scenarios: QAAgent, which answers queries using an LLM&#x27;s parametric knowledge; CoSearchAgent, which uses multi-user conversational context to reformulate queries, retrieve web information, and generate source-grounded answers, while asking clarifying questions when needed; an in-chat search plugin that returns result lists; and manual Google Search. After each task, participants complete several questionnaires assessing their search experience and independently write a report; after all tasks, they participate in individual interviews. Results show that LLM-based agents reduce perceived workload, support collaboration, and reshape communication and evidence-use practices. They also encourage more independent paraphrasing, albeit at the cost of report richness. To the best of our knowledge, this is the first systematic empirical comparison of LLM-based agents and conventional tools for collaborative search across search experience, user behavior, and collaborative outcomes.</p>
+    </details>
+    <div class="hits"><span>公司：google</span><span>会议：sigir</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.04619">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.04619">PDF</a><span class="who">Accepted by SIGIR-AP 2026</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">11</span>
+    <span class="sub">5 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.04662">SPADE: Spatiotemporal Preference Alignment and Diversity Enhancement for Local Search</a></h3>
+    <p class="who">Chenxu Wang、Wenxuan Yang、Yueqi Mou、Shuxian Bi 等 6 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Proactive query recommendation aims to suggest relevant search queries to users on the homepage of local service apps. Unlike conventional recommendation over a fixed item set, this requires open-set generation from a vocabulary of millions, where outputs must simultaneously align with user preference, match fine-grained spatiotemporal context, cover long-tail intents, and provide diverse alternatives within a few candidate slots. Existing approaches address these axes in isolation: standard tokenization suppresses long-tail queries, coarse location encoding misses fine-grained geographic demand, generic preference optimization fails to align with production impression-click distributions, and standard beam search collapses to near-duplicate outputs. We present SPADE (Spatiotemporal Preference Alignment and Diversity Enhancement), an end-to-end generative framework that jointly optimizes the generation space, contextual representation, preference distribution, and output slate quality through four components: Objective-Aligned BPE (OA-BPE) aligns subword merging with business value signals to boost long-tail query generation probability; Spatio-Temporal Adaptive Representation (STAR) replaces coarse location tokens with continuous multi-scale encodings and soft gating for precise spatiotemporal grounding; MARS-DPO (Multi-dimensional Adaptive Reward Sampling DPO) combines cross-domain pre-training with preference alignment on production impression-click data via composite rewards and adaptive hard negative sampling; and Sigmoid Diversity Beam Search (SDBS) improves intent coverage without sacrificing recall. Offline experiments on large-scale production data show that SPADE outperforms the strongest generative baseline by +5.6% HR@5, -40.3% GeoC@5, and +1.9% Exec@5. A one-week online A/B test confirms production impact: +1.88% Module CTR, +0.177% Search Volume, and +0.105% Search DAU.</p>
+    </details>
+    <div class="hits"><span>工业信号：a/b test、online a/b</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.04662">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.04662">PDF</a></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">12</span>
+    <span class="sub">5 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.04313">Coarse Semantic Blocks for Efficient Training-Free Sparse Attention</a></h3>
+    <p class="who">Sosuke Kobayashi、Shoichiro Yamaguchi、Seiya Tokui</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">We introduce a training-free sparse attention method that builds a prompt-specific key index to accelerate both prefill and decoding. The method clusters the keys into large semantic blocks that group tokens from noncontiguous positions. Each query position selects blocks by scoring their centroids and attends to the original keys and values within them. Queries that select the same block are processed together, so prefill stays fast even though each query chooses its own blocks. Large blocks make centroid scoring and this grouped processing cheap, so each query can attend to more tokens in the same time. Larger blocks with a larger token budget can thus be both faster and more accurate on long-context tasks than smaller blocks with a smaller budget. We evaluate two hybrid LLMs, Qwen3.5-4B and 35B-A3B, on one NVIDIA H200. Including the cost of building and using the index, whole-model wall-clock speedups over dense attention are 2.3-2.4x for prefill and 1.7-2.0x for decoding at 512K tokens, and 2.9-3.0x for prefill at 1M. The 35B-A3B model stays close to dense attention on five RULER tasks through 1M, on LongBench-v2 overall, and on MRCR through 256K. The 4B model loses accuracy mainly on multi-key retrieval, yet outperforms dense Qwen3.5-2B, whose latency is similar at 512K, on all three benchmarks.</p>
+    </details>
+    <div class="hits"><span>工业信号：latency</span><span>主题：sparse attention</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.04313">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.04313">PDF</a></p>
   </div>
 </article>
 <footer>
