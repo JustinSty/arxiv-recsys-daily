@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-11-05</title>
+<title>每日推荐系统论文 · 2026-11-06</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,72 +76,72 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-11-05</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 78 篇，达到阈值 5 篇</div>
+  <div class="date">2026-11-06</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 60 篇，达到阈值 6 篇</div>
 </header>
 <h2>今天读这些</h2><article class="paper">
   <div class="mark">
     <span class="num">1</span>
-    <span class="sub">16 分</span>
+    <span class="sub">10 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.05997">From Waste to Discovery: Recycling High-Scored Unexposed Candidates in Taobao Feed Recommendation</a></h3>
-    <p class="who">Ge Fan、Kai Meng、Huiping Chu、Yuning Jiang 等 6 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.07425">BRIDGE: Bridging the Semantic Quantization Gap for Generative Recommendation</a></h3>
+    <p class="who">Yatong Xiao、Mingjie Sun、Peng Wang、Wenjin Wu 等 5 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Helping users discover new interests is vital to the long-term health of industrial recommender systems, yet the usual remedy, boosting exposure of under-explored (discovery) content, often backfires in production. We report URED (Unexposed Recycling for Efficient Discovery), a training-free recall-stage system serving Taobao feed recommendation at Alibaba for over six months to tens of millions of daily active users. It rests on a production-validated insight: naive boosting fails because it injects cold, information-poor candidates that rankers systematically over-estimate, buying no discovery gain while risking engagement. Items scored highly but never exposed (signals industrial pipelines routinely discard) form a pool that is both relevant and reliably predictable. Over a 30-day horizon URED aggregates them and re-injects at recall time through a lightweight pipeline spanning offline storage, distributed aggregation, and low-latency online serving, adding under 1% latency via a single O(1) lookup per request with no model retraining. Online A/B tests show +3.47% discovered categories and +8.47% content richness with engagement preserved: completion video views rise significantly (+2.62%) and total views move positive (+0.36%, not significant). Ablations confirm both design pillars are necessary: a one-day window collapses the discovery gain to +0.55% (not significant), and random injection without score filtering yields no gain while trending negative on engagement (-0.17%). Across production recall channels, URED reaches 13.9x the platform-average discovery rate (6.3x the strongest nearline baseline) at engagement quality on par with the platform average. We share deployment details and lessons for practitioners facing the exploration-exploitation dilemma under tight resource constraints.</p>
+      <p class="abs">Generative recommendation retrieves items by autoregressively generating Semantic IDs(SIDs), where an RQ-VAE quantizes each item into a hierarchical SID sequence that the decoder generates level by level. We identify an overlooked bottleneck in this paradigm: the Semantic Quantization Gap(SQG). Quantization derives SIDs from rich continuous signals, including codebook centroids, local neighborhood geometry, and level-wise entropy. However, the decoder receives only discrete identifiers and loses the semantic structure that shaped them. This mismatch manifests in three ways: a grounding gap, where the decoder lacks semantic anchors when target-side information is limited; a neighborhood gap, where token-level supervision discards inter-item similarity and exacerbates exposure bias; and a difficulty gap, where computation is allocated uniformly despite generation difficulty diminishing with depth. To bridge the SQG, we propose BRIDGE. Codebook-grounded latent reasoning injects frozen quantizer centroids as semantic anchors before SID generation. Privileged EMA self-distillation transfers neighborhood-aware knowledge from a teacher to an on-policy student, preserving inter-item geometry while mitigating exposure bias. Effort-aware recurrence allocates more computation to the challenging early levels and progressively reduces it with depth. Across three Amazon benchmarks, BRIDGE improves Recall@10 and NDCG@10 by 10.9% and 9.7% on average over the strongest baseline (up to 12.6% and 10.7%). In a one-week online A/B experiment on a large-scale e-commerce advertising platform with 5% traffic, BRIDGE improves eCPM by 0.65%.</p>
     </details>
-    <div class="hits"><span>工业信号：daily active、in production、latency、online a/b、serving</span><span>公司：alibaba、taobao</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.05997">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.05997">PDF</a></p>
-  </div>
-</article><h2>可能相关</h2><article class="paper">
-  <div class="mark">
-    <span class="num">2</span>
-    <span class="sub">6 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.06323">Generative Retrieval under Real-Time Supply Constraints in Local Commerce</a></h3>
-    <p class="who">Shaopeng Liang、Biao Zhang、Hongzhen Ye、Zeyang Hou 等 11 人</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Generative retrieval predicts semantic identifiers for candidate entities. In local retail and food delivery, candidates must also be serviceable for a particular user at a particular time. Location, weather, and traffic reshape merchant and product supply, so a catalog-valid identifier may be infeasible for the current request. Post-generation filtering removes such candidates only after beam capacity and inference computation have been spent. We study retrieval over an explicitly materialized, request-time supply snapshot, where short output sequences leave little opportunity to amortize online constraint preparation. Our RTP-LLM pipeline compiles eligible residual-quantization identifiers into a compressed sparse row prefix index, overlaps CPU compilation with model prefill, and shares the uploaded index across beams. Legal expansions retain original-model log probabilities, and constraint states follow selected beam parents. We formalize snapshot-relative identifier validity and distinguish it from entity-level eligibility and freshness. The implementation generates three-token merchant identifiers. Historical evidence covers daily catalog constraints and subsequent request-scoped serving evaluations. In one matched-beam daily-constraint case, filtered merchants decrease from 170 of 299 candidates to 29 of 299; residual distance filtering motivates request-specific constraints. A different-host comparison with 30,000 supplied entries reports a 0.6 ms service-side latency increment, while client measurements expose additional request costs. Captured requests from three geographic settings characterize behavior across supply sizes and output widths. These observations span development stages and measurement boundaries. They establish a practical implementation and identify bottlenecks, but do not establish compute savings at matched retrieval quality.</p>
-    </details>
-    <div class="hits"><span>工业信号：latency、serving</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.06323">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.06323">PDF</a><span class="who">11 pages, 3 figures, 6 tables, 2 algorithms. The first five authors contributed equally</span></p>
+    <div class="hits"><span>工业信号：online a/b</span><span>公司：amazon</span><span>主题：generative recommendation</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.07425">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.07425">PDF</a></p>
   </div>
 </article><article class="paper">
   <div class="mark">
-    <span class="num">3</span>
-    <span class="sub">6 分</span>
+    <span class="num">2</span>
+    <span class="sub">8 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.06307">When Does Risk-Controlled Throughput Forecasting Actually Control Risk? A Reproduction Study on LEO Satellite Link</a></h3>
-    <p class="who">Mayan Sharma、Kriti Saini、Devansh Behl、Suganya R 等 5 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.07591">Beyond Independent Predictions: Learning the Browsing Journey for Sequence-Level Re-ranking</a></h3>
+    <p class="who">Jiayi Zhang、Jingxin Hai、Zhenjia Ma、Hongbin Pei 等 7 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Risk-budgeted throughput forecasting converts a point forecast of LEO satellite capacity into a conservative bound whose overestimation rate is held at a user-specified budget, so that admission control can act on it safely. We reproduce the state of the art, BG-CFQS, on the three Starlink traces its authors used and on an independent fourth dataset, and report four findings. First, its risk guarantee is reproducible but conditional on the calibration split: under a random split we recover every published quantity, including risk-pass on 3 of 3 datasets, but under a contiguous temporal split, which is what a deployed terminal faces, it holds on 1 of 3. Second, independent of any split, the method cannot serve a risk budget below 0.15, the low end of its candidate quantile set. On all four datasets the achieved rate is identical at budgets of 0.05, 0.10 and 0.15, overshooting by 1.4x to 3.7x at the tightest. Third, static conformal calibration cannot improve a ranking, only shift an operating point; we confirm this exactly on latency spike detection, where online calibration improves AUPRC by up to 51%. Fourth, group-conditional online recalibration splits into two mechanisms. The online part replicates: it tracks the budget within 1% from 0.05 to 0.35, where static calibration is 16 to 21% off. The group-conditional part does not: on three of four datasets, conditioning on any available covariate, including measured serving-satellite geometry, is worse than not conditioning, and our attempt to predict which datasets benefit failed. What is new here is empirical, not algorithmic: we claim the findings, not the methods.</p>
+      <p class="abs">Re-ranking aims to present users with an ordered list that maximizes sequence-level utility. Industrial deployments widely adopt the Generator--Evaluator framework, where the generator proposes candidate sequences, and the evaluator scores them to select the best one for display. The fidelity of the evaluator&#x27;s utility estimates thus directly governs recommendation quality. However, existing evaluators predominantly follow the \textbf{Independent Behavior Modeling (IBM)} paradigm, which simplifies the continuous user \emph{browsing journey} into independent per-item predictions (e.g., CTR). This oversimplification ignores two physical realities: (i) a click can occur only after the item has been reached and impressed, and (ii) items compete for finite user attention. As a result, IBM produces systematically biased evaluations and suboptimal sequence selection. To address this, we propose a \textbf{Joint Behavior Modeling (JBM)} perspective that explicitly models the \emph{display} $\rightarrow$ \emph{impression} $\rightarrow$ \emph{click} process to capture causal and competitive dependencies within a sequence. Building on JBM, we develop the \textbf{Impression-Click Evaluator (ICE)}, a plug-and-play framework that (i) predicts a browsing-depth distribution to estimate per-position impression probabilities, (ii) leverages predicted impressions to suppress spurious context from unexposed items during click modeling, and (iii) introduces a click distribution matching objective to capture intra-sequence dependencies. Extensive offline experiments across diverse backbones, together with a 14-day online A/B test in the Taobao App (+0.70\% clicks, +3.67\% revenue) and full-traffic deployment, validate the effectiveness and robustness of our approach.</p>
     </details>
-    <div class="hits"><span>工业信号：deployed、latency、serving、throughput</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.06307">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.06307">PDF</a><span class="who">Code: https://github.com/Mayan10/Thalweg</span></p>
+    <div class="hits"><span>工业信号：a/b test、online a/b</span><span>公司：taobao</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.07591">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.07591">PDF</a></p>
+  </div>
+</article><h2>可能相关</h2><article class="paper">
+  <div class="mark">
+    <span class="num">3</span>
+    <span class="sub">7 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.07593">TACT-KV: Tri-Axis Cosine Transform for Compressing Volumetric KV Caches in Medical VLMs</a></h3>
+    <p class="who">Chongyu Qu、Ritchie Zhao、Yufan He、Dong Yang 等 15 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Vision-language models (VLMs) applied to 3D medical scans face a structural memory wall. A single CT or MRI volume produces tens of thousands of vision tokens, and the resulting key-value (KV) cache scales linearly with both batch and context. Existing KV compression methods operate on the cache&#x27;s feature or token statistics, or apply 1D and 2D transforms, leaving the three-axis spatial structure in the cache unexploited. We propose TACT-KV (Tri-Axis Cosine Transform), a calibration-free KV compression method that exploits strong spatial correlations in visual KV states along all three anatomical axes of 3D scans. This correlation concentrates the KV cache energy under a frequency-domain transform. TACT-KV applies a separable 3D discrete cosine transform to the KV cache, allocates a per-layer bit budget across frequency bins via reverse water-filling (more bits to high-energy components), and quantizes each bin with a fixed scalar codebook. We derive a close-form relation: the distortion reduction from adaptive bit allocation is dominated by the spectral concentration of the transformed cache. Across six medical VLMs and two 3D CT benchmarks, TACT-KV achieves the lowest 1-bit prediction-flip rate on eleven of twelve model and dataset pairs in our main comparison. The same advantage reproduces on four general-purpose VLMs evaluated on video tasks, indicating that the benefit of exploiting three-axis structure generalizes beyond medical imaging. At equal high-bandwidth memory (HBM), TACT-KV scales the decoding batch size on a single GPU by up to $8\times$.</p>
+    </details>
+    <div class="hits"><span>主题：kv cache</span><span>会议：neurips</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.07593">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.07593">PDF</a><span class="who">Accepted at NeurIPS 2026</span></p>
   </div>
 </article><article class="paper">
   <div class="mark">
     <span class="num">4</span>
-    <span class="sub">6 分</span>
+    <span class="sub">7 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.05991">A Controlled Experimental Evaluation of Configuration and Cache Architecture in LLM Serving Engines</a></h3>
-    <p class="who">Muhammad Faizan Anwar、Sina Keshvadi</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.07393">CacheGraft: Enhancing Retrieval-Augmented Generation via Latent-Space Document Enrichment</a></h3>
+    <p class="who">Vihan Lakshman、Peter Baile Chen、Zhuohan Gu、Michael Cafarella</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Multi-agent LLM applications repeat most of their prompt tokens across requests, and serving engines reuse the cached state of shared prefixes. vLLM and SGLang reuse it at different granularities, and benchmarks of their default deployments report large performance gaps, usually credited to the cache. Such comparisons rarely control for other configuration differences. One of them, whether a long prompt is prefilled in chunks, is set by each engine&#x27;s defaults from the hardware and the release, and it confounds the comparison. We built a reproducible testbed on Kubernetes and a seeded multi-agent workload generator, and compared the two engines under vendor defaults and with chunked prefill matched. SGLang&#x27;s configuration is the same in both arms, which makes it an internal control across independently provisioned deployments. Under defaults, vLLM&#x27;s median time to first token is up to 64x SGLang&#x27;s. Matching one setting removes 78% of the capacity gap where that gap is largest and 30 to 67% of the latency gap. Near saturation the remaining latency gap reflects queue growth. A fluid queue model driven only by a 4.4% throughput shortfall reproduces it, and shows that such a gap scales with the length of the benchmark run. What survives matching is a tail-latency advantage of 2.4 to 6.4x at equal throughput, consistent with cache-aware ordering of waiting requests. We derive six recommendations for comparing serving engines.</p>
+      <p class="abs">Recent work in machine learning has demonstrated that transformer-based language model agents can communicate state not only through text, but also directly in latent space via key-value (KV) caches. In this paper, we argue that such cache-to-cache translation can provide utility beyond the original motivating application of real-time agent communication and can instead be utilized for retrieval-augmented generation (RAG). Building on the Cache-to-Cache (C2C) fusion framework, our proposed system CacheGraft encodes each corpus passage offline into a fused KV cache representation between a larger sharer model (4B parameters in our experiments) and a smaller receiver model (0.6B parameters) such that this cache can be injected into the receiver at query time with no need for the larger model. Across five QA benchmarks and two independent locally-run judges, CacheGraft improves answer quality over the text-only receiver baseline in 29 out of 30 comparisons, of which 17 of the 30 are statistically significant. Notably, these gains are zero-shot with respect to the fuser, which was never trained on retrieval data. These initial results suggest that latent-space document enrichment may be a promising avenue for enhancing the performance of RAG systems, particularly in compute-constrained settings where it is only feasible to deploy a small model at inference time.</p>
     </details>
-    <div class="hits"><span>工业信号：latency、serving、throughput</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.05991">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.05991">PDF</a><span class="who">29 pages, 14 figures, 7 tables. Artifact: https://github.com/FaizanAnwar01/llm-serving-config-eval</span></p>
+    <div class="hits"><span>主题：kv cache</span><span>会议：cikm</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.07393">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.07393">PDF</a><span class="who">5 pages. Third KEIR Workshop @ CIKM 2026. Work in progress</span></p>
   </div>
 </article><article class="paper">
   <div class="mark">
@@ -149,15 +149,31 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
     <span class="sub">5 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.05799">Item Representations Matter: Bridging Hard Semantic IDs and Soft Prototype Mixtures for Generative Retrieval</a></h3>
-    <p class="who">Vicente Balmaseda、Dongqi Fu、Jiarui Feng、Ren chen 等 9 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.08376">Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout</a></h3>
+    <p class="who">Tushaar Gangavarapu、Gil Tabak、Clemens JS Schaefer</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Modern recommender systems rely on generative retrieval techniques to predict the next item either as discrete codes or as a continuous vector. On the one hand, Semantic IDs (SIDs) give discrete models shared parameters and pretrained semantic structure, but discretizing items into hard codes discards some information from the original content embeddings. On the other hand, continuous models avoid quantization, yet typically use flat item lookup tables with no explicit parameter tying across items. We ask whether a continuous recommender can introduce shared structure without making it a discrete bottleneck. We propose CAP-Mix, a flow recommender that represents each item as a soft mixture of shared prototypes plus an item-specific vector. The assignments, prototypes, and item vectors are trained jointly, and the soft representation is retained at inference. Pretrained information is optional: SID responsibilities can serve as a prior over assignments, while a full content embedding can initialize the item-specific vector without changing the initial flat table. In matched comparisons on three datasets, CAP-Mix improves over a flat table on the two sparse Amazon datasets and yields a small gain on Steam when trained without pretrained information. Given only an offline SID, it outperforms a hard table built from the same tokenizer by 4.45-14.90% in HR@5. Given the full content embedding, it matches or improves a strong flat table while hard assignments regress on the sparse Amazon datasets. Overall, averaged across six benchmarks, CAP-Mix improves HR@5 and NDCG@5 by 6.9% and 13.6% relative to the best evaluated baseline for each dataset and metric, while delivering 1.4-161x the inference throughput of the discrete baselines in our experiments.</p>
+      <p class="abs">Linear attention compresses context into a fixed-size key-value state for linear-time training and constant-memory inference. Gated delta-rule models decay this state and erase its prediction for an incoming key before writing a new value; Gated DeltaNet-2 (GDN-2) generalizes this with channel-wise decay and decoupled, full-rank erase and write gates. However, we show that state updates are far less sensitive to erasure than to writes: key activation and unit normalization concentrate key energy onto a sparse subset of channels, whereas value writes scale all channels, so the erase gate can be parameterized at lower rank. Furthermore, slow-decaying state rows accumulate much larger norms than fast rows, dominating unweighted readout and forcing stronger write-time erasure to suppress interference. Guided by this analysis, we introduce Muir, which fuses all gates into a sensitivity-allocated low-rank projection, re-weights state rows with a matched-filter readout gate, and reinvests the saved parameters in a wider feed-forward network. Because standard chunkwise algorithms become numerically unstable at the large chunk sizes needed to saturate wide matrix units, we design a parallel update for stable, efficient training. Across 166M-1.34B parameters, Muir lowers perplexity by 1.8-2.0% over GDN-2 and 2.5-3.6% over Transformer, raises commonsense accuracy by up to 1.9 points, and improves extractive recall over GDN-2. At 1.34B, Muir outperforms both baselines on multi-hop and multi-needle recall, extrapolates 2,560x from its 4K training length to 10M-token streams without perplexity drift, and maintains near-100% passkey retrieval to 1M tokens with static readout. Muir achieves these gains while matching GDN-2 throughput, reaching its 100B-token validation loss 1.2x faster, and training 2.7x faster than Transformer at 32K.</p>
     </details>
-    <div class="hits"><span>工业信号：throughput</span><span>公司：amazon</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.05799">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.05799">PDF</a></p>
+    <div class="hits"><span>工业信号：throughput</span><span>主题：linear attention</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.08376">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.08376">PDF</a></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">6</span>
+    <span class="sub">5 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.08306">GINGER: Spicing Up Graph-Based Vector Search</a></h3>
+    <p class="who">Daniel Salwasser、Lars Gottesbüren、Laxman Dhulipala、Jakub Łącki 等 10 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">We present \textsc{Ginger}, a state-of-the-art open-source C++ library for graph-based approximate nearest neighbor search (ANNS). We developed \textsc{Ginger} at Google to push the speed and memory efficiency of graph search on large and high-dimensional embedding datasets. \textsc{Ginger} surpasses existing ANNS libraries with regards to query throughput and indexing time while matching the memory footprint of the most space-efficient competitors. \textsc{Ginger} builds upon recent advances in proximity graph construction (PiPNN) and vector quantization (TurboQuant). We introduce Nested TurboQuant (NTQ), a two-level quantizer which supports low precision graph navigation and high precision reranking in a single code. This representation achieves near floating point precision with $2.6\times$ less memory. We also compress the size of our proximity graphs by up to $2.5\times$ without impacting query throughput. We combine graph reordering with a new lossless compression codec called AdaptiveGap, which builds upon StreamVByte. At $95\%$ recall, \textsc{Ginger} speeds up query throughput by an average of $1.8\times$ over each dataset&#x27;s fastest competitor and by at least $2.3\times$ over any single library. This lead grows to $2.9\times$ over compact libraries on high-dimensional embeddings.</p>
+    </details>
+    <div class="hits"><span>工业信号：memory footprint、throughput</span><span>公司：google</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.08306">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.08306">PDF</a></p>
   </div>
 </article>
 <footer>
