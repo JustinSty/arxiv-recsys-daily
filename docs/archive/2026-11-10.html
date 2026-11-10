@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日推荐系统论文 · 2026-11-10</title>
+<style>
+:root {
+  --bg: #f5f6f4;
+  --ink: #1a2024;
+  --muted: #5e6b70;
+  --rule: #dcdfda;
+  --accent: #22516b;
+  --flag: #8a4b1f;
+  --surface: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181a;
+    --ink: #e6e8e4;
+    --muted: #939c9f;
+    --rule: #2b3134;
+    --accent: #7fb3d0;
+    --flag: #d39560;
+    --surface: #1b2023;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding: 2rem 1.15rem 4rem; }
+header { padding-bottom: 1.25rem; border-bottom: 2px solid var(--ink); }
+.date { font-size: 2.6rem; line-height: 1; font-weight: 600; letter-spacing: -0.02em; }
+.tally { margin-top: 0.5rem; color: var(--muted); font-size: 0.9rem; }
+h2 {
+  font-size: 0.95rem; font-weight: 600; margin: 2.25rem 0 0.25rem;
+  padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule);
+}
+.paper { padding: 1.4rem 0; border-bottom: 1px solid var(--rule); display: flex; gap: 0.9rem; }
+.mark { flex: 0 0 2.1rem; padding-top: 0.35rem; text-align: right; }
+.mark .num { font-size: 1.05rem; font-weight: 600; color: var(--accent); }
+.mark .sub { display: block; font-size: 0.7rem; color: var(--muted); }
+.body { flex: 1 1 auto; min-width: 0; }
+.title {
+  font-family: Charter, "Iowan Old Style", Georgia, "Songti SC", serif;
+  font-size: 1.16rem; line-height: 1.35; margin: 0 0 0.35rem;
+}
+.title a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+.title a:hover, .title a:focus { border-bottom-color: var(--accent); }
+.who { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+.zh { margin: 0.5rem 0; }
+.why { margin: 0.4rem 0; color: var(--muted); font-size: 0.92rem; }
+.flag { color: var(--flag); font-weight: 600; }
+.hits { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+.hits span { display: inline-block; margin-right: 0.7rem; white-space: nowrap; }
+.links { font-size: 0.85rem; margin-top: 0.6rem; }
+.links a { color: var(--accent); text-decoration: none; margin-right: 0.9rem; }
+.links a:hover { text-decoration: underline; }
+details { margin-top: 0.6rem; }
+summary { cursor: pointer; color: var(--muted); font-size: 0.88rem; }
+details .abs { margin-top: 0.5rem; font-size: 0.92rem; color: var(--muted); }
+.empty { padding: 2.5rem 0; color: var(--muted); }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
+  font-size: 0.85rem; color: var(--muted); }
+footer a { color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="date">2026-11-10</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 61 篇，达到阈值 5 篇</div>
+</header>
+<h2>今天读这些</h2><article class="paper">
+  <div class="mark">
+    <span class="num">1</span>
+    <span class="sub">13 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.12725">Scaling Taxonomy-Free Image Labeling with Generative AI: A Multimodal</a></h3>
+    <p class="who">Zhenjie Zhang、Sainan Chen、Kshiteesh Hegde、Mengze 等 8 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Providing real-time multimodal insights into images is challenging because it requires low latency, high description accuracy, and scalable solutions that are both cost-effective and efficient. For example, given a new image of an outfit, we would like to generate insights that the image depicts &quot;earth tones&quot; and &quot;linen pants&quot; and allow users to explore similar ideas along these themes. Traditional strategies to generate such insights would typically involve building taxonomies producing a golden set labeled by humans, training models on these datasets, and deploying these models for online inference services. Such workflows are constrained by fixed taxonomy, high labeling cost, limited labeling coverage in sample space, and human errors and expertise gaps in labelers. In addition, these methods are expensive and cumbersome to iterate over time. Recent trends have started exploring generative AI models for online insights, but this method suffers from long latency and prohibitive costs to support a high volume of requests or large amounts of offline labeling needs. We present Generative Labeling On Clusters (GLOC) as a solution to provide highly scalable, cost-effective, low latency, and high accuracy online image insight services. GLOC leverages highly optimized image embeddings to form image clusters that are semantically close to each other for the purpose of the type of insights, and summarizes the insights at the cluster level, which effectively generalizes to members in the cluster. At Pinterest, GLOC powers image descriptors and pivot query suggestions for Hybrid Search, which is a multimodal search service enabling users to search with both an image and a text query. Our offline and online A/B tests demonstrate that GLOC significantly outperforms previous methods, delivering improvements in quality and efficiency.</p>
+    </details>
+    <div class="hits"><span>工业信号：latency、online a/b</span><span>公司：google、pinterest</span><span>会议：kdd</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.12725">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.12725">PDF</a><span class="who">5 pages, 3 figures, 4th CJ Workshop at KDD 2025 (https://sites.google.com/view/kddcjworkshop2025/accepted-papers), also related: https://arxiv-org.atlassian.net/servicedesk/customer/portal/2/MOD-93955</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">2</span>
+    <span class="sub">13 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.12180">TS-GEAR: Taobao Shangou GEnerative Ad Retrieval</a></h3>
+    <p class="who">Guofeng Tong、Xu Zhang、Guangliang Yu、Haiqiang Wang 等 11 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">On-demand delivery platforms such as DoorDash and Uber Eats impose a constraint absent in traditional e-commerce: merchants beyond the user&#x27;s delivery range are invalid candidates rather than merely low-ranked. Generative retrieval has recently shown strong potential in large-scale retrieval systems. Adapting it to this setting, however, poses three challenges. First, existing semantic IDs encode geography only as a soft signal, so reachability can only rely on a non-differentiable post-generation hard truncation. Second, user preferences vary substantially across both regions and queries, so aggregating historical behaviors without conditioning on geography and the current query yields biased interest estimates. Third, the retrieved candidate set is evaluated by its collective value, yet autoregressive training scores each sequence independently, with no set-level signal to discourage redundant near-duplicates. To address the challenges, we propose TS-GEAR, a unified generative retrieval framework for on-demand delivery: (1) Geo-Semantic ID splits merchant identifiers into geographic prefixes and semantic suffixes, making reachability a prediction target rather than a post-hoc filter; (2) Query-Geo Target Attention aggregates historical behaviors using the real-time query and location as dual targets, while encoding each behavior&#x27;s own location into its attention key; (3) GMPO (Group Marginal Policy Optimization) rewrites advantages using a deduplicated group reward and marginal advantage within GRPO, avoiding auxiliary diversity objectives. Deployed online with a lightweight 0.1B backbone, TS-GEAR serves over 150 million queries per day in the search advertising pipeline of Taobao Shangou, consistently outperforming state-of-the-art generative retrieval methods on both HitRate and geographic validity, and achieving 3.8% gains in ad impressions and 4.2% in ad revenue.</p>
+    </details>
+    <div class="hits"><span>工业信号：deployed</span><span>公司：taobao</span><span>主题：semantic id、target attention</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.12180">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.12180">PDF</a></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">3</span>
+    <span class="sub">10 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.12296">RecoGEM: A Serving System for Production-Scale Generative Recommendation</a></h3>
+    <p class="who">Xiangrui Yang、Yunfeng Zhao、Jiawei Yang、Fangyu Zhang 等 11 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Generative recommendation (GR) is moving industrial recommender systems (RecSys) from scoring candidate items to autoregressively generating item identifiers. This shift promises higher recommendation quality, but makes serving substantially harder: each request executes a short sequence of dependent decoding steps that explore a large item space and select promising candidates on the latency-critical path. GR not only creates structural mismatches with conventional RecSys pipelines, but also challenges the architectural and optimization assumptions of LLM serving stacks, making direct adoption of existing systems difficult. We present RecoGEM, our production GR serving system. RecoGEM uses a runtime--engine decoupling architecture to move GR-specific serving responsibilities, such as candidate-state transitions and live artifact updates, to a dedicated runtime. Its execution engine exploits GR&#x27;s short token sequences, large candidate populations, and predictable step shapes to optimize self-attention, candidate selection, and execution planning. RecoGEM has been deployed for over nine months across our production lines, serving applications with hundreds of millions of users and supporting more than ten GR model families. On our OneModel production workloads, RecoGEM reaches over 1,000 QPS per serving instance with P99 latency below 35 ms and a 2.88$\times$ throughput improvement over representative baselines.</p>
+    </details>
+    <div class="hits"><span>工业信号：deployed、latency、millions of users、qps、serving、throughput</span><span>主题：generative recommendation</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.12296">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.12296">PDF</a></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">4</span>
+    <span class="sub">9 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.11801">Proactive Dimension-Adaptive Denoising for Graph Collaborative Filtering via Representation Coherence</a></h3>
+    <p class="who">Wenjun Li、Dong Zhao、Jiaying Shi、Juan Zhang 等 6 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Implicit feedback in recommender systems contains noisy interactions (e.g., accidental clicks, impulse purchases) that propagate through user-item graphs and contaminate learned representations. Existing explicit denoising methods uniformly rely on training loss to estimate interaction reliability. However, loss is a fundamentally passive signal: it detects noise only after it has caused prediction errors, and it is heavily confounded by training stage, negative sampling, and hard positives. We propose Noise-aware Dimension Learning (NDL), a proactive dimension-adaptive denoising framework. NDL introduces Representation Coherence Detection (RCD), which evaluates the coherence between an interaction representation and the user&#x27;s historical preference centroid in embedding space, providing an active noise signal independent of loss. RCD and the loss signal are fused via activity-aware weighting (active users rely more on coherence while cold-start users automatically fall back to loss), and the fused estimate drives an interaction-level dimension-adaptive mask that limits the effective representation capacity of unreliable interactions. A lightweight contrastive regularizer further improves embedding uniformity, stabilizing the geometry on which RCD discriminates. On three public benchmarks NDL consistently outperforms state-of-the-art denoising methods, lifting Recall@5 by +17.95% on Amazon-book, +12.33% on Yelp, and +5.63% on MovieLens-1M over the strongest baseline DAR; the core variant without contrastive learning already surpasses DAR on sparser datasets, confirming representation coherence as the primary driver of these gains. NDL is confined to the training loop and is serving-compatible with LightGCN-based production pipelines, adding no online latency or parameters at inference time. Code: https://github.com/GordonDongZHAO/NDL</p>
+    </details>
+    <div class="hits"><span>工业信号：latency、serving</span><span>公司：amazon</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.11801">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.11801">PDF</a><span class="who">code available at https://github.com/GordonDongZHAO/NDL</span></p>
+  </div>
+</article><h2>可能相关</h2><article class="paper">
+  <div class="mark">
+    <span class="num">5</span>
+    <span class="sub">5 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.12197">TrajLift: Lifting Memory Recall Trajectories with Latency-Modulated Heat Diffusion</a></h3>
+    <p class="who">Jiawen Kang、Jinchao Li、Mingyu Cui、Junan Li 等 6 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Verbal memory retrieval carries rich diagnostic information for Alzheimer&#x27;s disease through the order, hesitation, and categorical organization of recalled words, yet computational modeling of this retrieval process remains largely unexplored. A key challenge is that timing and hierarchical structure are diagnostically entangled: the diagnostic meaning of retrieval timing depends on its hierarchical context. We propose TrajLift, a spectral framework that models verbal recall as timed trajectories on a hierarchical graph. Our central mechanism is latency-modulated heat diffusion on the semantic hierarchy, a unified operator that lifts each recalled word into a representation of both multi-scale hierarchical structure and continuous retrieval timing. Formal analysis shows that the resulting representation is first-order separable into structural and temporal components with spectral selectivity across hierarchical levels. On synthetic benchmarks requiring structure-time interaction, TrajLift stays near-perfect on deep hierarchies where all baselines fail. On real-world clinical data, we show that TrajLift outperforms diverse baselines by jointly modeling timing and semantic structure, with gains that grow as retrieval timing becomes more informative.</p>
+    </details>
+    <div class="hits"><span>工业信号：latency</span><span>会议：neurips</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.12197">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.12197">PDF</a><span class="who">Accepted by NeurIPS 2026</span></p>
+  </div>
+</article>
+<footer>
+  <p><a href="feed.xml">RSS</a> · <a href="archive.html">历史</a></p>
+  <p>数据来自 arXiv，按本地规则打分排序。分数只是排序依据，不代表论文质量。</p>
+</footer>
+</div>
+</body>
+</html>
