@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-11-13</title>
+<title>每日推荐系统论文 · 2026-11-18</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,10 +76,154 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-11-13</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 0 篇，达到阈值 0 篇</div>
+  <div class="date">2026-11-18</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 74 篇，达到阈值 9 篇</div>
 </header>
-<p class="empty">今天没有达到阈值的论文。周末和节假日 arXiv 不发布新论文，工作日出现这种情况可以考虑调低阈值。</p>
+<h2>今天读这些</h2><article class="paper">
+  <div class="mark">
+    <span class="num">1</span>
+    <span class="sub">13 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.22280">XM-Sparse: High-Throughput Sparse-Attention LLM Serving over Scale-up Memory Pools</a></h3>
+    <p class="who">Yijun Sun、Xudong Liao、Zhuobin Huang、Kai Chen 等 6 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Sparse attention has been increasingly adopted by production LLMs for long-context inference, yet serving systems must still retain the full KV history, making GPU HBM capacity a key limit on serving concurrency. Existing systems offload the KV cache to host memory, but suffer from the limited bandwidth of PCIe and the limited capacity of host memory. Emerging scale-up memory pools (e.g., X-Mem) relieve both limits and open new opportunities for sparse-attention offloading. In this paper, we first conduct an in-depth analysis and reveal that, even with scale-up memory pools, decode throughput remains bounded by HBM capacity, as hot KV buffers and the fully resident indexer key (K-index) cache occupy substantial HBM. Moreover, the two caches exhibit distinct access patterns. Based on these insights, we present XM-Sparse, the first sparse-attention offloading system over scale-up memory expansion. The core idea of XM-Sparse is to offload both caches aggressively while matching each with an I/O mechanism tailored to its access pattern. Specifically, for dynamically selected KV entries, XM-Sparse fuses TMA-based retrieval with attention in a tile-level pipeline to hide on-demand retrieval latency. For predictable K-index accesses, it prefetches pages via SM-efficient GPU-initiated DMA and coordinates prefetching with latency-critical operations to avoid interfering with decoding. We have implemented XM-Sparse atop SGLang, and our experiments on DeepSeek-V3.2 and GLM-5.3 with an emulated scale-up memory pool show that XM-Sparse delivers up to 4.98$\times$ and 4.52$\times$ higher decode throughput than PCIe-based ECHO and HiSparse, respectively, and up to 1.34$\times$ over a naive integration on the same platform, across 16K-1M contexts.</p>
+    </details>
+    <div class="hits"><span>工业信号：latency、serving、throughput</span><span>主题：kv cache、sparse attention</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.22280">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.22280">PDF</a><span class="who">13 pages, 11 figures</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">2</span>
+    <span class="sub">11 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.22597">COTTI: Contrastive Training and Time-Aware Inference for Robust Industrial Recommendation under Promotional Drift</a></h3>
+    <p class="who">Maolei Huang、Jing Tian、Dexuan Duan、Fangfang Lin 等 6 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Promotional events shift traffic composition, purchase behavior, and the scale of conversion probabilities on different time horizons. We present \textbf{COTTI} (\textbf{CO}ntrastive \textbf{T}raining and \textbf{T}ime-aware \textbf{I}nference), an industrial recommendation framework that separates historical representation learning from event-time score adjustment. Cross-Period Contrastive Alignment (CPC) regularizes paired histories of the same user with adaptive consistency weights. Active Re-weighting (RW) controls the influence of promotional examples through historical-interest distance. Adaptive Boundary Alignment (ABA) combines stochastic prediction variability with a temporal event kernel to adjust logits while keeping predictor parameters fixed. We analyze the weighted objective and bound ABA-induced probability and ranking changes. On Fliggy data, COTTI attains an offline AUC of 0.8127, compared with 0.8101 for TEN and 0.8123 for TEN with ABA. Cross-category analysis reveals improved discrimination alongside declines in paid-item recall for novel categories. End-to-end measurements give a p99 latency of 38.9\,ms and throughput of 14,700 requests/s; enabling ABA adds 2.2\,ms to p99. A ten-day online experiment against the serving HDR model yields relative gains of 3.14\% in conversion rate and 2.68\% in revenue per mille. Together, these results characterize the trade-off between aggregate prediction, novel-category discovery, and serving cost in promotional recommendation.</p>
+    </details>
+    <div class="hits"><span>工业信号：latency、online experiment、serving、serving cost、throughput</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.22597">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.22597">PDF</a></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">3</span>
+    <span class="sub">10 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.22503">From Relevance to Utility: Rubric Alignment in Yuanbao Search</a></h3>
+    <p class="who">Yu Lu、Lixin Zou、Yangqi Chen、Hui Xu 等 11 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Agentic search demands that a search engine move beyond per document relevance ranking to assemble document sets optimized for downstream LLM reasoning. Prior work addresses this either by improving individual pipeline stages in isolation or by applying RL based selection on top of relevance trained upstream modules, leaving the full stack unaligned to utility for reasoning. We propose rubric aligned search, a framework that unifies the traditional search pipeline under a single supervision surface. For each query, we derive a rubric from coarse to fine, specifying weighted positive criteria that the document set must satisfy and negative criteria that it must avoid. From this rubric we derive two training signals. First, a lightweight labeler distills rubric grounded judgments into per document utility labels, which supervise a contrastive dual encoder for retrieval and a multi task ranker trained with four rubric aligned scoring heads. Second, a rubric conditioned evaluator produces a set level reward that drives a dual branch RL selector, combining GRPO with best rollout distillation to resolve credit assignment in subset optimization. Deployed in Yuanbao Search, the pipeline improves end to end answer quality by 8.52% over the online production baseline.</p>
+    </details>
+    <div class="hits"><span>工业信号：deployed</span><span>主题：multi task</span><span>会议：kdd</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.22503">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.22503">PDF</a><span class="who">10 pages, 5 figures, 5 tables, accepted at KDD 2027</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">4</span>
+    <span class="sub">9 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.22309">Efficient Wide-Beam Generative Retrieval with Model-Native Trie Decoding and Shared-Context Attention</a></h3>
+    <p class="who">Vedant Jhaveri、Arashpreet Singh Mor、Satyam Kumar、Alex Tsun 等 7 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Generative retrieval (GR) predicts catalog entries as short semantic identifiers (SIDs). Trie-constrained beam search keeps these identifiers valid, but wide beams expose two serving costs: vocabulary-wide score tensors that are mostly discarded, and repeated attention over the same prompt. We present Trie-Head, a model-native output interface that stores the identifier trie as validated GPU tensors. Compared with a Python custom logit processor (CLP), it reduces CPU--GPU coordination and memory traffic by avoiding Python constraint callbacks and vocabulary-wide candidate buffers. It scores compact codebook candidates and streams the full-vocabulary normalizer, preserving the original model&#x27;s valid-token scores in real arithmetic without retraining. Shared-context attention complements this output path by reusing prompt key/value blocks across beams while preserving their private decode tails. We implement both mechanisms in SGLang and evaluate candidate sourcing for LinkedIn Hiring Assistant and qualification retrieval for the Qualification Retrieval Platform. The combined system improves closed-loop throughput by up to 5.57x over the CLP baseline and up to 2.63x over BF16 FlashRec at a common beam width of 200 on the Qualification Retrieval Platform workload.</p>
+    </details>
+    <div class="hits"><span>工业信号：serving、throughput</span><span>公司：linkedin</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.22309">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.22309">PDF</a></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">5</span>
+    <span class="sub">9 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.22033">Thinking Harder Doesn&#x27;t Lead to Better Choices: Reasoning Effort Increases the Confidence but Not the Correctness of LLM Shopping Agents</a></h3>
+    <p class="who">Adi Krishnamoorthy、X. Y. Han</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Large language models (LLMs) are increasingly deployed as autonomous shopping agents that process multimodal product listings (consisting of visual and text data) and recommend purchases on behalf of consumers. Naturally, one might assume that models with more thinking power would make higher-quality purchasing decisions. To test this belief, we ask two questions about such agents: does asking a model to think harder make it choose better products, and does the confidence it reports tell us the likelihood it may be wrong? We benchmark ten frontier models on three product-choice benchmarks built from WebShop, Amazon&#x27;s SQID and Wayfair&#x27;s WANDS platforms to see if LLMs with more thinking power actually make better-quality product purchase decisions. Across all three benchmarks, we found that increasing the thinking effort does not increase decision quality in a statistically meaningful way. The same change in thinking effort raises stated confidence at a statistically significant level, so extra thinking buys confidence rather than correctness. We also measure the calibration of these models (how well their reported confidence percentage matches their true correctness percentage) in these tasks and show that most models are not well-calibrated at every effort level. We also find that errors are strongly shared: when one model errs in a task, several others tend to err on that same task. Furthermore, on tasks where several models all err, a large number of them pick the same wrong product.</p>
+    </details>
+    <div class="hits"><span>工业信号：deployed</span><span>公司：amazon</span><span>主题：one model</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.22033">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.22033">PDF</a></p>
+  </div>
+</article><h2>可能相关</h2><article class="paper">
+  <div class="mark">
+    <span class="num">6</span>
+    <span class="sub">7 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.22334">BQ-LoRA: Binary-Quantized Low-Rank Adapters as Implicit Regularizers for Parameter-Efficient Fine-Tuning</a></h3>
+    <p class="who">Juyoung Park、Heejun Lee</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Parameter-efficient fine-tuning of quantized large language models is dominated by QLoRA, which combines 4-bit weight quantization with FP16 low-rank adapters. We ask whether the FP16 adapter precision is necessary. Replacing it with a single binary bit per adapter parameter, combined with a learned per-layer scale $s$ and a Scaled Straight-Through Estimator, reduces adapter storage by 13-16x. We introduce two variants -- NormScale, which binarizes under a norm-preserving scale with a clipped STE, and LearnThresh, which makes the binarization threshold learnable -- unified under a framework we call BQ-LoRA. Our main theoretical contribution is a tight characterization of the BQ-LoRA hypothesis class: it has bounded entrywise norm, a typical-set spectral norm bound that is $Θ(r)$ times sharper than the worst case, a full-rank, near-isotropic update, and consequently a Rademacher complexity that yields an explicit $\tilde{O}(s_{\max}α\sqrt{d_{out}/(rn)})$ generalization bound. FP16 LoRA has no comparable a priori norm or isotropy control. On Qwen2.5 (1.5B-72B), BQ-LoRA exceeds QLoRA&#x27;s benchmark averages at every scale by 0.8-3.5 points; on LLaMA-2 (7B/70B) it remains competitive at the same storage reduction but does not uniformly lead the strongest FP16-adapter baselines (LoftQ at 7B, QLoRA at 70B). On Qwen2.5-7B the binary adapter preserves the 4-bit base WikiText-2 PPL within 0.06 (9.86 vs. 9.80) while QLoRA worsens it by 0.59. The reduction applies to inference-time adapter storage and serving; training memory matches QLoRA and step time rises by under 4%. We translate the storage saving into a deployment study, BQ-SGMV, by extending Punica&#x27;s SGMV kernel with a binary inner-product primitive: the same A100-80GB holds 15.6x more adapters in HBM, and our research prototype eliminates cache misses under a skewed synthetic workload.</p>
+    </details>
+    <div class="hits"><span>工业信号：serving</span><span>会议：neurips</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.22334">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.22334">PDF</a><span class="who">Accepted at NeurIPS 2026. 20 pages, 4 figures, 21 tables</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">7</span>
+    <span class="sub">5 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.22595">Lost in the Funnel: Selection-Induced Miscalibration in Ranking and Decision Systems</a></h3>
+    <p class="who">Aditya Somani、Rahul Ragesh、Vikas Joshi、Amit Singh</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Modern ranking and decision systems combine components with divergent objectives, and scores calibrated at the model boundary are used as calibrated probabilities throughout the funnel, across filtering, reranking, business-rule enforcement, and auctions. Yet calibration is typically validated only where the score is produced, so its breakdown where the score is used is routinely overlooked. We ask when calibration survives this selection, how inherited error differs from selection effects, and what can fail for a perfectly calibrated score at a component boundary. We study these questions through a boundary-wise diagnostic framework of residual identities. We target rubric-judged relevance rather than presentation-dependent metrics such as CTR, so calibration is measurable at every funnel layer of interest. We first present an industry-wide case study that applies our diagnosis to settings where calibration deteriorates at decision time, tracing the degradation to selection rather than model error. This diagnosis motivates Funnel-Aware Recalibration (FAR): post-hoc, selection-policy-aware recalibration at the boundary where scores drive decisions. In a live two-region production A/B test, FAR cuts decision-time expected calibration error (ECE) by 60-80% and improves auction efficiency. We further adapt two public datasets to simulate industry settings, providing additional evidence for the mechanism. We plan to release the adapted datasets and their generation pipeline to support further research. Finally, we distill these findings into practical operating principles for calibrating multi-stage scoring systems.</p>
+    </details>
+    <div class="hits"><span>工业信号：a/b test</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.22595">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.22595">PDF</a><span class="who">Under Review</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">8</span>
+    <span class="sub">5 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.22410">More Than a Score: Reinforcement Learning with Verbalized Feedback for Generative Recommendation</a></h3>
+    <p class="who">Zipeng Chen、Xinyu Lin、Yuliang Sun、Sheng Zhang 等 8 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Large language models (LLMs) are increasingly used for generative recommendation, where recommended items are generated directly from users&#x27; interaction histories. To further improve recommendation quality, reinforcement learning (RL) has been applied to align these models with recommendation objectives. However, existing RL methods rely on scalar rewards to implicitly guide exploration. These rewards do not specify which aspects of a candidate conflict with the user&#x27;s preferences or how the next candidate should differ. To address this gap, we propose VerRec, a verbalized feedback-guided RL framework for generative recommendation. Specifically, a user simulator generates personalized verbalized feedback based on the user&#x27;s historical preferences and the candidate item profile. The policy uses this feedback to produce refined recommendations. Original and refined candidates form an expanded group and are jointly optimized with group relative policy optimization. The user simulator is only required during training and is removed at inference time. Experiments on three Amazon review datasets with two generative recommendation backbones demonstrate that VerRec improves recommendation accuracy and ranking quality. Further analyses show that verbalized guidance encourages exploration of more diverse candidates and helps the policy discover more rewarding recommendations during training.</p>
+    </details>
+    <div class="hits"><span>公司：amazon</span><span>主题：generative recommendation</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.22410">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.22410">PDF</a><span class="who">10 pages, 11 figures and tables</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">9</span>
+    <span class="sub">5 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.22079">SIMQ: A Single Graph-based Index for Multi-Vector Query</a></h3>
+    <p class="who">Yifan Lu、Jiabao Jin、Xiaoyao Zhong、Peng Cheng 等 10 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Multi-vector retrieval models such as ColBERT achieve state-of-the-art effectiveness by representing documents as sets of token-level vectors and scoring via MaxSim, but their high computational cost limits scalability to large corpora. Existing approximate methods face fundamental bottlenecks: centroid interaction matrix approaches require computing a full matrix at every query and rely on GPU-accelerated clustering, while data-oblivious compression methods yield unstable recall that requires repeated compensation. We propose SIMQ (Single graph Index for Multi-vector Query), a framework that bridges single-vector graph indices and multi-vector retrieval through data-aware sampling-based clustering and per-token graph navigation, simultaneously bypassing all aforementioned bottlenecks. SIMQ organizes all token vectors into fine-grained clusters via data-aware sampling, builds a single graph index over cluster centroids independently of PLAID&#x27;s residual representation, and approximates the MaxSim score through per-token graph search without materializing any interaction matrix or relying on GPU acceleration. We provide theoretical analysis showing that, under a manifold assumption and successful cell retrieval, data-aware partitioning has a smaller expected approximation error than a data-oblivious partition. Building on this foundation, SIMQ+ further introduces count-based scoring and a dynamic candidate set to improve robustness across varying query conditions. Experiments on five benchmarks compare recall, throughput, and construction time against several baselines, primarily on CPU; large-scale PLAID k-means centroids are built on a separate GPU machine. SIMQ has been integrated into VSAG, an Ant Group&#x27;s open-source vector search library.</p>
+    </details>
+    <div class="hits"><span>工业信号：throughput</span><span>公司：ant group</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.22079">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.22079">PDF</a><span class="who">under ICDE 2027 review, 13 pages</span></p>
+  </div>
+</article>
 <footer>
   <p><a href="feed.xml">RSS</a> · <a href="archive.html">历史</a></p>
   <p>数据来自 arXiv，按本地规则打分排序。分数只是排序依据，不代表论文质量。</p>
