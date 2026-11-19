@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日推荐系统论文 · 2026-11-19</title>
+<style>
+:root {
+  --bg: #f5f6f4;
+  --ink: #1a2024;
+  --muted: #5e6b70;
+  --rule: #dcdfda;
+  --accent: #22516b;
+  --flag: #8a4b1f;
+  --surface: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181a;
+    --ink: #e6e8e4;
+    --muted: #939c9f;
+    --rule: #2b3134;
+    --accent: #7fb3d0;
+    --flag: #d39560;
+    --surface: #1b2023;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding: 2rem 1.15rem 4rem; }
+header { padding-bottom: 1.25rem; border-bottom: 2px solid var(--ink); }
+.date { font-size: 2.6rem; line-height: 1; font-weight: 600; letter-spacing: -0.02em; }
+.tally { margin-top: 0.5rem; color: var(--muted); font-size: 0.9rem; }
+h2 {
+  font-size: 0.95rem; font-weight: 600; margin: 2.25rem 0 0.25rem;
+  padding-bottom: 0.35rem; border-bottom: 1px solid var(--rule);
+}
+.paper { padding: 1.4rem 0; border-bottom: 1px solid var(--rule); display: flex; gap: 0.9rem; }
+.mark { flex: 0 0 2.1rem; padding-top: 0.35rem; text-align: right; }
+.mark .num { font-size: 1.05rem; font-weight: 600; color: var(--accent); }
+.mark .sub { display: block; font-size: 0.7rem; color: var(--muted); }
+.body { flex: 1 1 auto; min-width: 0; }
+.title {
+  font-family: Charter, "Iowan Old Style", Georgia, "Songti SC", serif;
+  font-size: 1.16rem; line-height: 1.35; margin: 0 0 0.35rem;
+}
+.title a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+.title a:hover, .title a:focus { border-bottom-color: var(--accent); }
+.who { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
+.zh { margin: 0.5rem 0; }
+.why { margin: 0.4rem 0; color: var(--muted); font-size: 0.92rem; }
+.flag { color: var(--flag); font-weight: 600; }
+.hits { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+.hits span { display: inline-block; margin-right: 0.7rem; white-space: nowrap; }
+.links { font-size: 0.85rem; margin-top: 0.6rem; }
+.links a { color: var(--accent); text-decoration: none; margin-right: 0.9rem; }
+.links a:hover { text-decoration: underline; }
+details { margin-top: 0.6rem; }
+summary { cursor: pointer; color: var(--muted); font-size: 0.88rem; }
+details .abs { margin-top: 0.5rem; font-size: 0.92rem; color: var(--muted); }
+.empty { padding: 2.5rem 0; color: var(--muted); }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
+  font-size: 0.85rem; color: var(--muted); }
+footer a { color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="date">2026-11-19</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 58 篇，达到阈值 4 篇</div>
+</header>
+<h2>今天读这些</h2><article class="paper">
+  <div class="mark">
+    <span class="num">1</span>
+    <span class="sub">13 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.24283">X-split Argus: Learning Reusable History Tokens for Efficient CTR Prediction</a></h3>
+    <p class="who">Alexander Ploshkin、Nikita Stepanov、Alexey Pismenny、Viacheslav Ovchinnikov 等 5 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Accurate click-through rate (CTR) prediction depends on user representations that capture both persistent preferences and recent intent, yet processing extensive behavioral histories for every ranking request is costly under production compute and latency constraints. We present X-split ARGUS, a framework for ad ranking whose history compressor and online ranker are trained end to end. The compressor encodes past interactions into a compact set of tokens that are computed offline and reused across candidates, while the online ranker scores ads through cross-attention to these tokens and representations of recent events. Training combines an autoregressive loss for click feedback with distillation of candidate-specific click logits from a larger teacher that scores each candidate using the uncompressed history. The number of compressed history tokens and the length of recent history can be adjusted to fit serving compute and latency budgets. Offline evaluation shows a 0.81% relative reduction in normalized entropy (NE) compared with the production baseline. Deployment in a large-scale real-time bidding system increases online inference cost by 15% relative to the production baseline. An online A/B test against this baseline yields relative gains of 4.65% in a business metric reflecting the monetary value of conversions generated for advertisers and 2.96% in clicks.</p>
+    </details>
+    <div class="hits"><span>工业信号：a/b test、inference cost、latency、online a/b、serving</span><span>主题：ctr prediction</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.24283">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.24283">PDF</a><span class="who">Alexander Ploshkin, Nikita Stepanov and Alexey Pismenny contributed equally to this work</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">2</span>
+    <span class="sub">9 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.24006">MARS Technical Report</a></h3>
+    <p class="who">Tong Liu、Chaoqun Hou、Longxiang Xiong、Junhong Lou 等 17 人</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Modern industrial recommender systems use multi-stage cascades--retrieval, pre-ranking, ranking, and re-ranking--to narrow millions of candidates to a personalized list. While each stage deploys sophisticated models, pipeline-level decisions on channel activation, quotas, model selection, and score fusion remain engineer-tuned and user-agnostic within each scenario. This report presents MARS (Multi-stage Agentic Recommendation System), extending personalization from individual-stage predictions to full pipeline orchestration. A near-line agent built on fine-tuned Qwen3-0.6B generates per-user configurations--a seven-dimensional action covering pipeline mode, retrieval quotas, model selection, fusion weights, and reranker settings--from a constrained action space. Configurations are validated, cached, and consumed asynchronously; the cascade never waits for LLM inference. Schema checks, fallbacks, and a kill switch ensure serving safety. The policy is trained in three stages: Confidence-aware SFT distills schema-valid generation from a teacher model; Format-Anchored Preference Optimization (FAPO) learns action preferences via ActionMask with posterior weighting; Group Relative Policy Optimization (GRPO) refines the policy through Sandbox replay with a frozen reward model, without exposing exploratory actions to live traffic. Two-week A/B tests across five Taobao scenarios with over ten million daily users show positive gains on all key metrics. The largest reach +5.22% V2P and +7.34% GMV, with positive CTR lifts on both click surfaces. About 20% of requests use a lightweight Minimal mode, and deployment shows 12 ms lower mean serving latency versus production.</p>
+    </details>
+    <div class="hits"><span>工业信号：latency、serving</span><span>公司：taobao</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.24006">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.24006">PDF</a><span class="who">46 pages, 5 figures</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">3</span>
+    <span class="sub">8 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.23910">MLE Agents: Autonomous ML Engineering in Large-scale Recommendation Systems</a></h3>
+    <p class="who">Matthew Li、Albert Liang、Dilip Raj</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">The typical workflow for improving large-scale ranking and recommendation models is slow and tedious: an engineer forms a hypothesis, implements it as a code change, trains a model, and evaluates it both offline and online, often relying on their own intuition and experience along the way. Autonomous LLM agents promise to speed this up by running the loop on their own, but it is still unclear whether they can do this in industry-scale systems rather than on benchmarks or small proxy tasks. We build human-on-the-loop machine learning engineer (MLE) agents that propose, implement, train, and evaluate model changes on large-scale search rankers. Engineers retain control over objective design, search direction, and final-model review. We identify three obstacles that make this industry setting challenging: feedback takes hours per experiment, offline metrics do not always predict online impact, and improvements saturate after the early wins. We address these with parallel training runs, an objective calibrated to match online impact, and careful context engineering. In one campaign, the system ran 1,097 completed candidate experiments and accepted 325, a 29.6\% acceptance rate compared with 15.6\% in the earlier campaign under a different objective and search constraint. Its best model increases search volume by 0.23\% in an A/B test of large scale. Several improvements were architectural changes the team had never tried, drawn from the broader industry and literature, suggesting that MLE agents can explore regions of the design space that human intuition overlooks. We find that the design of the harness around the model matters: intuition suggests that a stronger underlying model is enough, but in our experience, the design of the loop around it is just as critical. More broadly, our work shows that autonomous agents can do real machine-learning engineering in industry-scale systems.</p>
+    </details>
+    <div class="hits"><span>工业信号：a/b test</span><span>会议：neurips</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.23910">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.23910">PDF</a><span class="who">NeurIPS 2026 AutoMLR Workshop (oral)</span></p>
+  </div>
+</article><h2>可能相关</h2><article class="paper">
+  <div class="mark">
+    <span class="num">4</span>
+    <span class="sub">5 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.24757">Variance-Optimal Counterfactual Policy Design for Sample-Efficient Online A/B Testing</a></h3>
+    <p class="who">Shashank Gupta、Subhadeep Maji</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Online A/B testing is the standard approach for evaluating changes to user-facing systems, such as a new recommendation or ranking policy, before deployment. While the difference-in-means estimator of a standard A/B test is unbiased, it often suffers from high variance. When the treatment and production policies choose the same actions with similar probabilities, the resulting observations can add noise while providing little information about the difference between the policies. Consequently, A/B tests can require large amounts of traffic and long durations to detect small treatment effects. Existing variance-reduction methods mainly improve the estimator after the data-collection scheme has been fixed, and recent overlap-aware designs only optimize a single traffic split between the two policies; thereby, they cannot direct traffic to the actions on which the policies disagree. In this paper, we jointly optimize how actions are sampled and how the resulting observations are used to estimate the treatment effect. Our contributions are two-fold. First, building on pairwise off-policy evaluation, we derive the variance-optimal action-level logging policy for estimating the average treatment effect between two policies, which has a closed-form solution for any fixed control variate. Second, we use historical logs to jointly optimize the logging policy and a control variate to further reduce variance. Our experimental results in simulated policy A/B tests show that our designs estimate the average treatment effect more accurately than existing variance reduction methods on every evaluated setting, while generally improving statistical power and reducing how often the worse policy is selected. As a result, our designs enable practitioners to reach reliable deployment decisions with considerably less online traffic.</p>
+    </details>
+    <div class="hits"><span>工业信号：a/b test、online a/b</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.24757">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.24757">PDF</a></p>
+  </div>
+</article>
+<footer>
+  <p><a href="feed.xml">RSS</a> · <a href="archive.html">历史</a></p>
+  <p>数据来自 arXiv，按本地规则打分排序。分数只是排序依据，不代表论文质量。</p>
+</footer>
+</div>
+</body>
+</html>
