@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-11-19</title>
+<title>每日推荐系统论文 · 2026-11-20</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,72 +76,56 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-11-19</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 58 篇，达到阈值 4 篇</div>
+  <div class="date">2026-11-20</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 58 篇，达到阈值 3 篇</div>
 </header>
 <h2>今天读这些</h2><article class="paper">
   <div class="mark">
     <span class="num">1</span>
-    <span class="sub">13 分</span>
+    <span class="sub">16 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.24283">X-split Argus: Learning Reusable History Tokens for Efficient CTR Prediction</a></h3>
-    <p class="who">Alexander Ploshkin、Nikita Stepanov、Alexey Pismenny、Viacheslav Ovchinnikov 等 5 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.25659">DNA: Unlocking Depth Scaling in CTR Models</a></h3>
+    <p class="who">Caiyuan Li、Wenjie Wu、Yuheng Huang、Xiao Zhou 等 17 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Accurate click-through rate (CTR) prediction depends on user representations that capture both persistent preferences and recent intent, yet processing extensive behavioral histories for every ranking request is costly under production compute and latency constraints. We present X-split ARGUS, a framework for ad ranking whose history compressor and online ranker are trained end to end. The compressor encodes past interactions into a compact set of tokens that are computed offline and reused across candidates, while the online ranker scores ads through cross-attention to these tokens and representations of recent events. Training combines an autoregressive loss for click feedback with distillation of candidate-specific click logits from a larger teacher that scores each candidate using the uncompressed history. The number of compressed history tokens and the length of recent history can be adjusted to fit serving compute and latency budgets. Offline evaluation shows a 0.81% relative reduction in normalized entropy (NE) compared with the production baseline. Deployment in a large-scale real-time bidding system increases online inference cost by 15% relative to the production baseline. An online A/B test against this baseline yields relative gains of 4.65% in a business metric reflecting the monetary value of conversions generated for advertisers and 2.96% in clicks.</p>
+      <p class="abs">Long user behavior sequences are among the strongest signals for click-through rate (CTR) prediction. Cross-attention makes these sequences practical for industrial ranking by keeping compute linear in sequence length. Yet the gains from stacking cross-attention layers taper off: on Taobao search, growing a cross-attention stack from 16 to 28 layers adds only 0.02 percentage points (pt) of AUC. We argue that the key-value side is the bottleneck. Each layer projects the same behavior sequence into keys and values, so adding depth gives the model more reads of a fixed sequence. We propose DNA (Dual-stream Nexus Attention), which lets the sequence itself evolve with depth. At each layer, the request representation (the search query, user features and scene) first reads the sequence. Each behavior token then attends to the updated request representation and uses what it reads to update itself, so the next layer reads a sequence shaped by the current request. The update runs once per request, all candidates share the resulting sequence, and both the reads and the update keep linear complexity in sequence length. At comparable forward FLOPs, DNA improves AUC over cross-attention stacks by 0.08 to 0.26 pt and keeps improving in the depth range where those stacks level off. DNA-4 is deployed in Taobao search. In an online A/B test against the production model, it improves CTR by 0.8% and GMV by 0.5%.</p>
     </details>
-    <div class="hits"><span>工业信号：a/b test、inference cost、latency、online a/b、serving</span><span>主题：ctr prediction</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.24283">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.24283">PDF</a><span class="who">Alexander Ploshkin, Nikita Stepanov and Alexey Pismenny contributed equally to this work</span></p>
+    <div class="hits"><span>工业信号：a/b test、deployed、online a/b</span><span>公司：taobao</span><span>主题：behavior sequence</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.25659">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.25659">PDF</a><span class="who">10 pages, 5 figures</span></p>
   </div>
 </article><article class="paper">
   <div class="mark">
     <span class="num">2</span>
-    <span class="sub">9 分</span>
+    <span class="sub">14 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.24006">MARS Technical Report</a></h3>
-    <p class="who">Tong Liu、Chaoqun Hou、Longxiang Xiong、Junhong Lou 等 17 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.26531">Cost-Aware Agentic Feature Optimization System for Fleet-Scale Ranking Models</a></h3>
+    <p class="who">Chang Yang、Yao Xuan、Wendan Yan、Nhat Le 等 9 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Modern industrial recommender systems use multi-stage cascades--retrieval, pre-ranking, ranking, and re-ranking--to narrow millions of candidates to a personalized list. While each stage deploys sophisticated models, pipeline-level decisions on channel activation, quotas, model selection, and score fusion remain engineer-tuned and user-agnostic within each scenario. This report presents MARS (Multi-stage Agentic Recommendation System), extending personalization from individual-stage predictions to full pipeline orchestration. A near-line agent built on fine-tuned Qwen3-0.6B generates per-user configurations--a seven-dimensional action covering pipeline mode, retrieval quotas, model selection, fusion weights, and reranker settings--from a constrained action space. Configurations are validated, cached, and consumed asynchronously; the cascade never waits for LLM inference. Schema checks, fallbacks, and a kill switch ensure serving safety. The policy is trained in three stages: Confidence-aware SFT distills schema-valid generation from a teacher model; Format-Anchored Preference Optimization (FAPO) learns action preferences via ActionMask with posterior weighting; Group Relative Policy Optimization (GRPO) refines the policy through Sandbox replay with a frozen reward model, without exposing exploratory actions to live traffic. Two-week A/B tests across five Taobao scenarios with over ten million daily users show positive gains on all key metrics. The largest reach +5.22% V2P and +7.34% GMV, with positive CTR lifts on both click surfaces. About 20% of requests use a lightweight Minimal mode, and deployment shows 12 ms lower mean serving latency versus production.</p>
+      <p class="abs">Large Web platforms operate large fleets of ranking models, each selecting features from a shared pool of tens of thousands. We present an end-to-end agentic system that optimizes features across the fleet under resource constraints shared across models and those set per model, such as feature pipeline cost and serving throughput (QPS), respectively. In this system, LLM agents propose hypotheses, and deterministic tools execute experiments and verify them. For each model, an LLM generates and shortlists cross features from a combinatorial candidate space, and all features are then ranked by several importance methods. Feature blending mixes these rankings into a single selection, using Pareto fronts across tasks for multi-task models. An LLM Researcher agent then tunes the feature selection in 10--25 asynchronous trials under resource caps, and a trimming step keeps the pipeline cost within budget. Across production models, the system improves normalized entropy by 0.31% on average within each model&#x27;s budget, and the trimming step cuts pipeline cost by 2.3% with no regression beyond measurement noise. The optimized models were launched, and in online A/B tests they improved a primary online metric by 0.20%.</p>
     </details>
-    <div class="hits"><span>工业信号：latency、serving</span><span>公司：taobao</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.24006">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.24006">PDF</a><span class="who">46 pages, 5 figures</span></p>
-  </div>
-</article><article class="paper">
-  <div class="mark">
-    <span class="num">3</span>
-    <span class="sub">8 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.23910">MLE Agents: Autonomous ML Engineering in Large-scale Recommendation Systems</a></h3>
-    <p class="who">Matthew Li、Albert Liang、Dilip Raj</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">The typical workflow for improving large-scale ranking and recommendation models is slow and tedious: an engineer forms a hypothesis, implements it as a code change, trains a model, and evaluates it both offline and online, often relying on their own intuition and experience along the way. Autonomous LLM agents promise to speed this up by running the loop on their own, but it is still unclear whether they can do this in industry-scale systems rather than on benchmarks or small proxy tasks. We build human-on-the-loop machine learning engineer (MLE) agents that propose, implement, train, and evaluate model changes on large-scale search rankers. Engineers retain control over objective design, search direction, and final-model review. We identify three obstacles that make this industry setting challenging: feedback takes hours per experiment, offline metrics do not always predict online impact, and improvements saturate after the early wins. We address these with parallel training runs, an objective calibrated to match online impact, and careful context engineering. In one campaign, the system ran 1,097 completed candidate experiments and accepted 325, a 29.6\% acceptance rate compared with 15.6\% in the earlier campaign under a different objective and search constraint. Its best model increases search volume by 0.23\% in an A/B test of large scale. Several improvements were architectural changes the team had never tried, drawn from the broader industry and literature, suggesting that MLE agents can explore regions of the design space that human intuition overlooks. We find that the design of the harness around the model matters: intuition suggests that a stronger underlying model is enough, but in our experience, the design of the loop around it is just as critical. More broadly, our work shows that autonomous agents can do real machine-learning engineering in industry-scale systems.</p>
-    </details>
-    <div class="hits"><span>工业信号：a/b test</span><span>会议：neurips</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.23910">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.23910">PDF</a><span class="who">NeurIPS 2026 AutoMLR Workshop (oral)</span></p>
+    <div class="hits"><span>工业信号：launched、online a/b、qps、serving、throughput</span><span>主题：multi-task</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.26531">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.26531">PDF</a></p>
   </div>
 </article><h2>可能相关</h2><article class="paper">
   <div class="mark">
-    <span class="num">4</span>
-    <span class="sub">5 分</span>
+    <span class="num">3</span>
+    <span class="sub">6 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.24757">Variance-Optimal Counterfactual Policy Design for Sample-Efficient Online A/B Testing</a></h3>
-    <p class="who">Shashank Gupta、Subhadeep Maji</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.26096">From Sessions to Serving: Integrating LLM-Based Embeddings into Retrieval for Production Content Recommendation</a></h3>
+    <p class="who">Zhixiong Hu、Meng Li、Maggie Zhang、Deborshi Goswami 等 6 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Online A/B testing is the standard approach for evaluating changes to user-facing systems, such as a new recommendation or ranking policy, before deployment. While the difference-in-means estimator of a standard A/B test is unbiased, it often suffers from high variance. When the treatment and production policies choose the same actions with similar probabilities, the resulting observations can add noise while providing little information about the difference between the policies. Consequently, A/B tests can require large amounts of traffic and long durations to detect small treatment effects. Existing variance-reduction methods mainly improve the estimator after the data-collection scheme has been fixed, and recent overlap-aware designs only optimize a single traffic split between the two policies; thereby, they cannot direct traffic to the actions on which the policies disagree. In this paper, we jointly optimize how actions are sampled and how the resulting observations are used to estimate the treatment effect. Our contributions are two-fold. First, building on pairwise off-policy evaluation, we derive the variance-optimal action-level logging policy for estimating the average treatment effect between two policies, which has a closed-form solution for any fixed control variate. Second, we use historical logs to jointly optimize the logging policy and a control variate to further reduce variance. Our experimental results in simulated policy A/B tests show that our designs estimate the average treatment effect more accurately than existing variance reduction methods on every evaluated setting, while generally improving statistical power and reducing how often the worse policy is selected. As a result, our designs enable practitioners to reach reliable deployment decisions with considerably less online traffic.</p>
+      <p class="abs">Personalized content recommendation on large marketplace websites must reconcile heterogeneous candidate content (e.g., customer stories, product pages, industry pages, and learning content) with sparse, fast-changing user behavior, placing increasing demands on the retrieval stage to represent user interest well, not just the downstream ranking stage. We present LSER (LLM Session Embedding Retrieval), a production content recommendation system for autodesk.com that derives session- and history-level embeddings from a pretrained large language model (LLM) and adds them as auxiliary user-side features in the retrieval-stage user tower alongside existing learned sequence encoders. To keep user-side embeddings fresh under real-time behavior, we build a nearline serving path that asynchronously refreshes sequential and LLM-derived user vectors for our main content recommendation server. We validate the incremental value of the LLM features through an ablation study across our full multi-content-type catalog. Our results indicate that integrating LLM-derived embeddings as additional retrieval signals, together with production-grade nearline serving, is technically feasible and can improve model performances.</p>
     </details>
-    <div class="hits"><span>工业信号：a/b test、online a/b</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.24757">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.24757">PDF</a></p>
+    <div class="hits"><span>工业信号：serving</span><span>主题：retrieval stage</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.26096">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.26096">PDF</a></p>
   </div>
 </article>
 <footer>
