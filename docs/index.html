@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-11-20</title>
+<title>每日推荐系统论文 · 2026-11-21</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,58 +76,10 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-11-20</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 58 篇，达到阈值 3 篇</div>
+  <div class="date">2026-11-21</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 0 篇，达到阈值 0 篇</div>
 </header>
-<h2>今天读这些</h2><article class="paper">
-  <div class="mark">
-    <span class="num">1</span>
-    <span class="sub">16 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.25659">DNA: Unlocking Depth Scaling in CTR Models</a></h3>
-    <p class="who">Caiyuan Li、Wenjie Wu、Yuheng Huang、Xiao Zhou 等 17 人</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Long user behavior sequences are among the strongest signals for click-through rate (CTR) prediction. Cross-attention makes these sequences practical for industrial ranking by keeping compute linear in sequence length. Yet the gains from stacking cross-attention layers taper off: on Taobao search, growing a cross-attention stack from 16 to 28 layers adds only 0.02 percentage points (pt) of AUC. We argue that the key-value side is the bottleneck. Each layer projects the same behavior sequence into keys and values, so adding depth gives the model more reads of a fixed sequence. We propose DNA (Dual-stream Nexus Attention), which lets the sequence itself evolve with depth. At each layer, the request representation (the search query, user features and scene) first reads the sequence. Each behavior token then attends to the updated request representation and uses what it reads to update itself, so the next layer reads a sequence shaped by the current request. The update runs once per request, all candidates share the resulting sequence, and both the reads and the update keep linear complexity in sequence length. At comparable forward FLOPs, DNA improves AUC over cross-attention stacks by 0.08 to 0.26 pt and keeps improving in the depth range where those stacks level off. DNA-4 is deployed in Taobao search. In an online A/B test against the production model, it improves CTR by 0.8% and GMV by 0.5%.</p>
-    </details>
-    <div class="hits"><span>工业信号：a/b test、deployed、online a/b</span><span>公司：taobao</span><span>主题：behavior sequence</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.25659">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.25659">PDF</a><span class="who">10 pages, 5 figures</span></p>
-  </div>
-</article><article class="paper">
-  <div class="mark">
-    <span class="num">2</span>
-    <span class="sub">14 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.26531">Cost-Aware Agentic Feature Optimization System for Fleet-Scale Ranking Models</a></h3>
-    <p class="who">Chang Yang、Yao Xuan、Wendan Yan、Nhat Le 等 9 人</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Large Web platforms operate large fleets of ranking models, each selecting features from a shared pool of tens of thousands. We present an end-to-end agentic system that optimizes features across the fleet under resource constraints shared across models and those set per model, such as feature pipeline cost and serving throughput (QPS), respectively. In this system, LLM agents propose hypotheses, and deterministic tools execute experiments and verify them. For each model, an LLM generates and shortlists cross features from a combinatorial candidate space, and all features are then ranked by several importance methods. Feature blending mixes these rankings into a single selection, using Pareto fronts across tasks for multi-task models. An LLM Researcher agent then tunes the feature selection in 10--25 asynchronous trials under resource caps, and a trimming step keeps the pipeline cost within budget. Across production models, the system improves normalized entropy by 0.31% on average within each model&#x27;s budget, and the trimming step cuts pipeline cost by 2.3% with no regression beyond measurement noise. The optimized models were launched, and in online A/B tests they improved a primary online metric by 0.20%.</p>
-    </details>
-    <div class="hits"><span>工业信号：launched、online a/b、qps、serving、throughput</span><span>主题：multi-task</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.26531">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.26531">PDF</a></p>
-  </div>
-</article><h2>可能相关</h2><article class="paper">
-  <div class="mark">
-    <span class="num">3</span>
-    <span class="sub">6 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.26096">From Sessions to Serving: Integrating LLM-Based Embeddings into Retrieval for Production Content Recommendation</a></h3>
-    <p class="who">Zhixiong Hu、Meng Li、Maggie Zhang、Deborshi Goswami 等 6 人</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Personalized content recommendation on large marketplace websites must reconcile heterogeneous candidate content (e.g., customer stories, product pages, industry pages, and learning content) with sparse, fast-changing user behavior, placing increasing demands on the retrieval stage to represent user interest well, not just the downstream ranking stage. We present LSER (LLM Session Embedding Retrieval), a production content recommendation system for autodesk.com that derives session- and history-level embeddings from a pretrained large language model (LLM) and adds them as auxiliary user-side features in the retrieval-stage user tower alongside existing learned sequence encoders. To keep user-side embeddings fresh under real-time behavior, we build a nearline serving path that asynchronously refreshes sequential and LLM-derived user vectors for our main content recommendation server. We validate the incremental value of the LLM features through an ablation study across our full multi-content-type catalog. Our results indicate that integrating LLM-derived embeddings as additional retrieval signals, together with production-grade nearline serving, is technically feasible and can improve model performances.</p>
-    </details>
-    <div class="hits"><span>工业信号：serving</span><span>主题：retrieval stage</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.26096">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.26096">PDF</a></p>
-  </div>
-</article>
+<p class="empty">今天没有达到阈值的论文。周末和节假日 arXiv 不发布新论文，工作日出现这种情况可以考虑调低阈值。</p>
 <footer>
   <p><a href="feed.xml">RSS</a> · <a href="archive.html">历史</a></p>
   <p>数据来自 arXiv，按本地规则打分排序。分数只是排序依据，不代表论文质量。</p>
