@@ -3,9 +3,29 @@
 <channel>
   <title>每日推荐系统论文</title>
   <link>https://arxiv.org/list/cs.IR/new</link>
-  <description>每日筛选的工业推荐系统论文（2026-11-21）</description>
+  <description>每日筛选的工业推荐系统论文（2026-11-24）</description>
   <language>zh-cn</language>
-  <lastBuildDate>Sat, 21 Nov 2026 08:32:19 +0000</lastBuildDate>
-
+  <lastBuildDate>Tue, 24 Nov 2026 11:21:44 +0000</lastBuildDate>
+  <item>
+    <title>From Head to Tail: LLM-Augmented Sequential Recommendation and Trade-off Optimization</title>
+    <link>https://arxiv.org/abs/2611.31052</link>
+    <guid isPermaLink="true">https://arxiv.org/abs/2611.31052</guid>
+    <pubDate>Tue, 24 Nov 2026 11:21:44 +0000</pubDate>
+    <description>规则分 11 — Recommender systems exhibit popularity bias, often under-serving long-tail and cold-start items with sparse interaction data. We propose a group-specific data augmentation approach that leverages LLMs to generate synthetic interactions, formulated as a constrained optimization problem, maximizing group-specific NDCG@20 and coverage while bounding overall NDCG@20 degradation within an acceptable threshold. Items are partitioned by interaction frequency to find the optimal augmentation strategy for each group. We further study combining the augmentation across groups simultaneously and find that while individual optimal strategies navigate the multi-group augmentation design, they are not simply additive. We further ablate on the LLM-based augmentation itself, comparing LLM scales, augmentation configuration under token constraints, finding that augmentation quality scales with contextual richness, albeit at a proportionally higher cost. Experiments with SASRec demonstrate the effectiveness of the proposed approach, achieving over 100% and 60% improvement in group-specific NDCG@20 for extreme and regular long-tail items, respectively, on our industrial dataset, and 40%, 25% for MovieLens-32M, while increasing their coverage without significant overall degradation.</description>
+  </item>
+  <item>
+    <title>MTL-MHOL: Predicting Online Conversions under Delayed Feedback and Data Sparsity</title>
+    <link>https://arxiv.org/abs/2611.30648</link>
+    <guid isPermaLink="true">https://arxiv.org/abs/2611.30648</guid>
+    <pubDate>Tue, 24 Nov 2026 11:21:44 +0000</pubDate>
+    <description>规则分 5 — This paper proposes the model-agnostic Multi-Task Learning Multi-Head Online Learning (MTL-MHOL) framework for conversion rate (CVR) prediction. Existing approaches typically address key challenges in CVR prediction, such as delayed feedback and data sparsity, in isolation or lack flexibility and practical applicability. MTL-MHOL adopts a time bucketing approach to account for delayed feedback and combines it with multi-task learning of an auxiliary task to mitigate data sparsity. We evaluate the framework on proprietary datasets from a private company and on a public dataset from Criteo. MTL-MHOL matches or outperforms all benchmark models in terms of Negative Log-Likelihood (NLL) and Relative Cross Entropy (RCE), and it correctly captures temporal trends in the data using an MLP backbone, while maintaining strong performance with a DeepFM backbone. In particular, MTL-MHOL matches the performance of the advanced delayed-feedback method FSIW, outperforms the entire-space approach ESMM by 21.5% in RCE, and achieves up to 81% lift in RCE compared to the best-performing classical benchmark.</description>
+  </item>
+  <item>
+    <title>Post-Training Agents for Long-Document Reasoning</title>
+    <link>https://arxiv.org/abs/2611.30090</link>
+    <guid isPermaLink="true">https://arxiv.org/abs/2611.30090</guid>
+    <pubDate>Tue, 24 Nov 2026 11:21:44 +0000</pubDate>
+    <description>规则分 5 — Professional documents are a long-context workload that retrieval-style benchmarks do not capture. In a ten-domain enterprise collection, a task&#x27;s evidence is spread across a source document of median length 27 pages (mean 48.8, maximum 873); a third of tasks rest mainly on charts, drawings, and maps; and 70.9% require two or more reasoning hops. We post-train Kimi-K2.7, an open-weight foundation model, at its full context window on 1,465 expert-authored tasks with atomic rubrics from that collection, training rank-32 adapters with one round of privileged-context on-policy self-distillation followed by two rounds of rubric-reward reinforcement learning. We render each PDF as text for training and as extracted text plus selected page images at evaluation. The smoothed RL training reward rises from 0.37 in the first tenth of the run to 0.67 in the last. On the 100-task GDP.pdf holdout, served in a 262,144-token window, strict pass (all rubric criteria met) more than doubles after the second round, from 11.0% to 24.5%, with gains across input lengths up to 240K tokens. Mean tokens generated stay flat (9,803 to 9,733), so the gain does not come from longer outputs. GPT-5.6 Sol&#x27;s leaderboard strict pass is 30.7% at a measured 3,422 tokens. On 220 out-of-domain GDPval tasks, where the model runs as a long-horizon tool-using agent, mean rubric reward rises from 0.571 to 0.746 after the third round and zero-credit tasks fall from 54 to 10, while messages per task fall 18%, from 70.9 to 58.2. In paired trajectories, the third round replaces a context-thrashing retry loop with one up-front check of all sources, and verification extends from checking that files exist to checking what they contain. We argue that long-context evaluation of agents should report accuracy jointly with tokens and turns, and that datasets of long documents should ship text and image renderings alongside each PDF.</description>
+  </item>
 </channel>
 </rss>
