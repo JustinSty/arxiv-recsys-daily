@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-11-24</title>
+<title>每日推荐系统论文 · 2026-11-25</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,56 +76,104 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-11-24</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 62 篇，达到阈值 3 篇</div>
+  <div class="date">2026-11-25</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 67 篇，达到阈值 6 篇</div>
 </header>
 <h2>今天读这些</h2><article class="paper">
   <div class="mark">
     <span class="num">1</span>
-    <span class="sub">11 分</span>
+    <span class="sub">12 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.31052">From Head to Tail: LLM-Augmented Sequential Recommendation and Trade-off Optimization</a></h3>
-    <p class="who">Adeep Hande、Shaghayegh Agah、Neeraj Sharma、Karina Halevy 等 5 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.32590">LazUnirec: Unifying Retrieval and Ranking in Multi-scenario Industrial Recommendation</a></h3>
+    <p class="who">Xiaodong Li、Junfeng Zhang、Shichao Nie、Ziyue Guo 等 12 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Recommender systems exhibit popularity bias, often under-serving long-tail and cold-start items with sparse interaction data. We propose a group-specific data augmentation approach that leverages LLMs to generate synthetic interactions, formulated as a constrained optimization problem, maximizing group-specific NDCG@20 and coverage while bounding overall NDCG@20 degradation within an acceptable threshold. Items are partitioned by interaction frequency to find the optimal augmentation strategy for each group. We further study combining the augmentation across groups simultaneously and find that while individual optimal strategies navigate the multi-group augmentation design, they are not simply additive. We further ablate on the LLM-based augmentation itself, comparing LLM scales, augmentation configuration under token constraints, finding that augmentation quality scales with contextual richness, albeit at a proportionally higher cost. Experiments with SASRec demonstrate the effectiveness of the proposed approach, achieving over 100% and 60% improvement in group-specific NDCG@20 for extreme and regular long-tail items, respectively, on our industrial dataset, and 40%, 25% for MovieLens-32M, while increasing their coverage without significant overall degradation.</p>
+      <p class="abs">Modern industrial recommendation systems typically divide retrieval and ranking into two separate cascaded stages, leading to inconsistent optimization objectives, redundant encoding of user sequences, and a waste of computational resources. Previous efforts have investigated using Transformers to model both retrieval and ranking simultaneously. However, these studies still face two major limitations: (1) Since retrieval and ranking share a single Transformer backbone, the gradient conflict arises when the gradient directions of the two tasks are inconsistent. (2) When gradient conflict occurs, the model cannot determine a reliable direction for gradient updates. To this end, we propose a Unified Retrieval and Ranking approach for Multi-scenario Industrial Recommendation, termed as LazUnirec. Specifically, we construct task-shared and task-private parameters on the Transformer backbone to mitigate the gradient conflict. Wherein, for the attention components, we propose LoRA-modulated attention, enabling retrieval and ranking to share attention parameters while preserving task-private parameters. For the feed-forward networks (FFN), we present task-adaptive sparse mixture-of-experts (MoE) to mitigate gradient conflict by constructing task-shared and task-private experts. Moreover, we propose an uncertainty estimation that evaluates the gradient reliability of the retrieval and ranking, thereby guiding the model toward a more reliable gradient update direction when gradient conflict occurs. In addition, knowledge distillation from ranking to retrieval further enables cross-task knowledge transfer. Extensive offline experiments and online A/B testing demonstrate the effectiveness and superiority of LazUnirec. LazUnirec has been deployed in online multi-scenario industrial recommendation system and currently delivers significant gains for the platform.</p>
     </details>
-    <div class="hits"><span>工业信号：serving</span><span>主题：sequential recommendation</span><span>会议：cikm</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.31052">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.31052">PDF</a><span class="who">7 pages, 4 figures, 7 tables. Accepted at GRAIL 2026: Workshop on Generative, Retrieval-augmented, and Agentic Intelligence for Personalization, held at CIKM 2026</span></p>
+    <div class="hits"><span>工业信号：deployed、online a/b</span><span>主题：gradient conflict</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.32590">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.32590">PDF</a></p>
   </div>
-</article><h2>可能相关</h2><article class="paper">
+</article><article class="paper">
   <div class="mark">
     <span class="num">2</span>
-    <span class="sub">5 分</span>
+    <span class="sub">9 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.30648">MTL-MHOL: Predicting Online Conversions under Delayed Feedback and Data Sparsity</a></h3>
-    <p class="who">Mario Tejera Vicente、Eva Hagen、Emma van Breukelen、Quinten van de Vijver 等 5 人</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.32125">LARF: Learning-aligned Reasoning Framework for Search Relevance</a></h3>
+    <p class="who">Tian Tang、Guo Chen、Reed Li、Hao Wang 等 7 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">This paper proposes the model-agnostic Multi-Task Learning Multi-Head Online Learning (MTL-MHOL) framework for conversion rate (CVR) prediction. Existing approaches typically address key challenges in CVR prediction, such as delayed feedback and data sparsity, in isolation or lack flexibility and practical applicability. MTL-MHOL adopts a time bucketing approach to account for delayed feedback and combines it with multi-task learning of an auxiliary task to mitigate data sparsity. We evaluate the framework on proprietary datasets from a private company and on a public dataset from Criteo. MTL-MHOL matches or outperforms all benchmark models in terms of Negative Log-Likelihood (NLL) and Relative Cross Entropy (RCE), and it correctly captures temporal trends in the data using an MLP backbone, while maintaining strong performance with a DeepFM backbone. In particular, MTL-MHOL matches the performance of the advanced delayed-feedback method FSIW, outperforms the entire-space approach ESMM by 21.5% in RCE, and achieves up to 81% lift in RCE compared to the best-performing classical benchmark.</p>
+      <p class="abs">Query-document relevance estimation is a core component of AI-native search systems, where a model must assess whether retrieved documents satisfy users&#x27; information needs under complex, multi-dimensional criteria. However, directly applying large language models (LLMs) to this task remains challenging because conventional supervised fine-tuning (SFT) provides limited supervision for domain-specific judgment rationales, while standard trajectory-level reinforcement learning (RL) objectives do not explicitly enforce margin separation among adjacent ordinal relevance labels. Moreover, although such reasoning can be useful during training, chain-of-thought (CoT) reasoning is impractical for latency-sensitive online ranking. These challenges make it difficult to resolve ambiguous decision boundaries. We propose a three-stage framework LARF (Learning-Aligned Reasoning Framework for Search Relevance): it first performs cold-start SFT on strategically selected samples with multi-agent guided CoT rationales, then applies discriminative GRPO with attribute-wise, list-wise, and rule-consistency rewards together with a margin loss on the terminal relevance token, and finally distills the teacher into a dual-head student whose classification heads are retained for non-autoregressive inference. On a human-annotated web search relevance benchmark with approximately 300K training and 16K test instances, LARF-8B improves six-class classification accuracy by 5.78 percentage points and NDCG by 5.05 points, while the classification-only serving path reduces inference latency by 82.9\%. These results indicate that aligning structured reasoning, terminal decision optimization, and classification-head distillation can provide an effective accuracy--efficiency trade-off for industrial search relevance modeling.</p>
     </details>
-    <div class="hits"><span>主题：cvr prediction、multi-task</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.30648">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.30648">PDF</a><span class="who">To be published in TMLR</span></p>
+    <div class="hits"><span>工业信号：latency、serving</span><span>会议：wsdm</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.32125">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.32125">PDF</a><span class="who">Accepted by WSDM 2027</span></p>
   </div>
 </article><article class="paper">
   <div class="mark">
     <span class="num">3</span>
-    <span class="sub">5 分</span>
+    <span class="sub">9 分</span>
   </div>
   <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.30090">Post-Training Agents for Long-Document Reasoning</a></h3>
-    <p class="who">Sushant Mehta、Logan Ritchie、Edwin Chen</p>
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.31951">User-Adaptive Fusion of Multiple Foundation Models for Recommender Systems</a></h3>
+    <p class="who">Sunwoo Kim、Hyunjin Hwang、Geon Lee、Kyungho Kim 等 5 人</p>
     
     <details>
       <summary>英文摘要</summary>
-      <p class="abs">Professional documents are a long-context workload that retrieval-style benchmarks do not capture. In a ten-domain enterprise collection, a task&#x27;s evidence is spread across a source document of median length 27 pages (mean 48.8, maximum 873); a third of tasks rest mainly on charts, drawings, and maps; and 70.9% require two or more reasoning hops. We post-train Kimi-K2.7, an open-weight foundation model, at its full context window on 1,465 expert-authored tasks with atomic rubrics from that collection, training rank-32 adapters with one round of privileged-context on-policy self-distillation followed by two rounds of rubric-reward reinforcement learning. We render each PDF as text for training and as extracted text plus selected page images at evaluation. The smoothed RL training reward rises from 0.37 in the first tenth of the run to 0.67 in the last. On the 100-task GDP.pdf holdout, served in a 262,144-token window, strict pass (all rubric criteria met) more than doubles after the second round, from 11.0% to 24.5%, with gains across input lengths up to 240K tokens. Mean tokens generated stay flat (9,803 to 9,733), so the gain does not come from longer outputs. GPT-5.6 Sol&#x27;s leaderboard strict pass is 30.7% at a measured 3,422 tokens. On 220 out-of-domain GDPval tasks, where the model runs as a long-horizon tool-using agent, mean rubric reward rises from 0.571 to 0.746 after the third round and zero-credit tasks fall from 54 to 10, while messages per task fall 18%, from 70.9 to 58.2. In paired trajectories, the third round replaces a context-thrashing retry loop with one up-front check of all sources, and verification extends from checking that files exist to checking what they contain. We argue that long-context evaluation of agents should report accuracy jointly with tokens and turns, and that datasets of long documents should ship text and image renderings alongside each PDF.</p>
+      <p class="abs">Can recommender systems benefit from combining a collection of foundation models within and across modalities? While different foundation models may capture complementary aspects of item metadata, we find that naively combining their representations yields only marginal gains over using a single foundation model. We make a key observation: the users who benefit vary across foundation models. Motivated by this observation, we introduce UF2O, a user-adaptive approach for fusing multiple foundation models for recommendation. In a nutshell, UF2O models the contribution of each foundation model as user-specific by maintaining separate recommendation views and adaptively combining their scores for each user. By performing fusion at the score level, UF2O can also fuse heterogeneous foundation models without directly aligning their representation spaces. Extensive experiments that jointly combine four foundation models on four datasets show that UF2O outperforms existing fusion approaches in both static and sequential recommendation settings, with improvements of up to 7% over the strongest fusion baseline. The code, datasets, and supplementary materials for our work are available at https://github.com/kswoo97/UFFO.</p>
     </details>
-    <div class="hits"><span>主题：foundation model</span><span>会议：neurips</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.30090">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.30090">PDF</a><span class="who">Accepted at the Third Workshop on Long-Context Foundation Models (LCFM) at NeurIPS 2026. 14 pages, 2 figures, 7 tables</span></p>
+    <div class="hits"><span>主题：foundation model、sequential recommendation</span><span>会议：wsdm</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.31951">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.31951">PDF</a><span class="who">Published in the WSDM 2027 (Main Track)</span></p>
+  </div>
+</article><h2>可能相关</h2><article class="paper">
+  <div class="mark">
+    <span class="num">4</span>
+    <span class="sub">6 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.32855">Speculative Decoding for Semantic-ID-Based Generative Recommendations</a></h3>
+    <p class="who">Harshal A. Chaudhari</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Generative recommender systems with Semantic IDs (SIDs) represent each item as a short sequence of $L$ discrete tokens and use a sequence model to predict the next item&#x27;s tokens from a user&#x27;s history. Industry-scale deployments typically use these models to retrieve multiple candidates per request with constrained beam search. However, this incurs a fixed cost of $L$ sequential model calls per request, and accuracy degrades as the SID generator becomes less sharp, without a guarantee on how close the output is to the exact top-$K$. Production systems therefore cannot detect degraded retrieval for individual requests. We propose SIDECAR, which uses approximate draft candidates and a tree-attention pass to score the entire draft in a single model call, memory permitting. This pass bounds the probability of every unexplored SID prefix and certifies the exact top-$K$ if the draft contains them. Otherwise, a branch-and-bound fallback expands only the parts of the trie that can still change the output, reaching certification within at most $L$ calls for any draft. Moreover, under a budget of $M$ tokens per call and $Y$ calls, which for $Y = L$ matches the resources of a beam search of width $M$, SIDECAR announces a factor $1 + δ$ within which its list will be exact at every rank. Depending on model sharpness, SIDECAR returns the exact top-$K$ using a fraction of beam search&#x27;s calls or memory. Even when the budget is too small to recover the exact top-$K$, SIDECAR, unlike beam search, reports the announced factor, allowing the serving system to stop early once a quality target or latency limit is reached.</p>
+    </details>
+    <div class="hits"><span>工业信号：latency、serving</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.32855">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.32855">PDF</a><span class="who">33 pages, 19 figures (23 pages main text, appendices A-E follow). Preprint</span></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">5</span>
+    <span class="sub">6 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.31940">MELODI: Similarity-Identity Decoupling for Lightweight Ranking</a></h3>
+    <p class="who">Quoc Phong Nguyen、Vuong Le、Volodymyr Vaskovych、Julien Monteil</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">For latency-constrained candidate ranking, we propose a similarity-identity decoupling framework that separates target-history compatibility from target-only information. We study two orders for computing pooled similarity, similarity-then-pool and pool-then-similarity, and identify linearity of the similarity operator in its history argument, for each fixed target, as sufficient for their equivalence, justifying the cheaper pool-then-similarity form. We instantiate the framework as multi-head efficient lightweight operator for decoupling identity and similarity (MELODI), whose similarity branch combines target-conditioned multi-head history pooling with a single residual-free cross layer that is linear in its pooled-history input and whose identity branch is problem-dependent. On public benchmark datasets, MELODI matches or surpasses the evaluated target-aware and target-agnostic baselines. On two large-scale industrial datasets, its area under the precision-recall curve (AUPRC), normalised discounted cumulative gain (NDCG), and recall values are equal to or higher than those of the evaluated target-aware baselines. Processor measurements show lower latency than the evaluated candidate-conditioned baselines at large candidate counts, further reduced by request-local history reuse.</p>
+    </details>
+    <div class="hits"><span>工业信号：latency</span><span>主题：target-agnostic、target-aware</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.31940">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.31940">PDF</a></p>
+  </div>
+</article><article class="paper">
+  <div class="mark">
+    <span class="num">6</span>
+    <span class="sub">5 分</span>
+  </div>
+  <div class="body">
+    <h3 class="title"><a href="https://arxiv.org/abs/2611.32063">Integral DeltaNet: Improved Linear Attention with Adaptive Memory Integration</a></h3>
+    <p class="who">Junsoo Oh、Jihun Yun、Junhyuck Kim、Hanbaek Lyu</p>
+    
+    <details>
+      <summary>英文摘要</summary>
+      <p class="abs">Linear attention replaces softmax attention with a linear formulation, enabling linear-time computation with a fixed-size recurrent state instead of a growing key-value cache. These computational and memory advantages have attracted growing interest in linear attention for long-context language modeling. However, compressing past information into a fixed-size state causes memory collisions that hinder long-context understanding. Although DeltaNet mitigates memory collisions through delta-rule updates and Gated DeltaNet extends this approach with gating, these mechanisms may also discard information relevant to future predictions. To address this limitation, we introduce Integral DeltaNet, which maintains two complementary recurrent states: a fast-updating delta state that captures current key-value associations and an integral state that preserves a weighted history of the delta state. At readout, the model adaptively combines these states to access information across different timescales. We further derive a chunkwise parallel formulation that enables hardware-efficient training. We evaluate Integral DeltaNet using 340M and 1.3B parameter models trained from scratch on 15B and 100B FineWeb-Edu tokens, respectively. Comparisons with strong recurrent baselines show improved overall performance in language modeling, commonsense reasoning, real-world and synthetic retrieval, long-context understanding, and length extrapolation. We also compare training throughput and activation memory, as well as decoding latency and memory.</p>
+    </details>
+    <div class="hits"><span>工业信号：latency、throughput</span><span>主题：linear attention</span></div>
+    <p class="links"><a href="https://arxiv.org/abs/2611.32063">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.32063">PDF</a><span class="who">18 pages</span></p>
   </div>
 </article>
 <footer>
