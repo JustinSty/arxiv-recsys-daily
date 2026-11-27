@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>每日推荐系统论文 · 2026-11-26</title>
+<title>每日推荐系统论文 · 2026-11-27</title>
 <style>
 :root {
   --bg: #f5f6f4;
@@ -76,26 +76,10 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 <body>
 <div class="wrap">
 <header>
-  <div class="date">2026-11-26</div>
-  <div class="tally">抓取 300 篇，通过硬过滤 54 篇，达到阈值 1 篇</div>
+  <div class="date">2026-11-27</div>
+  <div class="tally">抓取 300 篇，通过硬过滤 0 篇，达到阈值 0 篇</div>
 </header>
-<h2>可能相关</h2><article class="paper">
-  <div class="mark">
-    <span class="num">1</span>
-    <span class="sub">6 分</span>
-  </div>
-  <div class="body">
-    <h3 class="title"><a href="https://arxiv.org/abs/2611.33772">Triage Before Fine-Tuning: Feasibility-Gated Selection and Monitored Adaptation of Embodied Foundation Models for a Fixed Physical Platform</a></h3>
-    <p class="who">Zilin Huang、Zhengyang Wan、Zihao Sheng、Boyue Wang 等 7 人</p>
-    
-    <details>
-      <summary>英文摘要</summary>
-      <p class="abs">Embodied foundation models are increasingly deployed by selection: a practitioner picks a public checkpoint by benchmark rank and fine-tunes it on local data. The platform is fixed before the model is chosen, with little or no local data. We ask what such a checkpoint loses on a fixed platform and which part of the loss local data can buy back. We split the gap by what can repair it. A sensing gap, information the sensors do not capture, cannot be closed with their data; a latency gap, output arriving after the control loop needs it, belongs to the loop, not the weights; only a distribution gap is fine-tuning&#x27;s to repair. TRIAGE turns this into feasibility-gated selection and monitored adaptation in five stages: gates on the sensor contract and on end-to-end latency that no score can override, probes on ten minutes of local logs, a ranking by target-relevant score among the candidates that pass, and fine-tuning that is monitored and checked in closed loop before release. On driving benchmarks, a deadline below a leading closed-loop model&#x27;s latency makes it collide on 80 to 90% of routes, and losing field of view moves plans 2.2 to 5.7 times more than losing resolution at equal pixels. Local frames close 75% of a stability gap but raise perturbation sensitivity at small budgets, and picking by score violates a gate in two of four deployment profiles. On a full-scale vehicle, the factory camera failed the sensing gate and an added camera repaired it. The latency gate removed the two highest-scoring candidates, neither of which completed a closed-loop trip. The selected model passed acceptance in 4 of 5 closed-loop trips, and the closed-loop check withheld a fine-tuned model that had improved offline. TRIAGE lets organizations that cannot train foundation models from scratch find out whether a public checkpoint can run on the robot or vehicle they own, and what to fix if not.</p>
-    </details>
-    <div class="hits"><span>工业信号：deployed、latency</span></div>
-    <p class="links"><a href="https://arxiv.org/abs/2611.33772">arXiv 页面</a><a href="https://arxiv.org/pdf/2611.33772">PDF</a><span class="who">Project page: https://zilin-huang.github.io/Triage/</span></p>
-  </div>
-</article>
+<p class="empty">今天没有达到阈值的论文。周末和节假日 arXiv 不发布新论文，工作日出现这种情况可以考虑调低阈值。</p>
 <footer>
   <p><a href="feed.xml">RSS</a> · <a href="archive.html">历史</a></p>
   <p>数据来自 arXiv，按本地规则打分排序。分数只是排序依据，不代表论文质量。</p>

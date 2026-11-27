@@ -3,15 +3,9 @@
 <channel>
   <title>每日推荐系统论文</title>
   <link>https://arxiv.org/list/cs.IR/new</link>
-  <description>每日筛选的工业推荐系统论文（2026-11-26）</description>
+  <description>每日筛选的工业推荐系统论文（2026-11-27）</description>
   <language>zh-cn</language>
-  <lastBuildDate>Thu, 26 Nov 2026 09:49:33 +0000</lastBuildDate>
-  <item>
-    <title>Triage Before Fine-Tuning: Feasibility-Gated Selection and Monitored Adaptation of Embodied Foundation Models for a Fixed Physical Platform</title>
-    <link>https://arxiv.org/abs/2611.33772</link>
-    <guid isPermaLink="true">https://arxiv.org/abs/2611.33772</guid>
-    <pubDate>Thu, 26 Nov 2026 09:49:33 +0000</pubDate>
-    <description>规则分 6 — Embodied foundation models are increasingly deployed by selection: a practitioner picks a public checkpoint by benchmark rank and fine-tunes it on local data. The platform is fixed before the model is chosen, with little or no local data. We ask what such a checkpoint loses on a fixed platform and which part of the loss local data can buy back. We split the gap by what can repair it. A sensing gap, information the sensors do not capture, cannot be closed with their data; a latency gap, output arriving after the control loop needs it, belongs to the loop, not the weights; only a distribution gap is fine-tuning&#x27;s to repair. TRIAGE turns this into feasibility-gated selection and monitored adaptation in five stages: gates on the sensor contract and on end-to-end latency that no score can override, probes on ten minutes of local logs, a ranking by target-relevant score among the candidates that pass, and fine-tuning that is monitored and checked in closed loop before release. On driving benchmarks, a deadline below a leading closed-loop model&#x27;s latency makes it collide on 80 to 90% of routes, and losing field of view moves plans 2.2 to 5.7 times more than losing resolution at equal pixels. Local frames close 75% of a stability gap but raise perturbation sensitivity at small budgets, and picking by score violates a gate in two of four deployment profiles. On a full-scale vehicle, the factory camera failed the sensing gate and an added camera repaired it. The latency gate removed the two highest-scoring candidates, neither of which completed a closed-loop trip. The selected model passed acceptance in 4 of 5 closed-loop trips, and the closed-loop check withheld a fine-tuned model that had improved offline. TRIAGE lets organizations that cannot train foundation models from scratch find out whether a public checkpoint can run on the robot or vehicle they own, and what to fix if not.</description>
-  </item>
+  <lastBuildDate>Fri, 27 Nov 2026 09:54:34 +0000</lastBuildDate>
+
 </channel>
 </rss>
